@@ -1,0 +1,1 @@
+These are the three group projects that I have ever involved during my study. Some projects might not contains the document in this git because the final document of the project is not shared on my school repository.

@@ -1,0 +1,2 @@
+The animal shelter is a C program assignment to practice with the use of array pointers and unit testing.
+Some sort of command must be used in this assignment such as adding new animal, group animals by species, remove animal, and also sorting the animals inside the shelter by name.

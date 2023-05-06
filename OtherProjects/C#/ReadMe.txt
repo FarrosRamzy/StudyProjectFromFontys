@@ -1,0 +1,3 @@
+The administration App is a basic C# app to generate data of students in a course, and also including the added student into a certain project group that are named based on a numerical order. This app is not necessarily using the proper object oriented concept yet.
+
+And the PoloClub App is a more complex C# App, using the object oriented designing such as the abstraction, inheritance, and polymorphism. The relation between each classes must be created properly and the error handling such as exception is also added in this project to evade any bugs.

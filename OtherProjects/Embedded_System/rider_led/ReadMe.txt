@@ -1,0 +1,4 @@
+This assignment is created to use the knowledge about bit manipulation and implementing it on a line of LEDs to show the effect of bit manipulation on a computer system.
+The product that created here are a single blink LED that must be keep blinking in a correct speed whether the button which is added on the system is being pressed or not.
+and a row of LEDs beside it should do a single LED sweep loop when the button is released, then a multiple LED sweep loop when the button is pressed.
+The complexity of this project is to make sure that the bit register which is being manipulated do the correct thing and does not affect the single LED blink.
