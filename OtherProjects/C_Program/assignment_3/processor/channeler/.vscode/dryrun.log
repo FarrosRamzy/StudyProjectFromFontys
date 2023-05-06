@@ -1,0 +1,11 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/c/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C/c_retake/assignment_3_farros_ramzy/processor/channeler'
+ 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/file_channeler.c -o src/file_channeler.o 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/main.c -o src/main.o 
+gcc -Wall -Wextra -g -Iinclude -Llib src/file_channeler.o src/main.o -o output/main.exe 
+ 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/main_test.c -o src/main_test.o 
+gcc -Wall -Wextra -g -Iinclude src/file_channeler.o src/main_test.o -o output/main_test  /c/Unity-master/Unity-master/src/libunity.a
+make: Leaving directory '/c/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C/c_retake/assignment_3_farros_ramzy/processor/channeler'
+ 

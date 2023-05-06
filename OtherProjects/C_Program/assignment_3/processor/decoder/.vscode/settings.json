@@ -1,0 +1,8 @@
+{
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "animal.h": "c",
+        "string.h": "c",
+        "file_channeler.h": "c"
+    }
+}
