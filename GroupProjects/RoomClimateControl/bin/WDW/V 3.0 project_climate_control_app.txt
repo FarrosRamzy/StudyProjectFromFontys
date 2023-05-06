@@ -1,0 +1,5 @@
+V 3.0 indoor_climate_control_application
+
+
+	Reconstruction of V 1.0 - proof of concept
+	Done by Covalciuc Victor and Farros Ramzy

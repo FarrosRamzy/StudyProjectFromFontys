@@ -1,0 +1,4 @@
+V 2.0 Main_Panel_Controls
+
+	copy of V1.0 - tryed restructuring
+	Done by Covalciuc Victor
