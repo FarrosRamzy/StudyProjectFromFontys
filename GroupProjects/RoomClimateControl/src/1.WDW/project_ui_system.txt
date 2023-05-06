@@ -1,0 +1,6 @@
+project_ui_system
+
+	The code for the entire system, together with all of the sensors integrated
+	Done by Farros Ramzy.
+	
+	FanSpeed Control, Gas Processor, and CO are modified by Covalciuc Victor.

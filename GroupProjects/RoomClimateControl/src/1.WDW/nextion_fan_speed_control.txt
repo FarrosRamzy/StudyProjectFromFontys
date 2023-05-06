@@ -1,0 +1,2 @@
+nextion_fan_speed_control
+	Done by Farros.
