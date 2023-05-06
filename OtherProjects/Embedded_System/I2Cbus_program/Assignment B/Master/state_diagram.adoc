@@ -1,0 +1,23 @@
+[plantuml, state-diagram, svg]
+----
+@startuml
+' Define the styles for the Context diagram.
+skinparam handwritten false
+skinparam defaultTextAlignment center
+skinparam defaultFontName "Calibri"
+skinparam defaultFontStyle bold
+
+state "I2C parallel_computer" as Off ##[dotted]grey {
+[*] --> IDLE : / timer.Start(); \n currentState = IDLE; \n previousState = IDLE; \n inputA = 0; \n inputB = 0;
+IDLE --> SET_VALUE : timer > 500 ms; / \n changeState();
+SET_VALUE --> FIND_MIN : timer > 500 ms; / \n changeState();
+FIND_MIN --> FIND_MAX : timer > 500 ms; / \n changeState();
+FIND_MAX --> IDLE : timer > 500 ms; / \n changeState(); 
+
+SET_VALUE : setValue(inputA,inputB);
+FIND_MIN : getMinimum();
+FIND_MAX : getMaximum();
+
+}
+@enduml
+----
