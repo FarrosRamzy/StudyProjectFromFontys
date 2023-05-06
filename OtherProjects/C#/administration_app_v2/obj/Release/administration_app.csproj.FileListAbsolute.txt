@@ -1,0 +1,10 @@
+D:\PCT01\ESO\2\C#\current\administration_app\bin\Release\administration_app.exe.config
+D:\PCT01\ESO\2\C#\current\administration_app\bin\Release\administration_app.exe
+D:\PCT01\ESO\2\C#\current\administration_app\bin\Release\administration_app.pdb
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.csprojAssemblyReference.cache
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.Form1.resources
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.Properties.Resources.resources
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.csproj.GenerateResource.cache
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.csproj.CoreCompileInputs.cache
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.exe
+D:\PCT01\ESO\2\C#\current\administration_app\obj\Release\administration_app.pdb
