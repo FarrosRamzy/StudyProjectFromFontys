@@ -1,0 +1,11 @@
+make.exe --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/c/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C/c_retake/assignment_2_farros_ramzy/animalShelter'
+ 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/animal.c -o src/animal.o 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/main.c -o src/main.o 
+gcc -Wall -Wextra -g -Iinclude -Llib src/animal.o src/main.o -o output/main.exe 
+ 
+gcc -Wall -Wextra -g -Iinclude -I/c/Unity-master/Unity-master/src -c src/main_test.c -o src/main_test.o 
+gcc -Wall -Wextra -g -Iinclude src/animal.o src/main_test.o -o output/main_test  /c/Unity-master/Unity-master/src/libunity.a
+make: Leaving directory '/c/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C/c_retake/assignment_2_farros_ramzy/animalShelter'
+ 
