@@ -1,0 +1,20 @@
+[plantuml, state-diagram, svg]
+----
+@startuml
+
+' Define the styles for the Context diagram.
+skinparam handwritten false
+skinparam defaultTextAlignment center
+skinparam defaultFontName "Ink Free"
+
+state "main_room_system" as Off ##[dotted]grey {
+[*] --> IDLE : / SendCommand("on");\n lasttime = GetTime()
+IDLE --> READ_AIR_QUALITY : IsMessageAvailable() / \n msg = ReadMessage();
+READ_AIR_QUALITY --> READ_TEMPERATURE : !IsMessageAvailable() / \n time = GetTime()
+READ_TEMPERATURE --> PROCESS_VENTILATION : msg == "ack" / \n return true
+PROCESS_VENTILATION --> SEND_DATA : msg == "nack" / \n return false
+SEND_DATA --> IDLE : time - lasttime > timeout / \n return false
+}
+
+@enduml
+----

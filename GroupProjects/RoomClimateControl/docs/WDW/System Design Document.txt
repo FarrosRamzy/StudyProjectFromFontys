@@ -1,0 +1,3 @@
+System Design Document
+
+	Done by Farros Ramzy, Covalciuc Victor, Sonam Lama and Bašić Žana.
