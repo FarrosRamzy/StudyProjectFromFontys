@@ -1,0 +1,413 @@
+make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
+# GNU Make 4.3
+ 
+# Built for x86_64-pc-msys
+# Copyright (C) 1988-2020 Free Software Foundation, Inc.
+# License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+# This is free software: you are free to change and redistribute it.
+# There is NO WARRANTY, to the extent permitted by law.
+ 
+
+# Make data base, printed on Thu Jun  2 15:25:48 2022
+
+# Variables
+
+# environment
+FPS_BROWSER_APP_PROFILE_STRING = Internet Explorer
+# environment
+SYSTEMDRIVE = C:
+# environment
+LC_ALL = C
+# makefile (from 'Makefile', line 5)
+SRC := src
+# environment
+USERPROFILE = C:\Users\farro
+# environment
+LOCALAPPDATA = C:\Users\farro\AppData\Local
+# environment
+VSCODE_IPC_HOOK_EXTHOST = \\.\pipe\vscode-ipc-f91b8322-6fa1-4e88-a32f-7e13d916983c-sock
+# environment
+VSCODE_CWD = C:\Users\farro\OneDriveStudent365\OneDrive - Office 365 Fontys\C\c_retake\assignment_1_farros_ramzy\bit_handler_submission
+# environment
+SYSTEMROOT = C:\Windows
+# makefile (from 'Makefile', line 26)
+TESTOBJECTS := src/bitHandler.o
+# environment
+PROCESSOR_LEVEL = 6
+# environment
+PSMODULEPATH = C:\Program Files\WindowsPowerShell\Modules;C:\Windows\system32\WindowsPowerShell\v1.0\Modules
+# default
+MAKE_COMMAND := make
+# makefile (from 'Makefile', line 22)
+CLIBS := -Llib
+# automatic
+@D = $(patsubst %/,%,$(dir $@))
+# environment
+CHROME_CRASHPAD_PIPE_NAME = \\.\pipe\crashpad_20952_WRLFLNUIKSVLXCMD
+# environment
+ONEDRIVECOMMERCIAL = C:\Users\farro\OneDriveStudent365\OneDrive - Office 365 Fontys
+# environment
+FPS_BROWSER_USER_PROFILE_STRING = Default
+# environment
+VSCODE_HANDLES_UNCAUGHT_ERRORS = true
+# default
+.VARIABLES := 
+# automatic
+%D = $(patsubst %/,%,$(dir $%))
+# automatic
+^D = $(patsubst %/,%,$(dir $^))
+# environment
+VSCODE_LOG_STACK = false
+# automatic
+%F = $(notdir $%)
+# environment
+VSCODE_CODE_CACHE_PATH = C:\Users\farro\AppData\Roaming\Code\CachedData\c3511e6c69bb39013c4a4b7b9566ec1ca73fc4d5
+# environment
+LANG = C
+# default
+.LOADED := 
+# environment
+TMP = /c/Users/farro/AppData/Local/Temp
+# default
+.INCLUDE_DIRS = /usr/include /usr/include
+# environment
+CONFIGSETROOT = C:\Windows\ConfigSetRoot
+# makefile
+MAKEFLAGS = pqrR
+# makefile (from 'Makefile', line 32)
+.SUFFIXES = .c .h
+# environment
+ONEDRIVE = C:\Users\farro\OneDriveStudent365\OneDrive - Office 365 Fontys
+# makefile
+CURDIR := /c/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C/c_retake/assignment_1_farros_ramzy/bit_handler_submission/assignment_1_bit_handler_a
+# environment
+VSCODE_PIPE_LOGGING = true
+# environment
+APPLICATION_INSIGHTS_NO_DIAGNOSTIC_CHANNEL = true
+# automatic
+*D = $(patsubst %/,%,$(dir $*))
+# environment
+PROGRAMFILES = C:\Program Files
+# makefile (from 'Makefile', line 30)
+LIBUNITY := /c/Unity-master/Unity-master/src/libunity.a
+# environment
+MFLAGS = -pqrR
+# default
+.SHELLFLAGS := -c
+# environment
+!C: = c:\Users\farro\OneDriveStudent365\OneDrive - Office 365 Fontys\C\c_retake\assignment_1_farros_ramzy\bit_handler_submission\assignment_1_bit_handler_a
+# environment
+COMMONPROGRAMW6432 = C:\Program Files\Common Files
+# automatic
++D = $(patsubst %/,%,$(dir $+))
+# makefile (from 'Makefile', line 1)
+MAKEFILE_LIST := Makefile
+# automatic
+@F = $(notdir $@)
+# environment
+VSCODE_VERBOSE_LOGGING = true
+# environment
+VSCODE_PID = 20952
+# automatic
+?D = $(patsubst %/,%,$(dir $?))
+# automatic
+*F = $(notdir $*)
+# makefile (from 'Makefile', line 7)
+LIB := lib
+# automatic
+<D = $(patsubst %/,%,$(dir $<))
+# environment
+VSCODE_NLS_CONFIG = {"locale":"en-us","availableLanguages":{},"_languagePackSupport":true}
+# makefile (from 'Makefile', line 6)
+INCLUDE := include
+# environment
+ONEDRIVECONSUMER = C:\Users\farro\OneDrive
+# default
+MAKE_HOST := x86_64-pc-msys
+# environment
+PROGRAMDATA = C:\ProgramData
+# default
+SHELL := /bin/sh
+# environment
+HOMEPATH = \Users\farro
+# environment
+PLATFORMIO_CALLER = vscode
+# default
+MAKECMDGOALS := all
+# environment
+DRIVERDATA = C:\Windows\System32\Drivers\DriverData
+# environment
+COMSPEC = C:\Windows\system32\cmd.exe
+# environment
+WINDIR = C:\Windows
+# environment
+MAKELEVEL := 0
+# default
+MAKE = $(MAKE_COMMAND)
+# environment
+PATH = /c/Program Files/Microsoft/jdk-11.0.12.7-hotspot/bin:/usr/bin:/mingw64/bin:/c/Program Files (x86)/Razer Chroma SDK/bin:/c/Program Files/Razer Chroma SDK/bin:/c/Program Files (x86)/Razer/ChromaBroadcast/bin:/c/Program Files/Razer/ChromaBroadcast/bin:/c/Windows/system32:/c/Windows:/c/Windows/System32/Wbem:/c/Windows/System32/WindowsPowerShell/v1.0:/c/Windows/System32/OpenSSH:/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common:/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR:/c/Windows/system32/config/systemprofile/AppData/Local/Microsoft/WindowsApps:/c/Program Files (x86)/Common Files/Oracle/Java/javapath:/c/Program Files/Microsoft SQL Server/130/Tools/Binn:/c/Program Files/Microsoft SQL Server/Client SDK/ODBC/170/Tools/Binn:/c/Program Files/PuTTY:/c/Program Files/dotnet:/c/Program Files/Microsoft SQL Server/150/Tools/Binn:/c/Program Files/Git/cmd:/c/Users/farro/AppData/Local/Microsoft/WindowsApps:/c/Users/farro/AppData/Local/Programs/Microsoft VS Code/bin:/c/Users/farro/AppData/Local/GitHubDesktop/bin:/c/Users/farro/.dotnet/tools
+# environment
+ZES_ENABLE_SYSMAN = 1
+# environment
+COMPUTERNAME = YZMARMSI
+# default
+MAKEFILES := 
+# automatic
+^F = $(notdir $^)
+# environment
+PROMPT = $P$G
+# makefile (from 'Makefile', line 19)
+LIBDIRS := lib
+# environment
+LOGONSERVER = \\YZMARMSI
+# environment
+VSCODE_LOG_NATIVE = false
+# environment
+USERNAME = farro
+# environment
+COMMONPROGRAMFILES = C:\Program Files\Common Files
+# automatic
+?F = $(notdir $?)
+# makefile (from 'Makefile', line 21)
+CINCLUDES := -Iinclude
+# makefile (from 'Makefile', line 18)
+INCLUDEDIRS := include
+# environment
+PROGRAMW6432 = C:\Program Files
+# makefile (from 'Makefile', line 29)
+INCLUDETEST := -I/c/Unity-master/Unity-master/src
+# environment
+NO_PROXY = 127.0.0.1
+# environment
+PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
+# automatic
++F = $(notdir $+)
+# environment
+ORIGINAL_XDG_CURRENT_DESKTOP = undefined
+# environment
+USERDOMAIN = YZMARMSI
+# 'override' directive
+GNUMAKEFLAGS := 
+# environment
+OS = Windows_NT
+# environment
+PLATFORMIO_PATH = C:\Users\farro\.platformio\python3;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\msys64\usr\bin;C:\msys64\mingw64\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Git\cmd;C:\Users\farro\AppData\Local\Microsoft\WindowsApps;C:\Users\farro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\farro\AppData\Local\GitHubDesktop\bin;C:\Users\farro\.dotnet\tools;C:\Program Files\Microsoft\jdk-11.0.12.7-hotspot\bin;C:\msys64\usr\bin;C:\msys64\mingw64\bin;C:\Program Files (x86)\Razer Chroma SDK\bin;C:\Program Files\Razer Chroma SDK\bin;C:\Program Files (x86)\Razer\ChromaBroadcast\bin;C:\Program Files\Razer\ChromaBroadcast\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Program Files (x86)\NVIDIA Corporation\PhysX\Common;C:\Program Files\NVIDIA Corporation\NVIDIA NvDLISR;C:\Windows\system32\config\systemprofile\AppData\Local\Microsoft\WindowsApps;C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\Program Files\Microsoft SQL Server\130\Tools\Binn\;C:\Program Files\Microsoft SQL Server\Client SDK\ODBC\170\Tools\Binn\;C:\Program Files\PuTTY\;C:\Program Files\dotnet\;C:\Program Files\Microsoft SQL Server\150\Tools\Binn\;C:\Program Files\Git\cmd;C:\Users\farro\AppData\Local\Microsoft\WindowsApps;C:\Users\farro\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\farro\AppData\Local\GitHubDesktop\bin;C:\Users\farro\.dotnet\tools
+# makefile
+.DEFAULT_GOAL := all
+# default
+MAKE_VERSION := 4.3
+# 'override' directive
+.SHELLSTATUS := 0
+# environment
+PROGRAMFILES(X86) = C:\Program Files (x86)
+ 
+# makefile (from 'Makefile', line 12)
+EXECUTABLE := main.exe
+# environment
+USERDOMAIN_ROAMINGPROFILE = YZMARMSI
+# environment
+NUMBER_OF_PROCESSORS = 16
+# environment
+PUBLIC = C:\Users\Public
+# makefile (from 'Makefile', line 17)
+SOURCEDIRS := src
+# environment
+MOZ_PLUGIN_PATH = C:\Program Files (x86)\Foxit Software\Foxit PDF Reader\plugins\
+# makefile (from 'Makefile', line 4)
+BIN := output
+# environment
+APPDATA = C:\Users\farro\AppData\Roaming
+# makefile (from 'Makefile', line 2)
+CFLAGS := -Wall -Wextra -g
+# environment
+HOMEDRIVE = C:
+# environment
+PROCESSOR_ARCHITECTURE = AMD64
+# makefile (from 'Makefile', line 9)
+LIBRARIES := 
+# environment
+VSCODE_AMD_ENTRYPOINT = vs/workbench/api/node/extensionHostProcess
+# environment
+PLATFORMIO_IDE = 2.4.3
+# environment
+HOME = /home/farro
+# environment
+COMMONPROGRAMFILES(X86) = C:\Program Files (x86)\Common Files
+# environment
+ELECTRON_RUN_AS_NODE = 1
+# environment
+TEMP = /c/Users/farro/AppData/Local/Temp
+# environment
+VSCODE_IPC_HOOK = \\.\pipe\38137e07ad33c67147f4a0060b844120-1.67.2-main-sock
+# environment
+TERM = xterm-256color
+# default
+.RECIPEPREFIX := 
+# automatic
+<F = $(notdir $<)
+# makefile (from 'Makefile', line 25)
+ALLOBJECTS := src/bitHandler.o src/main.o
+# default
+SUFFIXES := 
+# environment
+ALLUSERSPROFILE = C:\ProgramData
+# environment
+SESSIONNAME = Console
+# makefile (from 'Makefile', line 27)
+RELEASEOBJECTS := src/bitHandler.o src/main.o
+# default
+.FEATURES := target-specific order-only second-expansion else-if shortest-stem undefine oneshell nocomment grouped-target extra-prereqs archives jobserver output-sync check-symlink load
+# environment
+PROCESSOR_REVISION = 8d01
+# makefile (from 'Makefile', line 1)
+CC := gcc
+# makefile (from 'Makefile', line 24)
+SOURCES := src/bitHandler.c src/main.c
+# environment
+PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 141 Stepping 1, GenuineIntel
+# variable set hash-table stats:
+# Load=126/1024=12%, Rehash=0, Collisions=30/190=16%
+
+# Pattern-specific Variable Values
+
+# No pattern-specific variable values.
+
+# Directories
+
+# src (device 3061464937, inode 26458647811375881): 4 files, no impossibilities.
+# . (device 3061464937, inode 36591746972531317): 8 files, no impossibilities.
+
+# 12 files, no impossibilities in 2 directories.
+
+# Implicit Rules
+
+src/%.o: src/%.c
+#  recipe to execute (from 'Makefile', line 46):
+	$(CC) $(CFLAGS) $(CINCLUDES) $(INCLUDETEST) -c $^ -o $@ $(LIBRARIES)
+
+# 1 implicit rules, 0 (0.0%) terminal.
+# Files
+
+output/main.exe: src/bitHandler.o src/main.o
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+#  recipe to execute (from 'Makefile', line 49):
+	$(CC) $(CFLAGS) $(CINCLUDES) $(CLIBS) $^ -o $@ $(LIBRARIES)
+
+# Not a target:
+Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-15 19:49:09.3152928
+#  File has been updated.
+#  Successfully updated.
+
+clean:
+#  Phony target (prerequisite of .PHONY).
+#  Implicit rule search has not been done.
+#  File does not exist.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 38):
+	-$(RM) $(BIN)/$(EXECUTABLE) $(BIN)/main
+	-$(RM) $(ALLOBJECTS)
+
+src/bitHandler.o: src/bitHandler.c
+#  Implicit rule search has been done.
+#  Implicit/static pattern stem: 'bitHandler'
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# automatic
+# @ := src/bitHandler.o
+# automatic
+# * := bitHandler
+# automatic
+# < := src/bitHandler.c
+# automatic
+# + := src/bitHandler.c
+# automatic
+# % := 
+# automatic
+# ^ := src/bitHandler.c
+# automatic
+# ? := src/bitHandler.c
+# automatic
+# | := 
+# variable set hash-table stats:
+# Load=8/32=25%, Rehash=0, Collisions=9/18=50%
+#  recipe to execute (from 'Makefile', line 46):
+	$(CC) $(CFLAGS) $(CINCLUDES) $(INCLUDETEST) -c $^ -o $@ $(LIBRARIES)
+
+# Not a target:
+output/main:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# Not a target:
+src/main.o:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+output/main_test: src/bitHandler.o
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 52):
+	$(CC) $(CFLAGS) $(CINCLUDES) $^ -o $@ $(LIBRARIES) $(LIBUNITY)
+
+# Not a target:
+.DEFAULT:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+all: output/main.exe output/main
+#  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has been updated.
+#  Needs to be updated (-q is set).
+# variable set hash-table stats:
+# Load=0/32=0%, Rehash=0, Collisions=0/8=0%
+
+run: all
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 43):
+	./$(BIN)/$(EXECUTABLE)
+
+# Not a target:
+src/bitHandler.c:
+#  Implicit rule search has been done.
+#  Last modified 2022-03-18 14:49:41.4803887
+#  File has been updated.
+#  Successfully updated.
+
+.PHONY: clean
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+# files hash-table stats:
+# Load=13/1024=1%, Rehash=0, Collisions=0/36=0%
+# VPATH Search Paths
+
+# No 'vpath' search paths.
+
+# No general ('VPATH' variable) search path.
+
+# strcache buffers: 1 (0) / strings = 26 / storage = 235 B / avg = 9 B
+# current buf: size = 8162 B / used = 235 B / count = 26 / avg = 9 B
+
+# strcache performance: lookups = 45 / hit rate = 42%
+# hash-table stats:
+# Load=26/8192=0%, Rehash=0, Collisions=0/45=0%
+# Finished Make data base on Thu Jun  2 15:25:48 2022
+
+ 
