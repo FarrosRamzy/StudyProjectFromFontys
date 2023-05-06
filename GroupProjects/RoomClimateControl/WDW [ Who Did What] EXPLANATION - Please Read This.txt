@@ -1,0 +1,27 @@
+
+	In favor of storage space a special files has been devised which
+	states which team member has been doing what in the group, to some 
+	degree of detail.
+		
+		%-% This file will be called -> WDW <- 
+					which stand for [ Who Did What - WDW ]
+
+	=> THEREFORE,we made a folder in each folder called -> " WDW " <- which stand for "WHO DID WHAT"
+			WDW = WHO DID WHAT 
+			-> In which we will put a text file with the title of the folder or file name and 
+			   in that file we will enumerate the name of who worked on what.
+				
+			<> There will be a text that reads: "Assigned To:" which logically depicts the 
+			   first people that had tasks on that file/folder.
+
+			<> Next, there will be another text that reads: "Helpers:" which logically depicts 
+		           the people that intervened on that task so to quicken the process of finishing it.				
+
+			-> If the nature is as such that it was not assigned to someone specific
+			   rather it needed to be done by the whole group, it will be specified
+			   in the file as such.
+			
+			-> At last, if the nature of the task, pice of work, or anything else is of 
+		   	   such different degree that it does not fit in any of the aforementioned
+			   above, it shall be specified in the file detaling the contributions of
+			   that pice of work.
