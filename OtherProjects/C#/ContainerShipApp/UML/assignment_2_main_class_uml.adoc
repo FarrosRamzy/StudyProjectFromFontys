@@ -1,0 +1,120 @@
+[plantuml, class-diagram, svg]
+----
+@startuml
+' Define the styles for the Context diagram.
+skinparam handwritten false
+skinparam defaultTextAlignment center
+skinparam defaultFontName "Arial"
+skinparam defaultFontStyle bold
+
+'Define classes - containers'
+class Program{
+    -{static} currentSocketState : SocketState
+    -{static} shipping : ShippingManagement
+    -{static} Main(args[] : string) : void
+}
+class NetListener{
+    -{static} socketState : SocketState
+    -{static} address : IPAddress
+    -{static} port : int
+    -{static} listener : Socket
+    -{static} endPoint : IPEndPoint
+    -{static} networkStream : NetworkStream
+    -{static} streamReader : StreamReader
+    -{static} streamWriter : StreamWriter
+    -{static} taskProcessor : ContainerTaskProcessor
+    -Start(currentSocketState : SocketState) : void
+    +NetListener(currentSocketState : SocketState, \nshipping : ShippingManagement)
+    +listenToNewConnection() : Socket
+    +StartNewConnection(newClient : Socket, \ncurrentSocketState : SocketState) : void
+    +{static}IsConnected(socket : Socket) : bool
+    +OperateStateTask(client : Socket) : void
+}
+class ContainerTaskProcessor{
+    -{static} itemName : string
+    -{static} countryOrigin : string
+    -{static} isFridge : bool
+    -{static} weight : int
+    -{static} volume : float
+    -{static} shippingManagement  : \nShippingManagement
+    -{static} Intro(streamWriter : \nStreamWriter) : void
+    -{static} SelectSize(streamWriter : \nStreamWriter) : void
+    -{static} SelectType(streamWriter : \nStreamWriter) : void
+    -{static} AskWeight(streamWriter : \nStreamWriter) : void
+    -{static} AskVolume(streamWriter : \nStreamWriter) : void
+    -{static} AskProcess(streamWriter : \nStreamWriter) : void
+    +ContainerTaskProcessor(shipping : \nShippingManagement)
+    +{static}HandleStart(currentSocketState : \nSocketState, client : Socket) : SocketState
+    +{static}HandleIdle(currentSocketState : \nSocketState, streamWriter : StreamWriter) : \nSocketState
+    +{static}ReadInputData(currentSocketState : \nSocketState, streamWriter : StreamWriter, \nstreamReader : StreamReader) : SocketState
+}
+class ShippingManagement{
+    -containers : List<ShippingContainer>
+    -AddNewContainer(container : \nShippingContainer) : void
+    -WriteFridgeStatus(container : \nShippingContainer) : string
+    -GetTotalPrice(container : \nShippingContainer) : float
+    +ShippingManagement()
+    +AddNewFullSizedContainer(content : string, \norigin : string, isFridge : bool, weight : int) : void
+    +AddNewHalfSizedContainer(content : string, \norigin : string, volume : float) : void
+    +AddNewQuarterSizedContainer(content : string, \norigin : string) : void
+    +GenerateShippingReport() : List<String>
+}
+enum SocketState{
+    START,
+    IDLE,
+    HANDLE_COMMUNICATION,
+    DISCONNECT
+}
+enum States{
+    START,
+    PRINT_REPORT,
+    ADD_ITEM,
+    ADD_ORIGIN,
+    STOP,
+    SELECT_SIZE,
+    SELECT_TYPE,
+    ADD_WEIGHT,
+    ADD_VOLUME,
+    DISCONNECT
+}
+enum ContainerType{
+    FULL,
+    HALF,
+    QUARTER
+}
+class Exception{
+
+}
+class ShippingException {
+    +ShippingException()
+    +ShippingException(message : string) \n: base(message)
+    +ShippingException(message : string, \ninnerExc : Exception) \n: base(message, innerExc)
+}
+abstract class ShippingContainer {
+    -serialNumber : int
+    -shippingContent : string
+    -countryOrigin : string
+
+    +{static} idIncrement : int
+    +SerialNumber{get;} : int
+    +ShippingContent{get;} : string
+    +CountryOrigin{get;} : string
+    +ShippingContainer(item : string, origin : string)
+    +{abstract}CalculatePrice() : float
+}
+
+'Class relations'
+Program --left-- SocketState : -currentSocketState
+Program --right-- ShippingManagement : -shipping
+Program --down--> NetListener
+NetListener --left-- SocketState : -socketState
+NetListener --right--> ContainerTaskProcessor
+ContainerTaskProcessor --right-- ContainerType : uses
+ContainerTaskProcessor --right-- States : uses
+ContainerTaskProcessor --up--> ShippingManagement
+ShippingManagement "1" *-right-- "." ShippingContainer : -containers
+ShippingContainer -right- ShippingException
+Exception <|-left- ShippingException
+
+@enduml
+----
