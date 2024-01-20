@@ -1,0 +1,10 @@
+{
+    "files.associations": {
+        "stdint.h": "c",
+        "logging.h": "c",
+        "stdbool.h": "c",
+        "string.h": "c",
+        "stdlib.h": "c",
+        "mystack.h": "c"
+    }
+}
