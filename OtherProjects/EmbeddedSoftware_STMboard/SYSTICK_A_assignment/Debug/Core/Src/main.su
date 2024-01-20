@@ -1,0 +1,9 @@
+../Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	16	static
+../Core/Src/main.c:77:5:main	8	static
+../Core/Src/main.c:119:6:SystemClock_Config	72	static
+../Core/Src/main.c:159:6:SysTick_Init	8	static
+../Core/Src/main.c:179:6:SysTick_LED	4	static
+../Core/Src/main.c:205:6:DelayMS	24	static
+../Core/Src/main.c:223:6:ResetLED	16	static
+../Core/Src/main.c:236:6:BlinkLED	16	static
+../Core/Src/main.c:246:6:Error_Handler	4	static,ignoring_inline_asm

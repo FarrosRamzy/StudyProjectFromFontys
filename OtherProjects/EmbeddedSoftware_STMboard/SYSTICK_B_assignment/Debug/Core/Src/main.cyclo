@@ -1,0 +1,9 @@
+../Drivers/CMSIS/Include/core_cm4.h:1816:22:__NVIC_SetPriority	2
+../Core/Src/main.c:79:5:main	1
+../Core/Src/main.c:122:6:SystemClock_Config	3
+../Core/Src/main.c:162:6:SysTick_Init	1
+../Core/Src/main.c:183:6:SysTick_LED	1
+../Core/Src/main.c:210:6:SysTick_Handler	2
+../Core/Src/main.c:233:6:ResetLED	1
+../Core/Src/main.c:246:6:BlinkLED	1
+../Core/Src/main.c:255:6:Error_Handler	1
