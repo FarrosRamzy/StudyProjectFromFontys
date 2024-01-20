@@ -1,0 +1,6 @@
+../Core/Src/uart.c:6:6:configure_UART	40	static
+../Core/Src/uart.c:28:6:configure_extern_UART	40	static
+../Core/Src/uart.c:58:6:UART_send	32	static
+../Core/Src/uart.c:64:6:UART_send_double	40	static
+../Core/Src/uart.c:72:6:UART_send_speed_to_extern	40	static
+../Core/Src/uart.c:80:6:UART_send_direction_to_extern	40	static

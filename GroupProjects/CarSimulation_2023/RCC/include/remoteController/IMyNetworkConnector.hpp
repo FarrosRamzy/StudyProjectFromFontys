@@ -1,0 +1,17 @@
+#pragma once
+
+#include <Arduino.h>
+#include "IMyNetCommPublisher.hpp"
+#include "IMyNetCommSubscriber.hpp"
+#include "remote_system.hpp"
+
+class IMyNetworkConnector : public IMyNetCommPublisher, public IMyNetCommSubscriber
+{
+public:
+    virtual void setServer(const char *) = 0;
+    virtual void setPort(int) = 0;
+    virtual void myCallBackFunction(MQTT_CALLBACK_SIGNATURE) = 0;
+    virtual void connectToMyNetwork() = 0;
+    virtual void myNetLoop() = 0;
+    virtual bool amIconnected() = 0;
+};
