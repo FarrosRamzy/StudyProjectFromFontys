@@ -1,0 +1,2 @@
+This repository is a bit similar with the Swarm Robot project in RoboBoyz directory.
+However, I was working with a different person and the System program is much more advanced than the RoboBoyz project.

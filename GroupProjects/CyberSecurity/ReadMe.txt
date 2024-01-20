@@ -1,0 +1,2 @@
+These are the three documents which I was allowed to share on my CyberSecurity study during the specialization semester.
+I was also working in a group of five people to do a penetration test for a certain industrial company. However, due to the non-disclosure aggreement that I must respect under my hand signature, I am not allowed to mention anything that I did with my group during that pen-testing.

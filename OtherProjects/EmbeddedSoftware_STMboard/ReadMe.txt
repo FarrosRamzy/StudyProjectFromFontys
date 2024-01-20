@@ -1,0 +1,1 @@
+These are the Embedded Software programs I created alone for my Embedded System project at school. They are all programmed in STMboard IDE, using the STM32 Nucleo, F303RE. And most of them are about bit registers programming to set up the timers of a program, an input, and also an output port of the program.
