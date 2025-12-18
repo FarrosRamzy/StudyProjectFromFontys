@@ -1,0 +1,56 @@
+//
+// !!! WARNING !!! AUTO-GENERATED FILE!
+// PLEASE DO NOT MODIFY IT AND USE "platformio.ini":
+// https://docs.platformio.org/page/projectconf/section_env_build.html#build-flags
+//
+{
+    "configurations": [
+        {
+            "name": "PlatformIO",
+            "includePath": [
+                "c:/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C++/new_directory/assignment4/es-practicum-4/src/Assignment C/Master/MasterI2C/include",
+                "c:/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C++/new_directory/assignment4/es-practicum-4/src/Assignment C/Master/MasterI2C/src",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/cores/arduino",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/variants/standard",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                ""
+            ],
+            "browse": {
+                "limitSymbolsToIncludedHeaders": true,
+                "path": [
+                    "c:/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C++/new_directory/assignment4/es-practicum-4/src/Assignment C/Master/MasterI2C/include",
+                    "c:/Users/farro/OneDriveStudent365/OneDrive - Office 365 Fontys/C++/new_directory/assignment4/es-practicum-4/src/Assignment C/Master/MasterI2C/src",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/Wire/src",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/cores/arduino",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/variants/standard",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/EEPROM/src",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/HID/src",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/SPI/src",
+                    "C:/Users/farro/.platformio/packages/framework-arduino-avr/libraries/SoftwareSerial/src",
+                    ""
+                ]
+            },
+            "defines": [
+                "PLATFORMIO=60002",
+                "ARDUINO_AVR_UNO",
+                "F_CPU=16000000L",
+                "ARDUINO_ARCH_AVR",
+                "ARDUINO=10808",
+                "__AVR_ATmega328P__",
+                ""
+            ],
+            "cStandard": "c11",
+            "cppStandard": "c++11",
+            "compilerPath": "C:/Users/farro/.platformio/packages/toolchain-atmelavr/bin/avr-gcc.exe",
+            "compilerArgs": [
+                "-mmcu=atmega328p",
+                ""
+            ]
+        }
+    ],
+    "version": 4
+}
