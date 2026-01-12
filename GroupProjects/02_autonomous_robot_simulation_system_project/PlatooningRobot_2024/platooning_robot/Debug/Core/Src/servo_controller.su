@@ -1,0 +1,6 @@
+../Core/Src/servo_controller.c:10:6:move_forward	24	static
+../Core/Src/servo_controller.c:15:6:stop	16	static
+../Core/Src/servo_controller.c:24:6:turn_right	24	static
+../Core/Src/servo_controller.c:33:6:turn_left	24	static
+../Core/Src/servo_controller.c:42:6:move_backward	16	static
+../Core/Src/servo_controller.c:51:6:rotating	16	static

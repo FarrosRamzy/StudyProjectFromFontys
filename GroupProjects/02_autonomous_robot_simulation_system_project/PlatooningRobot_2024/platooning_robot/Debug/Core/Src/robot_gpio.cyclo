@@ -1,0 +1,6 @@
+../Core/Src/robot_gpio.c:10:6:EnableGPIOA	1
+../Core/Src/robot_gpio.c:15:6:EnableGPIOB	1
+../Core/Src/robot_gpio.c:20:6:Servo_PWM_Config	1
+../Core/Src/robot_gpio.c:43:6:Ultrasonic_Trigger_Config	1
+../Core/Src/robot_gpio.c:64:6:Ultrasonic_Echo_Config	1
+../Core/Src/robot_gpio.c:85:6:Infrared_Config	1

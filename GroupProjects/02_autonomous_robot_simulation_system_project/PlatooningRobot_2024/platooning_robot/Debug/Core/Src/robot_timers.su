@@ -1,0 +1,4 @@
+../Drivers/CMSIS/Include/core_cm4.h:1688:22:__NVIC_EnableIRQ	16	static
+../Core/Src/robot_timers.c:10:6:Timer2_Init	4	static
+../Core/Src/robot_timers.c:46:6:Timer3_Init	4	static
+../Core/Src/robot_timers.c:88:6:Timer4_Init	8	static

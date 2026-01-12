@@ -1,0 +1,7 @@
+../Core/Src/robot_uart.c:13:6:configure_UART	1
+../Core/Src/robot_uart.c:35:6:configure_extern_UART	1
+../Core/Src/robot_uart.c:65:6:UART_send	1
+../Core/Src/robot_uart.c:71:6:UART_send_double	1
+../Core/Src/robot_uart.c:79:6:UART_send_distance_to_extern	1
+../Core/Src/robot_uart.c:87:6:UART_send_speed_to_extern	1
+../Core/Src/robot_uart.c:95:6:UART_send_direction_to_extern	7
