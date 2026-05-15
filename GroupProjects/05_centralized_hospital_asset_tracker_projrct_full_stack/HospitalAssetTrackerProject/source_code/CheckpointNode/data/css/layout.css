@@ -1,0 +1,32 @@
+/**
+ * @file layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Page containers and layout grid.
+ * @version 1.0.0
+ * @date 2026-05-13
+
+ * @Copyright (c) 2026
+ */
+
+.page {
+    width: min(calc(100% - 24px), var(--max));
+    margin: 24px auto;
+}
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: 18px;
+}
+
+.card-stack {
+    display: grid;
+    gap: 18px;
+}

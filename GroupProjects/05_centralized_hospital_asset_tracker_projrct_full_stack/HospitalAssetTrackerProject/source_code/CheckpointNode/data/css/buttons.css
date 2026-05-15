@@ -1,0 +1,59 @@
+/**
+ * @file buttons.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Button and action styling.
+ * @version 1.0.0
+ * @date 2026-05-13
+
+ * @Copyright (c) 2026
+ */
+
+.btn,
+button {
+    min-height: 48px;
+    border: none;
+    border-radius: 14px;
+    padding: 12px 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: transform .05s ease, opacity .18s ease, background .18s ease, border-color .18s ease;
+}
+
+button:active,
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background: #eef4ff;
+    color: var(--primary);
+    border: 1px solid #d6e4ff;
+}
+
+.btn-primary:hover {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-secondary {
+    background: #eef4ff;
+    color: var(--primary);
+    border: 1px solid #d6e4ff;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-2);
+    color: var(--text);
+}
+
+.actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.device-toggle-btn {
+    width: 100%;
+    margin-top: 10px;
+}

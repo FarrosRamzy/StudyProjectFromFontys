@@ -1,0 +1,26 @@
+/**
+ * @file alerts.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Success and error alert styles.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+.alert {
+    margin-top: 18px;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-weight: 700;
+}
+
+.alert-error {
+    background: var(--error-bg);
+    color: var(--error-text);
+}
+
+.alert-success {
+    background: var(--success-bg);
+    color: var(--success-text);
+}

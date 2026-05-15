@@ -1,0 +1,57 @@
+/**
+ * @file nodeApi.js
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-08
+
+ * @Copyright (c) 2026
+ */
+
+import { requestJson } from "./apiClient";
+
+export async function getNodes() {
+    return requestJson("/nodes");
+}
+
+export async function enrollNode(payload) {
+    return requestJson("/nodes/enroll", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+}
+
+export async function assignNode(deviceId, payload) {
+    return requestJson(`/nodes/${encodeURIComponent(deviceId)}/assign`, {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+}
+
+export async function provisionNode(payload) {
+    return requestJson("/nodes/provision", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+    });
+}
+
+export async function unassignNode(deviceId) {
+    return requestJson(`/nodes/${encodeURIComponent(deviceId)}/unassign`, {
+        method: "POST",
+    });
+}
+
+export async function deleteNode(deviceId) {
+    return requestJson(`/nodes/${encodeURIComponent(deviceId)}`, {
+        method: "DELETE",
+    });
+}

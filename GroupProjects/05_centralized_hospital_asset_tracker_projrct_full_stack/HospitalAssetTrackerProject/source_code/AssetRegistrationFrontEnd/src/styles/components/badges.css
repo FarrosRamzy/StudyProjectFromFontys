@@ -1,0 +1,32 @@
+/**
+ * @file badges.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-07
+
+ * @Copyright (c) 2026
+ */
+
+/* Status badges */
+
+.asset-status {
+  display: inline-block;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.asset-status.active {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.asset-status.deregistered {
+  background: #fee2e2;
+  color: #991b1b;
+}

@@ -1,0 +1,71 @@
+/**
+ * @file panels.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Panel, section, and helper text styling.
+ * @version 1.0.0
+ * @date 2026-05-13
+
+ * @Copyright (c) 2026
+ */
+
+.panel {
+    background: var(--panel);
+    border: 1px solid rgba(216, 226, 240, .95);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.panel-head {
+    padding: 18px 18px 0;
+}
+
+.panel-body {
+    padding: 18px;
+}
+
+.section-title {
+    margin: 0;
+    font-size: 22px;
+    letter-spacing: -.02em;
+}
+
+.section-sub {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-size: 14px;
+}
+
+.hint {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.helper-banner {
+    margin-top: 10px;
+    border-radius: 16px;
+    padding: 10px 12px;
+    background: transparent;
+    border: none;
+    color: var(--muted);
+    text-align: center;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.micro-copy {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.footer-note {
+    margin-top: 18px;
+    text-align: center;
+    color: var(--muted);
+    font-size: 13px;
+    padding: 0 8px 12px;
+}

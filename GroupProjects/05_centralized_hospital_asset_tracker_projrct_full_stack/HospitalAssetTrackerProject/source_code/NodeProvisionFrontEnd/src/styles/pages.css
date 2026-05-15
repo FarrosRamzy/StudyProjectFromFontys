@@ -1,0 +1,78 @@
+/**
+ * @file pages.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Page-level layout styles.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+.dashboard-page,
+.app-shell {
+    width: min(1440px, calc(100% - 40px));
+    margin: 0 auto;
+    padding: 28px 0 40px;
+}
+
+.dashboard-header,
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #064e3b, #059669);
+    color: white;
+    border-radius: 28px;
+    padding: 28px 32px;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-header h1,
+.hero-section h1 {
+    margin: 0;
+    font-size: clamp(28px, 3vw, 42px);
+    line-height: 1.05;
+}
+
+.dashboard-header p,
+.hero-section p {
+    margin-top: 10px;
+    max-width: 720px;
+    color: rgba(255, 255, 255, 0.88);
+}
+
+.eyebrow {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+.hero-copy {
+    margin-bottom: 0;
+}
+
+@media (max-width: 760px) {
+
+    .dashboard-header,
+    .hero-section {
+        flex-direction: column;
+        padding: 24px;
+    }
+}
+
+@media (min-width: 1280px) {
+    .app-shell {
+        gap: 0;
+    }
+
+    .panel,
+    .table-panel,
+    .assignment-panel,
+    .compact-panel {
+        border-radius: 24px;
+    }
+}

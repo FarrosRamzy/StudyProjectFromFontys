@@ -1,0 +1,151 @@
+<!--
+  @file esp_index.html
+  @author Farros Ramzy (you@domain.com)
+  @description 
+  @version 1.5.1
+  @date 2026-04-29
+
+  @Copyright (c) 2026
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESP32 Wi‑Fi Setup</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+
+<body>
+  <main class="page">
+    <div class="page-container">
+      <section class="hero">
+        <div class="hero-inner">
+          <div class="eyebrow">Med-Tracker Setup Portal</div>
+          <h1>Welcome to Med-Tracker Wi-Fi Portal</h1>
+          <p>Connect this device to the hospital Wi-Fi network. After connection, it will automatically appear in the
+            system dashboard for room assignment.</p>
+        </div>
+        <div class="hero-note-wrap">
+          <div class="hero-note">Manual SSID overrides the dropdown</div>
+        </div>
+      </section>
+
+      <section class="layout">
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2 class="section-title">How to use</h2>
+          </div>
+          <div class="panel-body">
+            <div class="micro-copy">
+              <p>Fill in the <code>Wi-Fi name (SSID)</code>, and click the connect button to connect your module to
+                Wi-Fi network.</p>
+              <p>Tick the <code>"This network has no password"</code> checkbox if the Wi-Fi is an Open Network, or fill
+                in the password textbox
+                otherwise.</p>
+              <p>Click <code>Refresh</code> if your Wi-Fi Network name is not shown in the list.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <div class="panel-head">
+            <h2 class="section-title">Wi‑Fi configuration</h2>
+            <p class="section-sub">Type and choose a detected network in the list!</p>
+          </div>
+          <div class="panel-body">
+            <form id="wifiForm" action="/save" method="POST" onsubmit="showConnecting(); return validateForm()">
+              <div class="field">
+                <label for="ssid_input">Wi‑Fi name (SSID)</label>
+                <div class="hint">
+                  Select from the list or type manually if not shown.
+                </div>
+                <input type="text" id="ssid_input" name="ssid" list="ssid_list" maxlength="32"
+                  placeholder="Type and choose the SSID">
+                <datalist id="ssid_list">
+                  {{wifi_options}}
+                </datalist>
+              </div>
+
+              <div class="toggle-row">
+                <input type="checkbox" id="wifi_open" name="wifi_open" value="1" {{wifi_open_checked}}
+                  onchange="toggleWifiPassword()">
+                <label for="wifi_open">This network has no password</label>
+              </div>
+
+              <div class="field">
+                <label for="pass">Wi‑Fi password</label>
+                <div class="password-row">
+                  <input type="password" id="pass" name="pass" maxlength="63"
+                    placeholder="Enter password (min 8 characters)">
+                  <button type="button" id="toggleBtn" class="btn-primary" onclick="togglePassword()">Show
+                    password</button>
+                </div>
+                <div class="hint">Leave the password blank to keep the current saved password.</div>
+              </div>
+
+              <div class="actions">
+                <button type="submit" class="btn-primary">Connect</button>
+                <button type="button" class="btn-secondary" onclick="refreshNetworks()">Refresh</button>
+              </div>
+
+              <div class="status-card" id="statusBox">
+                <div class="status-title">Status</div>
+                <div class="status-message" id="statusMessage">
+                  Waiting for input...
+                </div>
+              </div>
+
+            </form>
+          </div>
+        </article>
+
+        <button type="button" class="btn-secondary device-toggle-btn" onclick="toggleDeviceInfo()">
+          Show Device Information
+        </button>
+
+        <article class="panel device-info-panel hidden" id="deviceInfoPanel">
+          <div class="panel-head">
+            <h2 class="section-title">Device information</h2>
+            <p class="section-sub">Useful details for identification and maintenance.</p>
+          </div>
+
+          <div class="panel-body">
+            <div class="info-grid">
+              <div class="info-card">
+                <div class="meta">Wi-Fi status</div>
+                <div class="value">{{wifi_status}}</div>
+              </div>
+              <div class="info-card">
+                <div class="meta">IP address</div>
+                <div class="value">{{ip_address}}</div>
+              </div>
+              <div class="info-card">
+                <div class="meta">Device ID</div>
+                <div class="value">{{device_id}}</div>
+              </div>
+              <div class="info-card">
+                <div class="meta">Firmware version</div>
+                <div class="value">{{firmware_version}}</div>
+              </div>
+              <div class="info-card">
+                <div class="meta">MAC address</div>
+                <div class="value">{{mac_address}}</div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <div class="footer-note">Designed to stay lightweight for embedded deployment while looking clean on phone and
+        desktop.</div>
+    </div>
+  </main>
+  <script type="module" src="/script.js"></script>
+</body>
+
+</html>
