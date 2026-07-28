@@ -26,7 +26,7 @@ The display controller rotates between occupancy, queue, emergency, full-buildin
 
 I participated in this project as a member of the design and development team. However, the supplied archive does not preserve a reliable per-person task breakdown, and some source comments attribute specific code sections to other teammates.
 
-For that reason, I have not assigned individual code modules to myself in this README. Before using this project in an internship application, I would update this section with the exact subsystem, integration work, testing, or documentation that I personally completed.
+For that reason, I have not assigned individual code modules to myself in this README. What I can say clearly is in this project, multiple developers in the group were mostly working on the same files by turns. But as a personal contribution, I was fully focused on the communication protocol, system data integration and LCD UI development.
 
 This project still demonstrates my experience working in a team on a distributed embedded system in which several independently operating devices must keep shared information synchronized.
 

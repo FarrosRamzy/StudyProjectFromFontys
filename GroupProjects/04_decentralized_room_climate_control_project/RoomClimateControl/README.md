@@ -31,10 +31,10 @@ My contribution included:
 - developing a Nextion fan-speed-control prototype;
 - designing the Nextion touchscreen interface;
 - working on the integrated `project_ui_system` firmware;
-- working with Victor Covalciuc on ESP communication;
-- contributing to unit testing and Wi-Fi testing;
+- working with one of my teammate on ESP communication;
+- contributing to unit testing and Wi-Fi communication testing;
 - creating the original desktop-application proof of concept;
-- rebuilding version 3 of the desktop application together with Victor;
+- rebuilding the final version of the desktop application together with one of my teammate;
 - contributing to the project plan and system design documentation.
 
 This project gave me experience across the complete path from sensor acquisition and embedded control to communication, data storage, and a user-facing desktop application.
