@@ -1,0 +1,102 @@
+/**
+ * @file mobile-cards.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .user-table .user-identity-cell {
+        order: -2;
+        display: block;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.22);
+        text-align: left;
+    }
+
+    .user-table .user-identity-cell::before {
+        display: none;
+    }
+
+    .user-table .user-email-cell {
+        order: -1;
+        display: block;
+        margin-top: -3px;
+        color: #64748b;
+        font-size: 0.78rem;
+        text-align: left;
+    }
+
+    .user-table .user-email-cell::before {
+        display: none;
+    }
+
+    .user-identity {
+        align-items: center;
+    }
+
+    .user-avatar {
+        flex-basis: 42px;
+        width: 42px;
+        height: 42px;
+    }
+
+    .user-identity-copy strong {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .user-role-cell>*,
+    .user-status-cell>* {
+        max-width: 58%;
+        text-align: right;
+    }
+
+    .user-password-cell,
+    .user-actions-cell {
+        display: grid !important;
+        justify-content: stretch !important;
+        gap: 8px !important;
+        padding-top: 10px !important;
+        border-top: 1px solid rgba(148, 163, 184, 0.2) !important;
+        text-align: left !important;
+    }
+
+    .user-password-cell::before,
+    .user-actions-cell::before {
+        margin-bottom: 2px;
+    }
+
+    .user-password-reset {
+        grid-template-columns: minmax(0, 1fr) auto;
+        width: 100%;
+    }
+
+    .user-row-actions {
+        width: 100%;
+    }
+
+    .user-row-actions button {
+        width: 100%;
+    }
+
+    .user-policy-note {
+        width: 100%;
+        margin-top: 0;
+        text-align: left;
+    }
+}
+
+@media (max-width: 420px) {
+    .user-password-reset {
+        grid-template-columns: 1fr;
+    }
+
+    .user-reset-button {
+        width: 100%;
+    }
+}

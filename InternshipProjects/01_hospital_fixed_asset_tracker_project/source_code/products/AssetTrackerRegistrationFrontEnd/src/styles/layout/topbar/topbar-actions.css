@@ -1,0 +1,62 @@
+/**
+ * @file topbar-actions.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Topbar refresh and sign-out controls.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.topbar-refresh-button {
+    min-height: 38px;
+    border: 1px solid rgba(4, 120, 87, 0.26);
+    border-radius: 999px;
+    padding: 0 0.95rem;
+    background: #ffffff;
+    color: #047857;
+    font-size: 0.82rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.topbar-refresh-button:hover {
+    background: #ecfdf5;
+    box-shadow: 0 8px 18px rgba(4, 120, 87, 0.14);
+    transform: translateY(-1px);
+}
+
+.topbar-refresh-button:active {
+    transform: translateY(0);
+}
+
+.topbar-logout-button {
+    min-height: 38px;
+    border: none;
+    border-radius: 999px;
+    padding: 0 1rem;
+    background: #0f172a;
+    color: #ffffff;
+    font-size: 0.82rem;
+    font-weight: 900;
+    cursor: pointer;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        background 0.18s ease;
+}
+
+.topbar-logout-button:hover {
+    background: #1e293b;
+    box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+    transform: translateY(-1px);
+}
+
+.topbar-logout-button:active {
+    transform: translateY(0);
+}

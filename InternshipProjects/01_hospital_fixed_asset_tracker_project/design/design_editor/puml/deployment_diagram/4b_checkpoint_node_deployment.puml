@@ -1,0 +1,33 @@
+@startuml
+title Checkpoint Node Deployment
+
+top to bottom direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam ranksep 75
+
+node "Checkpoint Node" as CheckNode <<device>> {
+    node "ESP32 Runtime" as Runtime <<execution environment>> {
+        artifact "Checkpoint Node\nFirmware" as Firmware
+    }
+
+    node "UHF RFID Reader" as Reader <<device>>
+    node "Status LEDs" as LEDs <<device>>
+}
+
+cloud "Hospital Wi-Fi" as WiFi
+cloud "MQTT Broker" as Broker
+
+Reader --> Runtime : UART
+Runtime --> LEDs : GPIO
+
+CheckNode --> WiFi : Wi-Fi
+WiFi --> Broker : Network access
+
+CheckNode --> Broker : RFID detections,\nheartbeats and ACKs
+Broker --> CheckNode : Blink commands
+
+@enduml

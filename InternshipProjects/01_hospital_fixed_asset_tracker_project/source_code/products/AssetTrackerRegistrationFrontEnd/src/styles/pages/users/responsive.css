@@ -1,0 +1,111 @@
+/**
+ * @file responsive.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (min-width: 681px) and (max-width: 1180px) {
+    .user-table {
+        min-width: 1040px;
+    }
+
+    .user-table th:first-child,
+    .user-table td:first-child {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        background: #ffffff;
+        box-shadow: 8px 0 14px -14px rgba(15, 23, 42, 0.8);
+    }
+
+    .user-table th:first-child {
+        z-index: 3;
+        background: #f8fafc;
+    }
+
+    .user-table tbody tr:hover td:first-child {
+        background: #f8fafc;
+    }
+}
+
+@media (max-width: 760px) {
+
+    .user-form-grid,
+    .account-form {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 680px) {
+    .user-table-panel {
+        overflow: visible;
+        padding: 16px;
+    }
+
+    .user-table-wrap {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .user-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: auto;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    .user-table colgroup,
+    .user-table thead {
+        display: none;
+    }
+
+    .user-table tbody {
+        display: grid;
+        gap: 12px;
+    }
+
+    .user-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 15px;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .user-table th,
+    .user-table td {
+        position: static;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 14px;
+        width: 100%;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: right;
+    }
+
+    .user-table td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        color: #64748b;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.055em;
+        text-align: left;
+        text-transform: uppercase;
+    }
+}

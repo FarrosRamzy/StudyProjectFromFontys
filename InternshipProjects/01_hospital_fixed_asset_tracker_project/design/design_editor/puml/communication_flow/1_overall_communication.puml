@@ -1,0 +1,48 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nOverall Communication Overview
+
+top to bottom direction
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam roundcorner 14
+
+actor "Hospital User" as User
+
+package "Web Applications" {
+    component "Registration App" as RegApp
+    component "Monitor App" as MonApp
+}
+
+component "FastAPI Backend" as Backend
+database "PostgreSQL" as Database
+cloud "MQTT Broker" as MQTT
+
+package "Sensor Nodes" {
+    component "Registration Desk Node" as RegNode
+    component "Checkpoint Node" as CheckNode
+}
+
+rectangle "RFID-Tagged Assets" as Assets
+
+User --> RegApp : Registration and\nmanagement actions
+User --> MonApp : Monitoring and\nmovement requests
+
+RegApp <--> Backend : HTTPS / JSON
+MonApp <--> Backend : HTTPS / JSON
+
+Backend --> RegApp : WebSocket updates
+Backend --> MonApp : WebSocket updates
+
+Backend <--> Database : Persistent data
+Backend <--> MQTT : MQTT messages
+
+MQTT <--> RegNode : Scans, commands,\nheartbeats
+MQTT <--> CheckNode : Detections, commands,\nheartbeats
+
+Assets --> RegNode : RFID scan
+Assets --> CheckNode : RFID detection
+
+@enduml

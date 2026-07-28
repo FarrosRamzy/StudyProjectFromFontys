@@ -1,0 +1,37 @@
+@startuml
+title WebSocket Connection State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "DISCONNECTED" as Disconnected
+state "CONNECTING" as Connecting
+state "CONNECTED" as Connected
+state "RECONNECTING" as Reconnecting
+state "STOPPED" as Stopped
+
+[*] --> Disconnected
+Disconnected --> Connecting : valid session available
+Connecting --> Connected : connection succeeds
+Connecting --> Reconnecting : connection fails
+Connected --> Reconnecting : connection interrupted
+Reconnecting --> Connected : retry succeeds
+Reconnecting --> Reconnecting : retry after delay
+Connecting --> Stopped : session invalidated
+Connected --> Stopped : logout or token invalid
+Reconnecting --> Stopped : logout or token invalid
+Stopped --> Disconnected : new valid login
+
+note bottom of Reconnecting
+After reconnection, reload current API data
+when missed events are possible.
+end note
+@enduml

@@ -1,0 +1,116 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.panel {
+    margin-top: 22px;
+    border: 1px solid var(--line);
+    border-radius: 26px;
+    background: var(--panel);
+    box-shadow: var(--shadow);
+    padding: 24px;
+}
+
+.panel {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.table-panel {
+    overflow-x: auto;
+}
+
+.form-tabs-panel {
+    margin-top: 22px;
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 18px;
+}
+
+.section-header h2 {
+    margin: 0;
+    color: var(--text);
+    font-size: 24px;
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+}
+
+.section-header p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.monitor-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.monitor-stat-card {
+    cursor: pointer;
+    text-align: left;
+    width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+    padding: 20px;
+    transition:
+        transform 0.18s ease,
+        box-shadow 0.18s ease,
+        border-color 0.18s ease;
+}
+
+.monitor-stat-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(4, 120, 87, 0.32);
+    box-shadow: 0 22px 44px rgba(15, 23, 42, 0.12);
+}
+
+.monitor-stat-card span {
+    display: block;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.monitor-stat-card strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 34px;
+    line-height: 1;
+    color: var(--text);
+}
+
+.monitor-stat-card p {
+    margin: 8px 0 0;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.monitor-stat-card.success {
+    border-top: 4px solid #10b981;
+}
+
+.monitor-stat-card.warning {
+    border-top: 4px solid #f59e0b;
+}

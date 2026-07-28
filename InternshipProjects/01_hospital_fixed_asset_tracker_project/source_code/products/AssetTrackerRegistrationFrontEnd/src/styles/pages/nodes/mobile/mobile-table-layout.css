@@ -1,0 +1,101 @@
+/**
+ * @file mobile-table-layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile node table container and row-card layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .table-panel {
+        overflow-x: visible;
+        padding: 16px;
+    }
+
+    .table-header-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .table-header-row>div:first-child {
+        min-width: 0;
+    }
+
+    .table-header-row .table-search {
+        width: 100%;
+        max-width: none;
+    }
+
+    .table-search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .asset-table.node-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: auto;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    .asset-table.node-table thead {
+        display: none;
+    }
+
+    .asset-table.node-table tbody {
+        display: grid;
+        gap: 12px;
+    }
+
+    .asset-table.node-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .asset-table.node-table tr:hover td,
+    .asset-table.node-table tr.selected-row td,
+    .asset-table.node-table tr.selected-row:hover td {
+        background: transparent;
+    }
+
+    .asset-table.node-table th,
+    .asset-table.node-table td,
+    .asset-table.node-table th:first-child,
+    .asset-table.node-table td:first-child {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: right;
+        font-size: 0.86rem;
+    }
+
+    .asset-table.node-table td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        color: #64748b;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: left;
+    }
+}

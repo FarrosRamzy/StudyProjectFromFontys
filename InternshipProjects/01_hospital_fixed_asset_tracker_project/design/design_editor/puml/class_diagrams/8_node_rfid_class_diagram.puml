@@ -1,0 +1,57 @@
+@startuml MyNodeRFID_Class
+ title MyNodeRFID Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ enum RFIDConfigState {
+   RFID_CONFIG_IDLE
+   RFID_CONFIG_WAIT_READER_READY
+   RFID_CONFIG_SEND_STOP_INVENTORY
+   RFID_CONFIG_WAIT_AFTER_STOP
+   RFID_CONFIG_SEND_SET_POWER
+   RFID_CONFIG_WAIT_SET_POWER_RESPONSE
+   RFID_CONFIG_DONE
+   RFID_CONFIG_FAILED
+ }
+ class MyNodeRFID {
+   -my_rfid_serial : HardwareSerial&
+   -my_rx_pin : int
+   -my_tx_pin : int
+   -my_en_pin : int
+   -frame_buffer[RFID_FRAME_BUFFER_SIZE] : uint8_t
+   -frame_index : size_t
+   -expected_frame_length : size_t
+   -my_rfid_power : uint16_t
+   -rfid_config_state : RFIDConfigState
+   -rfid_config_state_started_at : uint32_t
+   -pending_power_cdbm : uint16_t
+   -rfid_config_done : bool
+   +MyNodeRFID(HardwareSerial&, int, int, int)
+   +~MyNodeRFID()
+   +beginMyNodeRFID(uint32_t) : void
+   +enableMyRFID() : void
+   +disableMyRFID() : void
+   +clearBuffer() : void
+   +readDetectedTag(char*, size_t) : bool
+   +configureRFID() : void
+   +startRFIDConfiguration(uint16_t) : void
+   +runRFIDConfiguration() : void
+   +isRFIDConfigurationFinished() const : bool
+   -sendCommand(const uint8_t*, size_t) : bool
+   -isValidFrame(size_t) const : bool
+   -extractEPC(char*, size_t) : bool
+   -readNextByte(uint8_t&) : bool
+   -isFrameStartByte(uint8_t) const : bool
+   -resetFrameBuffer() : void
+   -appendFrameByte(uint8_t) : bool
+   -isFrameComplete() const : bool
+   -pollFrame() : bool
+   -waitForResponse(uint8_t, uint8_t, uint32_t) : bool
+   -frameMatches(uint8_t, uint8_t) const : bool
+   -setTransmitPower(uint16_t) : bool
+   -getTransmitPower(uint16_t&) : bool
+   -sendSetPowerCommandOnly(uint16_t) : bool
+   -isSetPowerSuccessFrame() const : bool
+ }
+ MyNodeRFID o-- HardwareSerial
+ MyNodeRFID --> RFIDConfigState
+@enduml

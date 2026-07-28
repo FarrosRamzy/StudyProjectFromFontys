@@ -1,0 +1,14 @@
+/**
+ * @file panels.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Panel, card, empty state, loading state, and message banner styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./panels/part-01.css";
+@import "./panels/part-02.css";
+@import "./panels/part-03.css";

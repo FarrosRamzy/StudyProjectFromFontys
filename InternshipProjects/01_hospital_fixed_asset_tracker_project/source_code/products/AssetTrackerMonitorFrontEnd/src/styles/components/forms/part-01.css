@@ -1,0 +1,117 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.form-stack {
+    display: grid;
+    gap: 16px;
+}
+
+.field {
+    display: grid;
+    gap: 8px;
+}
+
+.field>span,
+.field label>span {
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.field input,
+.field select,
+.field textarea,
+input,
+select,
+textarea {
+    width: 100%;
+    min-height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 12px 14px;
+    background: white;
+    color: var(--text);
+    font: inherit;
+    font-weight: 800;
+    transition:
+        border-color 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease;
+}
+
+.field textarea,
+textarea {
+    min-height: 110px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.field input::placeholder,
+.field textarea::placeholder,
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus,
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    border-color: var(--primary);
+}
+
+.field input:disabled,
+.field select:disabled,
+.field textarea:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled {
+    cursor: not-allowed;
+    background: #f8fafc;
+    color: var(--muted);
+}
+
+.required-marker {
+    color: #dc2626;
+}
+
+.field-help {
+    margin-top: 2px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.field-help.success {
+    color: #047857;
+}
+
+.field-help.warning {
+    color: #b45309;
+}
+
+.field-help.error {
+    color: #b91c1c;
+}
+
+.monitor-search {
+    min-height: 46px;
+    width: min(420px, 100%);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 12px 14px;
+    background: white;
+    color: var(--text);
+    font-weight: 800;
+}

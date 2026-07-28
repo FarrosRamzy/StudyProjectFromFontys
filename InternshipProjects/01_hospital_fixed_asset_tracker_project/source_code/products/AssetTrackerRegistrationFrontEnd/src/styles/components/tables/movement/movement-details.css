@@ -1,0 +1,77 @@
+/**
+ * @file movement-details.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Movement request route, metadata, note, and actions.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.movement-request-main h3 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 16px;
+    font-weight: 900;
+}
+
+.movement-request-tag {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.movement-route {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 800;
+}
+
+.movement-route strong {
+    color: #64748b;
+}
+
+.movement-request-meta {
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.movement-request-note {
+    grid-column: 1 / -1;
+    margin: 4px 0 0;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.movement-request-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+@media (max-width: 900px) {
+    .movement-requests-header {
+        flex-direction: column;
+    }
+
+    .movement-request-card {
+        grid-template-columns: 1fr;
+    }
+
+    .movement-request-main {
+        grid-template-columns: 1fr;
+    }
+
+    .movement-request-actions {
+        justify-content: flex-start;
+    }
+}

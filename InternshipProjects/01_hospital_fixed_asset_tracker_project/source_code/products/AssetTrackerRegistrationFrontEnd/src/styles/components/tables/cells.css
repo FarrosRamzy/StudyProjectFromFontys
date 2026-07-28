@@ -1,0 +1,80 @@
+/**
+ * @file cells.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Shared table cells, sticky columns, row hover, and sorting controls.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.node-table th,
+.node-table td,
+.asset-table th,
+.asset-table td {
+    padding: 18px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.node-table th:first-child,
+.node-table td:first-child,
+.asset-table th:first-child,
+.asset-table td:first-child {
+    position: sticky;
+    left: 0;
+    background: var(--panel);
+    z-index: 2;
+}
+
+.node-table th,
+.asset-table th {
+    position: sticky;
+    top: 0;
+    background: var(--panel);
+    z-index: 1;
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.node-table td:first-child,
+.asset-table td:first-child {
+    box-shadow: 2px 0 0 var(--line);
+}
+
+.node-table th:first-child,
+.asset-table th:first-child {
+    z-index: 3;
+}
+
+.node-table tr:hover td,
+.asset-table tr:hover td {
+    background: #f8fafc;
+}
+
+.node-table tr.selected-row td {
+    background: #ecfdf5;
+}
+
+.node-table tr.selected-row:hover td {
+    background: #d1fae5;
+}
+
+.table-sort-button {
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    padding: 0;
+    color: inherit;
+    font: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    cursor: pointer;
+}

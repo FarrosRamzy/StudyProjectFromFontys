@@ -1,0 +1,87 @@
+/**
+ * @file user-management-policy.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-policy-note {
+    display: block;
+    margin-top: 6px;
+    color: #b45309;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.user-admin-page button:disabled,
+.user-admin-page input:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.password-action-field {
+    position: relative;
+    width: 100%;
+}
+
+.password-action-field input {
+    width: 100%;
+    min-width: 0;
+    padding-right: 48px;
+}
+
+.password-action-field.compact {
+    min-width: 240px;
+}
+
+.user-password-icon-button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+
+    width: 28px;
+    height: 28px;
+
+    transform: translateY(-50%);
+
+    display: inline-grid;
+    place-items: center;
+
+    border: none;
+    border-radius: 999px;
+    padding: 0;
+
+    background: transparent;
+    cursor: pointer;
+}
+
+.user-password-icon-button:hover:not(:disabled) {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.user-password-icon-button:focus-visible {
+    outline: 3px solid rgba(5, 150, 105, 0.24);
+    outline-offset: 2px;
+}
+
+.user-password-icon-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.72;
+    pointer-events: none;
+}
+
+.user-password-icon-button:hover:not(:disabled) img {
+    opacity: 1;
+}
+
+.user-password-icon-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}

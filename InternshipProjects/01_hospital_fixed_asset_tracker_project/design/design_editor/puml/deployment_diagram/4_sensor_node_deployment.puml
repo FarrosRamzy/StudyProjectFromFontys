@@ -1,0 +1,51 @@
+@startuml
+title Sensor Node Deployment
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam nodesep 85
+skinparam ranksep 70
+
+node "Registration Desk Node" as RegNode <<device>> {
+    node "ESP32 Runtime" as RegRuntime <<execution environment>> {
+        artifact "Sensor Node Firmware\nRegistration Desk Role" as RegFirmware
+    }
+
+    node "UHF RFID Reader" as RegReader <<device>>
+    node "Red and Green LEDs" as RegLEDs <<device>>
+}
+
+node "Checkpoint Node" as CheckNode <<device>> {
+    node "ESP32 Runtime" as CheckRuntime <<execution environment>> {
+        artifact "Sensor Node Firmware\nCheckpoint Role" as CheckFirmware
+    }
+
+    node "UHF RFID Reader" as CheckReader <<device>>
+    node "Red and Green LEDs" as CheckLEDs <<device>>
+}
+
+cloud "Hospital Wi-Fi" as WiFi
+cloud "MQTT Broker" as Broker
+
+RegReader --> RegRuntime : UART
+RegRuntime --> RegLEDs : GPIO
+
+CheckReader --> CheckRuntime : UART
+CheckRuntime --> CheckLEDs : GPIO
+
+RegNode --> WiFi : Wi-Fi
+CheckNode --> WiFi : Wi-Fi
+
+WiFi --> Broker : Network access
+
+RegNode --> Broker : Scans, heartbeats,\nacknowledgements
+CheckNode --> Broker : Detections, heartbeats,\nacknowledgements
+
+Broker --> RegNode : Supported commands
+Broker --> CheckNode : Supported commands
+
+@enduml

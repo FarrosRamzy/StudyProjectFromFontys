@@ -1,0 +1,73 @@
+/**
+ * @file responsive-navigation.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Tablet and early mobile navigation behavior.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 900px) {
+    .sticky-page-header {
+        padding-top: 8px;
+    }
+
+    .module-nav {
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    .app-topbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .topbar-user {
+        width: 100%;
+        border-radius: 1.25rem;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+
+    .topbar-user-text {
+        width: 100%;
+    }
+
+    .topbar-user-actions {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .topbar-role-badge,
+    .topbar-refresh-button,
+    .topbar-logout-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 560px) {
+    .topbar-user-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .topbar-role-badge,
+    .topbar-refresh-button,
+    .topbar-logout-button {
+        width: 100%;
+    }
+
+    .module-nav {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .module-nav a {
+        width: 100%;
+    }
+}

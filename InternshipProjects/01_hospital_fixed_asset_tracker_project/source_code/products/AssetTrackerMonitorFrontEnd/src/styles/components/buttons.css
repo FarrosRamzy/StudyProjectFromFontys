@@ -1,0 +1,132 @@
+/**
+ * @file buttons.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Button styles used across the monitor app.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+button {
+    font-family: inherit;
+}
+
+.primary-button,
+.secondary-button,
+.ghost-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border-radius: 14px;
+    padding: 10px 16px;
+    border: 1px solid transparent;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 12px 24px rgba(4, 120, 87, 0.22);
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: 0 16px 28px rgba(4, 120, 87, 0.28);
+}
+
+.secondary-button {
+    border-color: var(--line);
+    background: white;
+    color: var(--text);
+}
+
+.secondary-button:hover {
+    border-color: rgba(4, 120, 87, 0.32);
+    background: #ecfdf5;
+    color: var(--primary);
+    transform: translateY(-1px);
+}
+
+.ghost-button {
+    background: transparent;
+    color: var(--danger);
+}
+
+.ghost-button:hover {
+    background: #f1f5f9;
+    color: var(--text);
+}
+
+.primary-button.small,
+.secondary-button.small,
+.ghost-button.small {
+    min-height: 34px;
+    padding: 7px 11px;
+    border-radius: 11px;
+    font-size: 12px;
+}
+
+.primary-button:disabled,
+.secondary-button:disabled,
+.ghost-button:disabled,
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+    transform: none;
+    box-shadow: none;
+}
+
+.danger-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    min-height: 44px;
+    border-radius: 14px;
+    padding: 10px 16px;
+    border: 1px solid #fecaca;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+    background: #fef2f2;
+    color: #b91c1c;
+    transition:
+        transform 0.16s ease,
+        box-shadow 0.16s ease,
+        background 0.16s ease,
+        border-color 0.16s ease,
+        color 0.16s ease;
+}
+
+.danger-button:hover {
+    background: #fee2e2;
+    border-color: #fca5a5;
+    transform: translateY(-1px);
+}
+
+.danger-button.small {
+    min-height: 34px;
+    padding: 7px 11px;
+    border-radius: 11px;
+    font-size: 12px;
+}
+
+.danger-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+    transform: none;
+    box-shadow: none;
+}

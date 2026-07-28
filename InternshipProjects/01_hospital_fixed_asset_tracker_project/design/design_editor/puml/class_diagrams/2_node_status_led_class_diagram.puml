@@ -1,0 +1,26 @@
+@startuml NodeStatusLED_Class
+ title NodeStatusLED Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class NodeStatusLED {
+   -green_pin : uint8_t
+   -red_pin : uint8_t
+   -green_active : bool
+   -red_detect : bool
+   -red_active : bool
+   -identify_active : bool
+   -identify_led_on : bool
+   -identify_toggles_remaining : uint8_t
+   -identify_last_toggle_time : uint32_t
+   -identify_interval_ms : uint32_t
+   -last_red_blink_time : uint32_t
+   -red_blink_interval_ms : uint32_t
+   +NodeStatusLED(uint8_t, uint8_t)
+   +~NodeStatusLED()
+   +beginMyLEDs() : void
+   +setGreenConnected(bool) : void
+   +setRedDetecting(bool) : void
+   +startIdentifyBlink(uint8_t, uint32_t) : void
+   +updateMyLEDstate() : void
+ }
+@enduml

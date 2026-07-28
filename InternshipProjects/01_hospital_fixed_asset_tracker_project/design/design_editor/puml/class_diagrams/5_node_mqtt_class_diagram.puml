@@ -1,0 +1,42 @@
+@startuml MyNodeMQTT_Class
+ title MyNodeMQTT Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class MyNodeMQTT {
+   -my_node_mqtt_client : PubSubClient
+   -node_esp_client : WiFiClient&
+   -my_node_net_server : const char*
+   -my_node_net_port : int
+   -my_node_net_id : const char*
+   -my_mqtt_callback : void (*)(char*, uint8_t*, unsigned int)
+   -last_reconnect_attempt : uint32_t
+   -reconnect_interval : uint32_t
+   -{static} my_active_instance : MyNodeMQTT*
+   +MyNodeMQTT(WiFiClient&, const char*, int, const char*, void (*)(char*, uint8_t*, unsigned int))
+   +~MyNodeMQTT()
+   +startMyMQTT() : void
+   +setNodeMQTTServer(const char*) : void
+   +setNodeMQTTPort(int) : void
+   +setNodeMQTTClientId(const char*) : void
+   +myNodeCallbackFunction(char*, uint8_t*, unsigned int) : void
+   +setMessageCallback(void (*)(char*, uint8_t*, unsigned int)) : void
+   +connectToMyNodeNetwork() : void
+   +myNodeMQTTLoop() : void
+   +unsubscribeMyNodeNetMQTT(const char*) : void
+   +updateServerConfig() : void
+   +reconnectToMyMQTT() : void
+   +amIConnected() : bool
+   +subscribeToMyNodeNetMQTT(const char*) : bool
+   +publishToMyNodeNetMQTT(const char*, const char*) : bool
+   +publishDetection(const char*, const char*, const char*, const char*, const char*, const char*) : bool
+   +publishRegistration(const char*, const char*, const char*, const char*, const char*) : bool
+   +publishHeartbeat(const char*, const char*, const char*, const char*, const char*) : bool
+   +publishGreeting(const char*, const char*, const char*, const char*, const char*, const char*, const char*) : bool
+   -{static} myMQTTCallbackRouter(char*, uint8_t*, unsigned int) : void
+   -{static} hasRequiredText(const char*) : bool
+   -{static} topicWasBuilt(int, size_t) : bool
+   -{static} buildJsonPayload(JsonDocument&, char*, size_t) : bool
+ }
+ MyNodeMQTT *-- PubSubClient
+ MyNodeMQTT o-- WiFiClient
+@enduml

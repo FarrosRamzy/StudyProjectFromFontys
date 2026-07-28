@@ -1,0 +1,40 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nDeployment Overview
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam nodesep 75
+skinparam ranksep 70
+
+node "Hospital Environment" as Hospital {
+    node "Hospital Client Device" as Client <<device>>
+    node "Registration Desk Node" as RegNode <<device>>
+    node "Checkpoint Node" as CheckNode <<device>>
+}
+
+node "Cloud Hosting Platform" as Cloud {
+    node "Registration App" as RegSite
+    node "Monitor App" as MonitorSite
+    node "FastAPI Backend" as Backend
+    database "PostgreSQL" as Database
+}
+
+cloud "MQTT Broker" as Broker
+
+Client --> RegSite : HTTPS
+Client --> MonitorSite : HTTPS
+Client --> Backend : HTTPS / WSS
+
+RegNode --> Broker : MQTT
+CheckNode --> Broker : MQTT
+
+Broker --> Backend : Node events
+Backend --> Broker : Node commands
+
+Backend --> Database : PostgreSQL
+
+@enduml

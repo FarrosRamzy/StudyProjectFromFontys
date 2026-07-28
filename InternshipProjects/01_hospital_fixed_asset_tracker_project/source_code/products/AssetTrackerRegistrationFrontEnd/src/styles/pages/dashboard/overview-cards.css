@@ -1,0 +1,85 @@
+/**
+ * @file overview-cards.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Registration dashboard overview cards.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.registration-dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 0.85rem;
+    width: 100%;
+}
+
+.registration-dashboard-card {
+    min-width: 0;
+    min-height: 112px;
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+    padding: 0.95rem;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        transform 160ms ease,
+        box-shadow 160ms ease,
+        border-color 160ms ease;
+}
+
+.registration-dashboard-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+    border-color: rgba(5, 150, 105, 0.35);
+}
+
+.registration-dashboard-card span {
+    display: block;
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 900;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.registration-dashboard-card strong {
+    display: block;
+    margin-top: 0.35rem;
+    color: #0f172a;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1;
+}
+
+.registration-dashboard-card p {
+    margin: 0.45rem 0 0;
+    color: #64748b;
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.registration-dashboard-card.success {
+    background: linear-gradient(135deg, #ecfdf5, #ffffff);
+}
+
+.registration-dashboard-card.warning {
+    background: linear-gradient(135deg, #fffbeb, #ffffff);
+}
+
+.registration-dashboard-card.danger {
+    background: linear-gradient(135deg, #fef2f2, #ffffff);
+}
+
+.registration-dashboard-card.info {
+    background: linear-gradient(135deg, #eff6ff, #ffffff);
+}
+
+.registration-dashboard-card.neutral {
+    background: linear-gradient(135deg, #f8fafc, #ffffff);
+}

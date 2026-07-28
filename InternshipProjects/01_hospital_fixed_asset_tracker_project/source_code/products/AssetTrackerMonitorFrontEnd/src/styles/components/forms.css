@@ -1,0 +1,13 @@
+/**
+ * @file forms.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Form, field, input, select, textarea, and helper styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./forms/part-01.css";
+@import "./forms/part-02.css";

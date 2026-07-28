@@ -1,0 +1,13 @@
+/**
+ * @file auth.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Login/auth page styles for the monitor app.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./auth/part-01.css";
+@import "./auth/part-02.css";

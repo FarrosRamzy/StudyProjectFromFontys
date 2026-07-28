@@ -1,0 +1,94 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nCommunication Flow Diagram
+
+left to right direction
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam roundcorner 16
+skinparam defaultTextAlignment center
+skinparam linetype ortho
+
+actor "Authorized\nHospital User" as User
+
+rectangle "RFID-Tagged\nHospital Asset" as Asset
+
+package "Sensor Node Layer" {
+    component "Registration Desk Node\nESP32 + UHF RFID Reader" as RegNode
+    component "Checkpoint Node\nESP32 + UHF RFID Reader" as CheckpointNode
+}
+
+cloud "Hospital Wi-Fi /\nNetwork" as Network
+cloud "MQTT Broker" as MQTT
+
+package "Web Application Layer" {
+    component "Registration App" as RegistrationApp
+    component "Monitor App" as MonitorApp
+}
+
+package "Backend Layer" {
+    component "FastAPI Backend" as Backend
+    component "WebSocket Service" as WebSocket
+    component "MQTT Processing Service" as MQTTService
+}
+
+database "PostgreSQL\nDatabase" as Database
+
+' User interactions
+User --> RegistrationApp : Node, asset, user,\nmovement and settings actions
+RegistrationApp --> User : Forms, status,\nresults and warnings
+
+User --> MonitorApp : Monitoring queries and\nmovement requests
+MonitorApp --> User : Asset locations, node status,\nalerts and activity
+
+' Physical RFID communication
+Asset --> RegNode : UHF RFID signal\nRegistration scan
+Asset --> CheckpointNode : UHF RFID signal\nAsset detection
+
+' Sensor connectivity
+RegNode --> Network : Wi-Fi connection
+CheckpointNode --> Network : Wi-Fi connection
+
+' MQTT messages from nodes
+RegNode --> MQTT : MQTT publish\nRegistration scans\nHeartbeats\nAcknowledgements
+
+CheckpointNode --> MQTT : MQTT publish\nRFID detections\nHeartbeats\nAcknowledgements
+
+' MQTT broker to backend
+MQTT --> MQTTService : MQTT delivery\nNode messages
+MQTTService --> Backend : Validated scan,\ndetection and heartbeat data
+
+' Commands from backend to nodes
+Backend --> MQTTService : Blink or supported\nnode command
+MQTTService --> MQTT : MQTT publish\nCommand message
+MQTT --> RegNode : Deliver command
+MQTT --> CheckpointNode : Deliver command
+
+' Frontend API communication
+RegistrationApp --> Backend : HTTPS / JSON\nAuthenticated requests
+Backend --> RegistrationApp : HTTPS / JSON\nResponses and errors
+
+MonitorApp --> Backend : HTTPS / JSON\nAuthenticated requests
+Backend --> MonitorApp : HTTPS / JSON\nResponses and errors
+
+' Database communication
+Backend --> Database : SQLAlchemy / PostgreSQL\nCreate, read, update and delete
+Database --> Backend : Stored records and\nquery results
+
+' Live updates
+Backend --> WebSocket : Asset, node, movement,\nalert and activity events
+WebSocket --> RegistrationApp : Secure WebSocket\nLive updates
+WebSocket --> MonitorApp : Secure WebSocket\nLive updates
+
+note bottom of RegistrationApp
+The browser applications do not
+connect directly to the MQTT broker.
+end note
+
+note bottom of MQTTService
+Incoming MQTT topics and payloads
+are validated before database updates.
+end note
+
+@enduml

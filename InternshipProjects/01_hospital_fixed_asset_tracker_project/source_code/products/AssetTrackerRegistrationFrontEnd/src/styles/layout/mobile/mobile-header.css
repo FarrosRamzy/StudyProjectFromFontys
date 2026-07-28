@@ -1,0 +1,111 @@
+/**
+ * @file mobile-header.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Compact mobile topbar and module navigation.
+                Applies to Node Registration, Asset Registration,
+                User Accounts, and Change Password pages.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .sticky-page-header {
+        position: sticky;
+        top: 0;
+        z-index: 50;
+        padding: 8px 0 8px;
+        margin-bottom: 12px;
+        background: rgba(245, 250, 248, 0.94);
+        backdrop-filter: blur(14px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .app-topbar {
+        flex-direction: row;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 8px;
+    }
+
+    .app-brand-lockup {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .app-brand-lockup div {
+        min-width: 0;
+    }
+
+    .app-brand-lockup strong {
+        font-size: 0.92rem;
+        line-height: 1.1;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .app-brand-lockup span:last-child {
+        font-size: 0.72rem;
+        line-height: 1.15;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .topbar-user {
+        width: auto;
+        flex: 0 0 auto;
+        padding: 0;
+        border: none;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+    }
+
+    .topbar-user-text,
+    .topbar-role-badge {
+        display: none;
+    }
+
+    .topbar-user-actions {
+        width: auto;
+        display: flex;
+        grid-template-columns: none;
+        align-items: center;
+        gap: 6px;
+    }
+
+    .topbar-refresh-button,
+    .topbar-logout-button {
+        width: auto;
+        min-height: 34px;
+        padding: 0 0.75rem;
+        font-size: 0.74rem;
+        border-radius: 999px;
+    }
+
+    .module-nav {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 8px;
+        margin: 8px 0 12px;
+        overflow-x: auto;
+        padding: 4px 0 6px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .module-nav a {
+        width: auto;
+        flex: 0 0 auto;
+        min-height: 36px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        font-size: 0.82rem;
+        white-space: nowrap;
+    }
+}

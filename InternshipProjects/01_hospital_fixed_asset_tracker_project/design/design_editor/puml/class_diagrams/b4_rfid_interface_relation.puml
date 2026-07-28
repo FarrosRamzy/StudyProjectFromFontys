@@ -1,0 +1,19 @@
+@startuml RFID_Interface_Relation
+title RFID Interface Relation
+skinparam classAttributeIconSize 0
+hide circle
+interface IMyNodeRFID {
++beginMyNodeRFID(uint32_t) : void
++enableMyRFID() : void
++disableMyRFID() : void
++clearBuffer() : void
++pollFrame() : bool
++readDetectedTag(char*, size_t) : bool
++configureRFID() : void
++startRFIDConfiguration(uint16_t) : void
++runRFIDConfiguration() : void
++isRFIDConfigurationFinished() const : bool
+}
+class MyNodeRFID
+MyNodeRFID ..|> IMyNodeRFID
+@enduml

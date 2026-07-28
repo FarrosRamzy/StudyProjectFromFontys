@@ -1,0 +1,20 @@
+@startuml SD-11 Node Heartbeat
+title SD-11 Node Heartbeat
+
+participant "ESP32 Node" as Node
+participant "MQTT Broker" as MQTT
+participant "Node Status Handler" as Handler
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+participant "Monitor App" as MonApp
+
+Node -> MQTT: Publish heartbeat
+MQTT -> Handler: Deliver heartbeat
+Handler -> DB: Update last_ping_at and status ONLINE
+DB --> Handler: Commit success
+Handler -> WS: Broadcast node_heartbeat
+WS -> RegApp: Update node status
+WS -> MonApp: Update node status
+
+@enduml

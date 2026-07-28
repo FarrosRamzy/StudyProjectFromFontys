@@ -1,0 +1,118 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-page {
+    width: min(1500px, calc(100% - 88px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+}
+
+.sticky-page-header {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    padding: 10px 0 14px;
+    background: linear-gradient(180deg,
+            rgba(248, 250, 252, 0.96),
+            rgba(248, 250, 252, 0.82));
+    backdrop-filter: blur(16px);
+}
+
+.app-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 12px;
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.88);
+    box-shadow: var(--shadow);
+}
+
+.app-brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.app-brand-lockup div {
+    display: grid;
+    gap: 2px;
+}
+
+.app-brand-lockup strong {
+    color: var(--text);
+    font-size: 15px;
+}
+
+.app-brand-lockup span:not(.app-brand-mark) {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 800;
+}
+
+.app-brand-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    border-radius: 14px;
+    background: #047857;
+    box-shadow: 0 12px 28px rgba(4, 120, 87, 0.22);
+    overflow: hidden;
+}
+
+.app-brand-mark img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #f8fafc;
+}
+
+.topbar-user-text {
+    display: grid;
+    gap: 1px;
+    text-align: right;
+}
+
+.topbar-user-text span {
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.topbar-user-text strong {
+    color: var(--text);
+    font-size: 13px;
+}

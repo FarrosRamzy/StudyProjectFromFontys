@@ -1,0 +1,83 @@
+/**
+ * @file monitor-hero.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Compact monitor-style hero retained for shared views.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 640px) {
+    .monitor-page .hero {
+        gap: 14px;
+        padding: 20px;
+        border-radius: 24px;
+        min-height: auto;
+    }
+
+    .monitor-page .hero-content {
+        max-width: 100%;
+    }
+
+    .monitor-page .eyebrow {
+        margin-bottom: 8px;
+        font-size: 0.68rem;
+        letter-spacing: 0.09em;
+    }
+
+    .monitor-page .hero h1 {
+        max-width: 100%;
+        font-size: clamp(2rem, 9vw, 2.6rem);
+        line-height: 1;
+        letter-spacing: -0.05em;
+    }
+
+    .monitor-page .hero p {
+        max-width: 100%;
+        margin-top: 10px;
+        font-size: 0.9rem;
+        line-height: 1.38;
+    }
+
+    .monitor-page .hero-metric {
+        width: 100%;
+        padding: 14px;
+        border-radius: 18px;
+    }
+
+    .monitor-page .hero-metric span {
+        font-size: 0.68rem;
+    }
+
+    .monitor-page .hero-metric strong {
+        font-size: 1.35rem;
+        line-height: 1.1;
+    }
+
+    .monitor-page .hero-metric p {
+        margin-top: 8px;
+        font-size: 0.82rem;
+        line-height: 1.35;
+    }
+}
+
+@media (max-width: 380px) {
+    .monitor-page .hero {
+        padding: 16px;
+        border-radius: 20px;
+    }
+
+    .monitor-page .hero h1 {
+        font-size: clamp(1.75rem, 8.5vw, 2.2rem);
+    }
+
+    .monitor-page .hero p {
+        font-size: 0.84rem;
+    }
+
+    .monitor-page .hero-metric {
+        padding: 12px;
+    }
+}

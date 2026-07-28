@@ -1,0 +1,29 @@
+@startuml Network_Structs_And_RFID_Enum
+ title Data Structs and RFID Enum
+ skinparam classAttributeIconSize 0
+ hide circle
+ struct myNodeBootstrapConfig {
+   +device_id : String
+   +wifi_ssid : String
+   +wifi_password : String
+   +is_configured : bool
+ }
+ struct myNodeRemoteConfig {
+   +role : String
+   +hospital_name : String
+   +room_name : String
+   +mqtt_host : String
+   +mqtt_port : uint16_t
+   +is_provisioned : bool
+ }
+ enum RFIDConfigState {
+   RFID_CONFIG_IDLE
+   RFID_CONFIG_WAIT_READER_READY
+   RFID_CONFIG_SEND_STOP_INVENTORY
+   RFID_CONFIG_WAIT_AFTER_STOP
+   RFID_CONFIG_SEND_SET_POWER
+   RFID_CONFIG_WAIT_SET_POWER_RESPONSE
+   RFID_CONFIG_DONE
+   RFID_CONFIG_FAILED
+ }
+@enduml

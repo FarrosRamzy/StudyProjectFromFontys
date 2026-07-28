@@ -1,0 +1,61 @@
+@startuml
+title Asset and Detection Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "ROOM" as ROOM {
+    * room_id : UUID <<PK>>
+    --
+    name : varchar
+}
+
+entity "NODE" as NODE {
+    * node_id : varchar <<PK>>
+    --
+    alias : varchar
+    role : varchar
+    status : varchar
+}
+
+entity "ASSET" as ASSET {
+    * asset_id : UUID <<PK>>
+    --
+    tag_id : varchar <<UNIQUE>>
+    assigned_room_id : UUID <<FK>>
+    current_room_id : UUID <<FK>>
+    last_node_id : varchar <<FK>>
+    name : varchar
+    is_active : boolean
+    flow_status : varchar
+    last_seen_at : datetime
+}
+
+entity "DETECTION_EVENT" as DETECTION {
+    * detection_event_id : UUID <<PK>>
+    --
+    node_id : varchar <<FK>>
+    asset_id : UUID <<FK>>
+    tag_id : varchar
+    detected_at : datetime
+    processing_result : varchar
+}
+
+ROOM "1..1" -- "0..*" ASSET : assigned room
+ROOM "1..0" -- "0..*" ASSET : current room
+NODE "1..0" -- "0..*" ASSET : last detected by
+
+NODE "1..1" -- "0..*" DETECTION : produces
+ASSET "1..0" -- "0..*" DETECTION : matched to
+
+note bottom of DETECTION
+asset_id may be empty when the detected
+tag does not match an active asset.
+This supports unknown-tag alerts.
+end note
+
+@enduml

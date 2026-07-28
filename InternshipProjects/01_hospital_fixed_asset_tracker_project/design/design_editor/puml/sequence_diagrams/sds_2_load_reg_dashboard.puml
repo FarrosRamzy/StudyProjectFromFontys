@@ -1,0 +1,29 @@
+@startuml SD-02 Load Registration Dashboard
+title SD-02 Load Registration Dashboard
+
+actor User
+participant "Registration Dashboard" as Dashboard
+participant "Asset API" as AssetAPI
+participant "Node API" as NodeAPI
+database "Database" as DB
+
+User -> Dashboard: Open /dashboard
+Dashboard -> Dashboard: Check role access
+
+alt Role can access assets
+    Dashboard -> AssetAPI: GET /assets
+    AssetAPI -> DB: Load assets
+    DB --> AssetAPI: Asset list
+    AssetAPI --> Dashboard: Assets
+end
+
+alt Role can access nodes
+    Dashboard -> NodeAPI: GET /nodes
+    NodeAPI -> DB: Load nodes
+    DB --> NodeAPI: Node list
+    NodeAPI --> Dashboard: Nodes
+end
+
+Dashboard -> User: Show role-based dashboard cards
+
+@enduml

@@ -1,0 +1,153 @@
+/**
+ * @file table.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-table-wrap {
+    width: 100%;
+    margin-top: 18px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    border: 1px solid rgba(148, 163, 184, 0.25);
+    border-radius: 18px;
+    background: #ffffff;
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 139, 0.45) transparent;
+}
+
+.user-table-wrap::-webkit-scrollbar {
+    height: 9px;
+}
+
+.user-table-wrap::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.45);
+    background-clip: padding-box;
+}
+
+.user-table {
+    width: 100%;
+    min-width: 1080px;
+    table-layout: fixed;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.user-name-column {
+    width: 18%;
+}
+
+.user-email-column {
+    width: 20%;
+}
+
+.user-role-column {
+    width: 13%;
+}
+
+.user-status-column {
+    width: 10%;
+}
+
+.user-password-column {
+    width: 27%;
+}
+
+.user-actions-column {
+    width: 12%;
+}
+
+.user-table th,
+.user-table td {
+    min-width: 0;
+    padding: 15px 14px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    vertical-align: middle;
+}
+
+.user-table th {
+    background: #f8fafc;
+    color: var(--muted);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.055em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.user-table td {
+    color: var(--text);
+    font-size: 0.88rem;
+    font-weight: 750;
+}
+
+.user-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.user-table tbody tr:hover td {
+    background: rgba(248, 250, 252, 0.82);
+}
+
+.user-row-inactive td {
+    background: rgba(248, 250, 252, 0.65);
+}
+
+.user-identity {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    min-width: 0;
+}
+
+.user-avatar {
+    flex: 0 0 38px;
+    display: grid;
+    width: 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 12px;
+    background: rgba(5, 150, 105, 0.11);
+    color: #047857;
+    font-size: 0.78rem;
+    font-weight: 950;
+}
+
+.user-identity-copy {
+    display: grid;
+    gap: 3px;
+    min-width: 0;
+}
+
+.user-identity-copy strong,
+.user-email-cell span {
+    overflow-wrap: anywhere;
+}
+
+.current-user-label {
+    color: #047857;
+    font-size: 0.68rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.user-actions-cell {
+    vertical-align: middle;
+}
+
+.user-actions-cell .user-row-actions {
+    width: 100%;
+}
+
+.user-actions-cell .user-table-action-button {
+    width: 100%;
+}

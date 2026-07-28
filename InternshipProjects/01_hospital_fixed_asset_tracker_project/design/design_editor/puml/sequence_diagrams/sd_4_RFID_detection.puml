@@ -1,0 +1,46 @@
+@startuml RFID Detection and Live Frontend Update
+title RFID Detection and Live Frontend Update
+
+actor "RFID Tag" as Tag
+participant "Checkpoint Node\n(ESP32 Firmware)" as Node
+participant "MQTT Broker" as MQTT
+participant "Backend MQTT Handler" as Backend
+participant "Asset Location Service" as Location
+database "PostgreSQL Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+participant "Monitor App" as MonApp
+
+Tag -> Node: Tag enters RFID range
+Node -> Node: Read tag ID
+Node -> MQTT: Publish RFID detection\n(tag_id, device_id, timestamp)
+MQTT -> Backend: Deliver detection message
+
+Backend -> Backend: Parse MQTT payload
+Backend -> Location: update_asset_location(tag_id, device_id)
+Location -> DB: Find node by device_id
+DB --> Location: Node data
+Location -> DB: Find asset by tag_id
+DB --> Location: Asset data
+
+alt Valid node and registered active asset
+    Location -> Location: Resolve flow status\navailable / wrong_location / in_transit
+    Location -> DB: Save latest room, node, status, timestamp
+    DB --> Location: Commit success
+    Location --> Backend: Updated asset
+    Backend -> WS: Broadcast asset_updated
+    WS -> RegApp: Send asset_updated
+    WS -> MonApp: Send asset_updated
+    RegApp -> RegApp: Update asset table without refresh
+    MonApp -> MonApp: Update monitor table without refresh
+else Unknown tag
+    Location --> Backend: Unknown tag
+    Backend -> WS: Broadcast unknown_tag alert
+    WS -> MonApp: Show alert
+else Unknown or disabled node
+    Location --> Backend: Invalid node detection
+    Backend -> WS: Broadcast unknown_node_detection
+    WS -> MonApp: Show node warning
+end
+
+@enduml

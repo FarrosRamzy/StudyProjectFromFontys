@@ -1,0 +1,163 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nUML Deployment Diagram
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 15
+skinparam ArrowFontSize 13
+skinparam nodesep 55
+skinparam ranksep 70
+skinparam defaultTextAlignment center
+
+' =========================================================
+' Hospital environment
+' =========================================================
+
+node "Hospital Environment" as Hospital {
+
+    node "Client Device\nDesktop / Laptop / Tablet" as Client <<device>> {
+        node "Web Browser" as Browser {
+            artifact "Registration App" as BrowserRegApp
+            artifact "Monitor App" as BrowserMonitorApp
+        }
+    }
+
+    node "Registration Desk Node" as RegistrationNode <<device>> {
+        node "ESP32 Runtime" as RegistrationRuntime {
+            artifact "Sensor Node Firmware\nRegistration Desk Role" as RegistrationFirmware
+        }
+
+        node "UHF RFID Reader" as RegistrationReader <<device>> 
+        node "Status LEDs" as RegistrationLEDs <<device>> 
+    }
+
+    node "Checkpoint Node" as CheckpointNode <<device>> {
+        node "ESP32 Runtime" as CheckpointRuntime {
+            artifact "Sensor Node Firmware\nCheckpoint Role" as CheckpointFirmware
+        }
+
+        node "UHF RFID Reader" as CheckpointReader <<device>> 
+        node "Status LEDs" as CheckpointLEDs <<device>> 
+    }
+
+    cloud "Hospital Wi-Fi /\nInternet Connection" as HospitalNetwork
+}
+
+' =========================================================
+' Cloud hosting platform
+' =========================================================
+
+node "Cloud Hosting Platform\nRender" as RenderCloud {
+
+    node "Registration App\nStatic Web Service" as RegistrationSite {
+        artifact "Vite Production Build" as RegistrationBuild
+    }
+
+    node "Monitor App\nStatic Web Service" as MonitorSite {
+        artifact "Vite Production Build" as MonitorBuild
+    }
+
+    node "FastAPI Backend\nWeb Service" as BackendService {
+        node "Python Runtime" as PythonRuntime {
+            artifact "Backend Application" as BackendArtifact
+        }
+
+        component "REST API" as RestAPI
+        component "Authentication and\nAuthorization" as AuthService
+        component "WebSocket Manager" as WebSocketManager
+        component "MQTT Client" as BackendMQTTClient
+    }
+
+    database "PostgreSQL\nDatabase Service" as Database
+}
+
+' =========================================================
+' External infrastructure
+' =========================================================
+
+cloud "External MQTT Broker\nConfigured MQTT Service" as MQTTBroker
+
+' =========================================================
+' Internal hardware connections
+' =========================================================
+
+RegistrationReader --> RegistrationRuntime : UART / Serial
+RegistrationRuntime --> RegistrationLEDs : GPIO
+
+CheckpointReader --> CheckpointRuntime : UART / Serial
+CheckpointRuntime --> CheckpointLEDs : GPIO
+
+' =========================================================
+' Hospital network connections
+' =========================================================
+
+Client --> HospitalNetwork : Wi-Fi / LAN
+RegistrationNode --> HospitalNetwork : Wi-Fi
+CheckpointNode --> HospitalNetwork : Wi-Fi
+
+' =========================================================
+' Browser application deployment
+' =========================================================
+
+HospitalNetwork --> RegistrationSite : HTTPS\nLoad static application
+HospitalNetwork --> MonitorSite : HTTPS\nLoad static application
+
+RegistrationSite --> BrowserRegApp : Deliver application files
+MonitorSite --> BrowserMonitorApp : Deliver application files
+
+' =========================================================
+' Browser-to-backend communication
+' =========================================================
+
+Browser --> BackendService : HTTPS / JSON\nREST API requests
+BackendService --> Browser : HTTPS / JSON\nResponses and errors
+
+BackendService --> Browser : WSS / WebSocket\nLive system updates
+
+' =========================================================
+' MQTT communication
+' =========================================================
+
+RegistrationNode --> MQTTBroker : MQTT\nRegistration scans,\nheartbeats and acknowledgements
+
+CheckpointNode --> MQTTBroker : MQTT\nRFID detections,\nheartbeats and acknowledgements
+
+MQTTBroker --> BackendMQTTClient : MQTT\nDeliver node messages
+
+BackendMQTTClient --> MQTTBroker : MQTT\nPublish node commands
+
+MQTTBroker --> RegistrationNode : MQTT\nBlink or supported commands
+MQTTBroker --> CheckpointNode : MQTT\nBlink or supported commands
+
+' =========================================================
+' Backend database connection
+' =========================================================
+
+BackendService --> Database : PostgreSQL connection\nSQLAlchemy queries
+Database --> BackendService : Stored data\nand query results
+
+' =========================================================
+' Internal backend deployment relationships
+' =========================================================
+
+BackendArtifact --> RestAPI
+BackendArtifact --> AuthService
+BackendArtifact --> WebSocketManager
+BackendArtifact --> BackendMQTTClient
+
+note bottom of BackendService
+The backend is the authoritative
+business-rule and security boundary.
+
+Browser applications do not connect
+directly to the MQTT broker.
+end note
+
+note bottom of MQTTBroker
+Use MQTT over TLS in production
+when supported by the selected broker.
+end note
+
+@enduml

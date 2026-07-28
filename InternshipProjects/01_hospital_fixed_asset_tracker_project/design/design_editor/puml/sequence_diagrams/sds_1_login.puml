@@ -1,0 +1,24 @@
+@startuml SD-01 Login
+title SD-01 Login
+
+actor User
+participant "Frontend App" as App
+participant "Auth API" as Auth
+database "Database" as DB
+
+User -> App: Enter email and password
+App -> Auth: POST /auth/login
+Auth -> DB: Find user by email
+DB --> Auth: User record
+Auth -> Auth: Verify password and active status
+
+alt Login valid
+    Auth --> App: JWT token + user role
+    App -> App: Store token and user
+    App -> User: Redirect to allowed page
+else Login invalid
+    Auth --> App: Error
+    App -> User: Show login error
+end
+
+@enduml

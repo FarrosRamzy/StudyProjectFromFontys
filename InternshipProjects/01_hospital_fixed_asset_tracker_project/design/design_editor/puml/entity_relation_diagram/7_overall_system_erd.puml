@@ -1,0 +1,222 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nComplete Logical Entity-Relationship Diagram
+
+left to right direction
+
+hide methods
+hide stereotypes
+
+skinparam shadowing false
+skinparam roundcorner 12
+skinparam defaultFontSize 13
+skinparam ArrowFontSize 12
+skinparam nodesep 45
+skinparam ranksep 55
+
+' =========================================================
+' Identity and configuration
+' =========================================================
+
+package "Identity and Configuration" {
+
+    entity "USER" as UserEntity {
+        * user_id : UUID
+        --
+        name : varchar
+        email : varchar
+        password_hash : varchar
+        role : varchar
+        is_active : boolean
+        created_at : datetime
+    }
+
+    entity "SYSTEM_SETTING" as SettingEntity {
+        * setting_id : UUID
+        --
+        setting_key : varchar
+        setting_value : text
+        updated_by_user_id : UUID (FK)
+        updated_at : datetime
+    }
+}
+
+' =========================================================
+' Hospital location and sensor nodes
+' =========================================================
+
+package "Hospital Location and Nodes" {
+
+    entity "HOSPITAL" as HospitalEntity {
+        * hospital_id : UUID
+        --
+        name : varchar
+        address : varchar
+    }
+
+    entity "ROOM" as RoomEntity {
+        * room_id : UUID
+        --
+        hospital_id : UUID (FK)
+        name : varchar
+        description : varchar
+    }
+
+    entity "NODE" as NodeEntity {
+        * node_id : varchar
+        --
+        hospital_id : UUID (FK)
+        room_id : UUID (FK)
+        alias : varchar
+        role : varchar
+        status : varchar
+        is_enabled : boolean
+        last_ping_at : datetime
+        last_event_at : datetime
+    }
+}
+
+' =========================================================
+' Asset tracking
+' =========================================================
+
+package "Asset Tracking" {
+
+    entity "ASSET" as AssetEntity {
+        * asset_id : UUID
+        --
+        tag_id : varchar
+        name : varchar
+        assigned_room_id : UUID (FK)
+        current_room_id : UUID (FK)
+        last_node_id : varchar (FK)
+        is_active : boolean
+        flow_status : varchar
+        last_seen_at : datetime
+    }
+
+    entity "DETECTION_EVENT" as DetectionEntity {
+        * detection_event_id : UUID
+        --
+        node_id : varchar (FK)
+        asset_id : UUID (FK)
+        tag_id : varchar
+        event_type : varchar
+        detected_at : datetime
+        processing_result : varchar
+    }
+}
+
+' =========================================================
+' Movement management
+' =========================================================
+
+package "Asset Movement" {
+
+    entity "MOVEMENT_REQUEST" as MovementEntity {
+        * movement_request_id : UUID
+        --
+        asset_id : UUID (FK)
+        requested_by_user_id : UUID (FK)
+        decided_by_user_id : UUID (FK)
+        source_room_id : UUID (FK)
+        destination_room_id : UUID (FK)
+        status : varchar
+        requested_at : datetime
+        decided_at : datetime
+        completed_at : datetime
+    }
+}
+
+' =========================================================
+' Monitoring and audit
+' =========================================================
+
+package "Monitoring and Audit" {
+
+    entity "ALERT" as AlertEntity {
+        * alert_id : UUID
+        --
+        asset_id : UUID (FK)
+        node_id : varchar (FK)
+        alert_type : varchar
+        severity : varchar
+        message : text
+        status : varchar
+        created_at : datetime
+        resolved_at : datetime
+    }
+
+    entity "ACTIVITY_EVENT" as ActivityEntity {
+        * activity_event_id : UUID
+        --
+        user_id : UUID (FK)
+        asset_id : UUID (FK)
+        node_id : varchar (FK)
+        event_type : varchar
+        message : text
+        created_at : datetime
+    }
+}
+
+' =========================================================
+' Relationships
+' =========================================================
+
+' User and configuration
+UserEntity "0..1" -- "0..*" SettingEntity : updates
+
+' Hospital structure
+HospitalEntity "1" -- "0..*" RoomEntity : contains
+HospitalEntity "0..1" -- "0..*" NodeEntity : assigned hospital
+RoomEntity "0..1" -- "0..*" NodeEntity : assigned room
+
+' Asset location
+RoomEntity "1" -- "0..*" AssetEntity : assigned room
+RoomEntity "0..1" -- "0..*" AssetEntity : current room
+NodeEntity "0..1" -- "0..*" AssetEntity : last detected by
+
+' Detection history
+NodeEntity "1" -- "0..*" DetectionEntity : produces
+AssetEntity "0..1" -- "0..*" DetectionEntity : matched asset
+
+' Movement workflow
+AssetEntity "1" -- "0..*" MovementEntity : movement history
+UserEntity "1" -- "0..*" MovementEntity : requested by
+UserEntity "0..1" -- "0..*" MovementEntity : decided by
+RoomEntity "0..1" -- "0..*" MovementEntity : source room
+RoomEntity "1" -- "0..*" MovementEntity : destination room
+
+' Alerts
+AssetEntity "0..1" -- "0..*" AlertEntity : related asset
+NodeEntity "0..1" -- "0..*" AlertEntity : related node
+
+' Activity history
+UserEntity "0..1" -- "0..*" ActivityEntity : performed by
+AssetEntity "0..1" -- "0..*" ActivityEntity : related asset
+NodeEntity "0..1" -- "0..*" ActivityEntity : related node
+
+note bottom of DetectionEntity
+asset_id may be empty when an RFID tag
+does not match an active registered asset.
+end note
+
+note bottom of MovementEntity
+Only one pending movement request should
+exist for the same asset at one time.
+
+Typical statuses:
+PENDING, APPROVED, REJECTED,
+CANCELLED, COMPLETED
+end note
+
+note bottom of AlertEntity
+An alert may relate to an asset,
+a node, or both.
+
+Examples:
+UNKNOWN_TAG
+NODE_OFFLINE
+UNAUTHORIZED_MOVEMENT
+end note
+
+@enduml

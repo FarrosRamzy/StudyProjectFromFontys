@@ -1,0 +1,25 @@
+/**
+ * @file monitor.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Main monitor page, dashboard, table, alert, drawer, and modal styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./monitor/part-01.css";
+@import "./monitor/part-02.css";
+@import "./monitor/part-03.css";
+@import "./monitor/part-04.css";
+@import "./monitor/part-05.css";
+@import "./monitor/part-06.css";
+@import "./monitor/part-07.css";
+@import "./monitor/part-08.css";
+@import "./monitor/part-09.css";
+@import "./monitor/part-10.css";
+@import "./monitor/part-11.css";
+@import "./monitor/part-12.css";
+@import "./monitor/part-13.css";
+@import "./monitor/part-14.css";

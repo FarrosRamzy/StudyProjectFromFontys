@@ -1,0 +1,106 @@
+/**
+ * @file part-09.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .monitor-table td {
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: start;
+        align-items: start;
+        gap: 4px;
+        text-align: left;
+    }
+
+    .monitor-table td::before {
+        max-width: none;
+        width: 100%;
+        color: #64748b;
+        font-size: 0.64rem;
+        font-weight: 1000;
+        letter-spacing: 0.08em;
+        line-height: 1.2;
+        text-align: left;
+    }
+
+    .monitor-table td>strong,
+    .monitor-table td>div,
+    .monitor-table td>span,
+    .monitor-table td>small {
+        max-width: 100%;
+        text-align: left;
+    }
+
+    .monitor-table .monitor-mono,
+    .monitor-table .monitor-note {
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .monitor-table .monitor-muted {
+        max-width: 100%;
+        width: 100%;
+        text-align: left;
+        line-height: 1.35;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .monitor-table .status-badge,
+    .monitor-table .role-badge,
+    .monitor-table .flow-badge {
+        margin-left: 0;
+        justify-self: start;
+        max-width: 100%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .monitor-table .monitor-primary-cell {
+        gap: 4px;
+    }
+
+    .monitor-table .monitor-primary-cell strong {
+        font-size: 1rem;
+        line-height: 1.25;
+    }
+
+    .monitor-table .monitor-action-cell {
+        display: block;
+        width: 100%;
+        text-align: stretch;
+    }
+
+    .monitor-table .monitor-action-cell button,
+    .monitor-table button.small {
+        width: 100%;
+    }
+}
+
+@media (max-width: 680px) {
+    .monitor-table tr {
+        gap: 11px;
+    }
+
+    .monitor-table td:not(.monitor-primary-cell):not(.monitor-action-cell) {
+        padding-bottom: 7px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.14);
+    }
+
+    .monitor-table td:nth-last-child(2),
+    .monitor-table td:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
+    }
+}

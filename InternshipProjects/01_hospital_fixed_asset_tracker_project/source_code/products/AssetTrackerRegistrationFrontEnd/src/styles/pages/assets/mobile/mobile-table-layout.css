@@ -1,0 +1,106 @@
+/**
+ * @file mobile-table-layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile registered-asset table container and row-card layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .asset-registration-page .table-panel {
+        overflow-x: visible;
+        padding: 16px;
+    }
+
+    .asset-registration-page .table-header-row {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 12px;
+        align-items: start;
+    }
+
+    .asset-registration-page .table-header-row>div:first-child {
+        min-width: 0;
+    }
+
+    .asset-registration-page .table-search {
+        width: 100%;
+        max-width: none;
+    }
+
+    .asset-registration-page .table-search input {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table {
+        width: 100%;
+        min-width: 0;
+        table-layout: auto;
+        border-collapse: separate;
+        border-spacing: 0 12px;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table thead {
+        display: none;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table tbody {
+        display: grid;
+        gap: 12px;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table tr {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 14px;
+        border: 1px solid rgba(148, 163, 184, 0.28);
+        border-radius: 18px;
+        background: #ffffff;
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table tr:hover td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-danger td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-warning td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-success td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-danger:hover td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-warning:hover td,
+    .asset-registration-page .asset-table.asset-registration-table tr.asset-row-success:hover td {
+        background: transparent;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table th,
+    .asset-registration-page .asset-table.asset-registration-table td,
+    .asset-registration-page .asset-table.asset-registration-table th:first-child,
+    .asset-registration-page .asset-table.asset-registration-table td:first-child {
+        position: static;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        width: 100%;
+        min-width: 0;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        box-shadow: none;
+        text-align: right;
+        font-size: 0.86rem;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table td::before {
+        content: attr(data-label);
+        flex: 0 0 auto;
+        color: #64748b;
+        font-size: 0.68rem;
+        font-weight: 900;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-align: left;
+    }
+}

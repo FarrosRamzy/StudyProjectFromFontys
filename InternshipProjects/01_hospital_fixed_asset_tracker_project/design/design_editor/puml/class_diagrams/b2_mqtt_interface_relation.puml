@@ -1,0 +1,33 @@
+@startuml MQTT_Interface_Relation
+title MQTT Interface Relation
+skinparam classAttributeIconSize 0
+hide circle
+interface IMyNodeMQTTPublisher {
++publishToMyNodeNetMQTT(const char*, const char*) : bool
+}
+interface IMyNodeMQTTSubscriber {
++subscribeToMyNodeNetMQTT(const char*) : bool
++unsubscribeMyNodeNetMQTT(const char*) : void
+}
+interface IMyNodeMQTTConnector {
++setNodeMQTTServer(const char*) : void
++setNodeMQTTPort(int) : void
++setNodeMQTTClientId(const char*) : void
++myNodeCallbackFunction(char*, uint8_t*, unsigned int) : void
++setMessageCallback(void (*)(char*, uint8_t*, unsigned int)) : void
++startMyMQTT() : void
++connectToMyNodeNetwork() : void
++reconnectToMyMQTT() : void
++updateServerConfig() : void
++myNodeMQTTLoop() : void
++amIConnected() : bool
++publishDetection(...) : bool
++publishRegistration(...) : bool
++publishHeartbeat(...) : bool
++publishGreeting(...) : bool
+}
+class MyNodeMQTT
+IMyNodeMQTTConnector --|> IMyNodeMQTTSubscriber
+IMyNodeMQTTConnector --|> IMyNodeMQTTPublisher
+MyNodeMQTT ..|> IMyNodeMQTTConnector
+@enduml

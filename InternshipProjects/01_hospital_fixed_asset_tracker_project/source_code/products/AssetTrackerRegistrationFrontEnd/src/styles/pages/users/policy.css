@@ -1,0 +1,35 @@
+/**
+ * @file policy.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-policy-note {
+    display: block;
+    margin-top: 7px;
+    color: #b45309;
+    font-size: 0.72rem;
+    font-weight: 800;
+    line-height: 1.35;
+    overflow-wrap: anywhere;
+}
+
+.user-admin-page button:disabled,
+.user-admin-page input:disabled {
+    cursor: not-allowed;
+    opacity: 0.52;
+}
+
+.user-admin-page input:disabled {
+    background: #f8fafc;
+}
+
+.user-password-icon-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}

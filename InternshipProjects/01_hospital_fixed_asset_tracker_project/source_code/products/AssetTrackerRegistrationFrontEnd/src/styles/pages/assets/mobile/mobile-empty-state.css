@@ -1,0 +1,37 @@
+/**
+ * @file mobile-empty-state.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile movement request empty and list states.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+
+    .movement-requests-list,
+    .movement-request-list,
+    .movement-request-table,
+    .movement-request-empty-state {
+        width: 100%;
+        min-height: auto;
+    }
+
+    .movement-request-empty-state,
+    .empty-movement-request-card,
+    .empty-state {
+        padding: 12px;
+        border-radius: 16px;
+        font-size: 0.78rem;
+        line-height: 1.35;
+        text-align: center;
+    }
+
+    .movement-requests-table,
+    .movement-request-table {
+        width: 100%;
+        min-width: 0;
+    }
+}

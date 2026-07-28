@@ -1,0 +1,23 @@
+@startuml SD-07 Request Asset Movement
+title SD-07 Request Asset Movement
+
+actor "Monitor Staff" as Staff
+participant "Monitor App" as App
+participant "Movement API" as API
+participant "Movement Service" as Service
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+
+Staff -> App: Select asset and destination
+App -> API: POST /assets/movement/request
+API -> Service: create_movement_request()
+Service -> DB: Create pending request
+Service -> DB: Set asset flow_status = movement_requested
+DB --> Service: Commit success
+Service --> API: Movement request
+API -> WS: Broadcast asset_movement_requested
+WS -> App: Update asset row
+WS -> RegApp: Show pending request
+
+@enduml

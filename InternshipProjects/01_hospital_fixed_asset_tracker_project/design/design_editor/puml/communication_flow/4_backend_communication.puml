@@ -1,0 +1,41 @@
+@startuml
+title Backend Data and Live-Update Communication
+
+left to right direction
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam roundcorner 14
+
+component "MQTT Processing Service" as MQTTService
+component "FastAPI Business Services" as Backend
+database "PostgreSQL Database" as Database
+component "WebSocket Manager" as WebSocket
+
+package "Connected Browser Clients" {
+    component "Registration App" as RegApp
+    component "Monitor App" as MonApp
+}
+
+MQTTService --> Backend : Validated scans,\ndetections and heartbeats
+
+Backend --> Database : Create or update\nsystem records
+Database --> Backend : Query results and\nstored records
+
+Backend --> WebSocket : Asset, node, alert,\nmovement and activity events
+
+WebSocket --> RegApp : Live registration-side\nupdates
+WebSocket --> MonApp : Live monitoring\nupdates
+
+RegApp --> Backend : HTTPS command\nor data request
+MonApp --> Backend : HTTPS command\nor data request
+
+note bottom of WebSocket
+Connected clients receive supported
+events without manually refreshing
+the page.
+end note
+
+@enduml

@@ -1,0 +1,15 @@
+/**
+ * @file modal.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Modal and drawer component styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./modal/part-01.css";
+@import "./modal/part-02.css";
+@import "./modal/part-03.css";
+@import "./modal/part-04.css";

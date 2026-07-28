@@ -1,0 +1,20 @@
+@startuml MyNodeWiFi_Class
+ title MyNodeWiFi Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class MyNodeWiFi {
+   -ssid : String
+   -password : String
+   -last_reconnect_attempt : uint32_t
+   -reconnect_interval : uint32_t
+   +MyNodeWiFi()
+   +~MyNodeWiFi()
+   +setCredentials(const char*, const char*) : void
+   +hasCredentials() const : bool
+   +startWiFi() : void
+   +loopNetWiFi() : void
+   +amIConnected() : bool
+   +reconnectWiFi() : void
+   +disconnectWiFi() : void
+ }
+@enduml

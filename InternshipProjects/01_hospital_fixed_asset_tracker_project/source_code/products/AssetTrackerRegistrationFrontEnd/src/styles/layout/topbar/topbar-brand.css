@@ -1,0 +1,61 @@
+/**
+ * @file topbar-brand.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Application topbar and brand lockup.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.app-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.25rem;
+    margin-bottom: 10px;
+}
+
+.app-brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 0.85rem;
+    color: #0f172a;
+}
+
+.app-brand-mark {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 42px;
+    border-radius: 14px;
+    background: #047857;
+    box-shadow: 0 12px 28px rgba(4, 120, 87, 0.22);
+    overflow: hidden;
+}
+
+.app-brand-mark img {
+    width: 30px;
+    height: 30px;
+    display: block;
+    object-fit: contain;
+    object-position: center;
+}
+
+.app-brand-lockup div {
+    display: grid;
+    gap: 0.15rem;
+}
+
+.app-brand-lockup strong {
+    font-size: 1rem;
+    font-weight: 900;
+}
+
+.app-brand-lockup span:last-child {
+    color: #64748b;
+    font-size: 0.85rem;
+    font-weight: 700;
+}

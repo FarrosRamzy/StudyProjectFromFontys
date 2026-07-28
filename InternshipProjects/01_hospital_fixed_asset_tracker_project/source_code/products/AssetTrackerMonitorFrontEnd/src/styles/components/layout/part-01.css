@@ -1,0 +1,117 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-page {
+    width: min(1500px, calc(100% - 32px));
+    margin: 0 auto;
+    padding: 24px 0 48px;
+}
+
+.sticky-page-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    padding: 8px 0 10px;
+    background: linear-gradient(180deg,
+            rgba(248, 250, 252, 0.98),
+            rgba(248, 250, 252, 0.92));
+    backdrop-filter: blur(18px);
+}
+
+.app-topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 14px 18px;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: var(--shadow);
+}
+
+.app-brand-lockup {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 230px;
+}
+
+.app-brand-mark {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: #ffffff;
+    font-weight: 1000;
+    box-shadow: 0 12px 24px rgba(4, 120, 87, 0.22);
+}
+
+.app-brand-lockup strong {
+    display: block;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.1;
+}
+
+.app-brand-lockup span:not(.app-brand-mark) {
+    display: block;
+    margin-top: 3px;
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    min-width: 0;
+}
+
+.connection-pill,
+.topbar-actions .secondary-button,
+.topbar-actions .ghost-button,
+.topbar-user {
+    min-height: 38px;
+    border-radius: 14px;
+    white-space: nowrap;
+}
+
+.connection-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    background: #f8fafc;
+    color: var(--text);
+    font-size: 13px;
+    font-weight: 900;
+}
+
+.connection-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    background: #34d399;
+    box-shadow: 0 0 0 4px rgba(52, 211, 153, 0.16);
+}
+
+.topbar-actions .secondary-button,
+.topbar-actions .ghost-button {
+    padding: 8px 12px;
+    font-size: 13px;
+}

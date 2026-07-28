@@ -1,0 +1,25 @@
+/**
+ * @file asset-registration.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Asset registration stylesheets entry point.
+ * @version 1.5.0
+ * @date 2026-05-20
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./assets/page-layout.css";
+@import "./assets/tabs.css";
+@import "./assets/forms.css";
+@import "./assets/table.css";
+@import "./assets/movement-toolbar.css";
+@import "./assets/responsive-base.css";
+@import "./assets/mobile/mobile-table-layout.css";
+@import "./assets/mobile/mobile-table-details.css";
+@import "./assets/mobile/mobile-table-actions.css";
+@import "./assets/mobile/mobile-movement-panel.css";
+@import "./assets/mobile/mobile-tabs.css";
+@import "./assets/mobile/mobile-empty-state.css";
+@import "./assets/mobile/mobile-request-cards.css";
+@import "./assets/monitor/monitor-hero.css";

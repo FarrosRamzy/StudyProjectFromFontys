@@ -1,0 +1,98 @@
+/**
+ * @file part-08.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+.monitor-table .monitor-note {
+        max-width: 58%;
+        text-align: right;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+.monitor-table .status-badge,
+    .monitor-table .role-badge,
+    .monitor-table .flow-badge {
+        margin-left: auto;
+        white-space: nowrap;
+    }
+
+.monitor-table .monitor-action-cell {
+        width: 100%;
+        justify-content: stretch;
+        padding-top: 8px;
+        border-top: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+.monitor-table .monitor-action-cell::before {
+        display: none;
+    }
+
+.monitor-table .monitor-action-cell button,
+    .monitor-table button.small {
+        width: 100%;
+        min-height: 38px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 900;
+    }
+
+.monitor-toolbar {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        align-items: stretch;
+    }
+
+.monitor-search {
+        width: 100%;
+        min-width: 0;
+    }
+
+.toolbar-controls {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        width: 100%;
+    }
+
+.toolbar-controls select {
+        width: 100%;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 420px) {
+    .table-panel {
+        padding: 12px;
+    }
+
+    .monitor-table tr {
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .monitor-table td {
+        font-size: 0.8rem;
+    }
+
+    .monitor-table td::before {
+        font-size: 0.62rem;
+    }
+
+    .monitor-table .monitor-primary-cell strong {
+        font-size: 0.94rem;
+    }
+
+    .monitor-table .monitor-note,
+    .monitor-table .monitor-mono {
+        max-width: 60%;
+    }
+}

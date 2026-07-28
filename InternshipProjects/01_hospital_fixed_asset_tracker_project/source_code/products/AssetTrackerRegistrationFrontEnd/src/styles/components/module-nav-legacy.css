@@ -1,0 +1,35 @@
+/**
+ * @file module-nav-legacy.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Base module navigation styles overridden by page-shell navigation where needed.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+/* .module-nav a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 42px;
+    padding: 10px 16px;
+    border-radius: 14px;
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 800;
+    text-decoration: none;
+    border: 1px solid #dbe3ea;
+}
+
+.module-nav a.active {
+    background: #064e3b;
+    color: #ffffff;
+    border-color: #064e3b;
+    box-shadow: 0 12px 24px rgba(6, 78, 59, 0.18);
+}
+
+.module-nav a:hover {
+    background: #e2e8f0;
+} */

@@ -1,0 +1,35 @@
+/**
+ * @file responsive.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Responsive shared table and movement request behavior.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 900px) {
+    .action-col {
+        width: 120px;
+        min-width: 120px;
+    }
+
+    .node-action-buttons {
+        display: grid;
+        gap: 0.55rem;
+        justify-content: stretch;
+    }
+
+    .node-action-button {
+        width: 100%;
+        min-width: 72px;
+    }
+}
+
+@media (max-width: 700px) {
+    .movement-requests-header {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}

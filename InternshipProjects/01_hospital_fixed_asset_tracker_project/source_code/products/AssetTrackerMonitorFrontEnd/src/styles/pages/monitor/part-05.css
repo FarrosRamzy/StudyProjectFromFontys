@@ -1,0 +1,96 @@
+/**
+ * @file part-05.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-table th,
+.monitor-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.monitor-table th {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: #f8fafc;
+}
+
+.monitor-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.monitor-table tr:hover td {
+    background: #f8fafc;
+}
+
+.monitor-row-danger td {
+    background: #fef2f2;
+}
+
+.monitor-row-danger:hover td {
+    background: #fee2e2;
+}
+
+.monitor-row-warning td {
+    background: #fffbeb;
+}
+
+.monitor-row-warning:hover td {
+    background: #fef3c7;
+}
+
+.monitor-row-muted td {
+    background: #f8fafc;
+    color: var(--muted);
+}
+
+.monitor-muted {
+    color: var(--muted);
+}
+
+.monitor-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.monitor-note {
+    max-width: 320px;
+    color: var(--muted);
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+@media (max-width: 1180px) {
+    .monitor-summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 980px) {
+    .monitor-page .hero {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 720px) {
+    .drawer-panel {
+        width: 100%;
+    }
+}

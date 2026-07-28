@@ -1,0 +1,95 @@
+/**
+ * @file badges.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Badge and status indicator styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    width: fit-content;
+    min-height: 28px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 900;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+
+.status-badge.success {
+    border: 1px solid #bbf7d0;
+    background: #f0fdf4;
+    color: #047857;
+}
+
+.status-badge.warning {
+    border: 1px solid #fde68a;
+    background: #fffbeb;
+    color: #b45309;
+}
+
+.status-badge.danger {
+    border: 1px solid #fecaca;
+    background: #fef2f2;
+    color: #b91c1c;
+}
+
+.status-badge.info {
+    border: 1px solid #bae6fd;
+    background: #f0f9ff;
+    color: #0369a1;
+}
+
+.status-badge.neutral {
+    border: 1px solid #e2e8f0;
+    background: #f8fafc;
+    color: #475569;
+}
+
+.connection-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #f8fafc;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 900;
+    white-space: nowrap;
+}
+
+.connection-dot {
+    width: 9px;
+    height: 9px;
+    flex: 0 0 9px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+}
+
+.connection-dot.online {
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.14);
+}
+
+.connection-dot.offline {
+    background: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.14);
+}
+
+.connection-dot.warning {
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+}

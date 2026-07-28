@@ -1,0 +1,40 @@
+/**
+ * @file part-06.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 640px) {
+    .monitor-page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 20px;
+    }
+
+    .module-nav {
+        width: 100%;
+        overflow-x: auto;
+    }
+
+    .hero-status-card {
+        width: 100%;
+    }
+
+    .monitor-toolbar {
+        align-items: stretch;
+    }
+
+    .monitor-search,
+    .toolbar-controls,
+    .toolbar-controls select {
+        width: 100%;
+    }
+
+    .toolbar-controls {
+        flex-direction: column;
+    }
+}

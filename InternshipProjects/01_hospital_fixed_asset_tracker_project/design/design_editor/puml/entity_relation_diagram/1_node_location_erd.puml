@@ -1,0 +1,47 @@
+@startuml
+title Hospital, Room, and Node Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "HOSPITAL" as HOSPITAL {
+    * hospital_id : UUID <<PK>>
+    --
+    name : varchar
+}
+
+entity "ROOM" as ROOM {
+    * room_id : UUID <<PK>>
+    --
+    hospital_id : UUID <<FK>>
+    name : varchar
+}
+
+entity "NODE" as NODE {
+    * node_id : varchar <<PK>>
+    --
+    hospital_id : UUID <<FK>>
+    room_id : UUID <<FK>>
+    alias : varchar
+    role : varchar
+    status : varchar
+    last_ping_at : datetime
+}
+
+HOSPITAL "1..1" -- "0..*" ROOM : contains
+HOSPITAL "1..0" -- "0..*" NODE : has
+ROOM "1..0" -- "0..*" NODE : assigned to
+
+note bottom of NODE
+A discovered or unassigned node may not
+yet have a hospital or room assignment.
+
+A Registration Desk Node may not require
+a room assignment.
+end note
+
+@enduml

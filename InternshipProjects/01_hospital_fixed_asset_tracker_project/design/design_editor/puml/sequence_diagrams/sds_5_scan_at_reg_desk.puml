@@ -1,0 +1,19 @@
+@startuml SD-05 Scan Tag at Registration Desk
+title SD-05 Scan Tag at Registration Desk
+
+actor "Registration Staff" as Staff
+participant "Registration Desk Node" as RegNode
+participant "MQTT Broker" as MQTT
+participant "Backend MQTT Handler" as Backend
+participant "WebSocket Manager" as WS
+participant "Asset Registration Page" as Page
+
+Staff -> RegNode: Scan RFID tag
+RegNode -> MQTT: Publish registration scan
+MQTT -> Backend: Deliver scan message
+Backend -> Backend: Validate registration node
+Backend -> WS: Broadcast latest_scan
+WS -> Page: Send scanned tag ID
+Page -> Staff: Display tag ID in form
+
+@enduml

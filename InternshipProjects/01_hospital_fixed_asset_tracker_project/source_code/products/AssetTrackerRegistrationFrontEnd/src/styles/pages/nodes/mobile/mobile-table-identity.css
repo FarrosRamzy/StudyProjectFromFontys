@@ -1,0 +1,52 @@
+/**
+ * @file mobile-table-identity.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile node identity and status cells.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .asset-table.node-table .device-cell {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 4px;
+        text-align: left;
+        width: 100%;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .asset-table.node-table .device-cell::before {
+        display: none;
+    }
+
+    .asset-table.node-table .device-cell .device-alias {
+        display: block;
+        width: 100%;
+        font-size: 1rem;
+        line-height: 1.25;
+        word-break: break-word;
+    }
+
+    .asset-table.node-table .device-cell .device-id-small {
+        display: block;
+        width: 100%;
+        margin-top: 0;
+        color: #64748b;
+        font-size: 0.76rem;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .asset-table.node-table td .role-badge,
+    .asset-table.node-table td .status-badge {
+        margin-left: auto;
+    }
+}

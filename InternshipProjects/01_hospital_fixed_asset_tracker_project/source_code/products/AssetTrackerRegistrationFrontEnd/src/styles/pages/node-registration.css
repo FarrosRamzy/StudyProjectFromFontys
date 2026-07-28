@@ -1,0 +1,25 @@
+/**
+ * @file node-registration.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Node registration and shared registration-shell stylesheets entry point.
+ * @version 1.0.0
+ * @date 2026-05-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "../layout/sticky-header.css";
+@import "../layout/topbar/topbar-brand.css";
+@import "../layout/topbar/topbar-user.css";
+@import "../layout/topbar/topbar-actions.css";
+@import "../layout/page-hero.css";
+@import "../layout/module-navigation.css";
+@import "../layout/responsive-navigation.css";
+@import "../layout/mobile/mobile-header.css";
+@import "../layout/mobile/mobile-hero.css";
+@import "./nodes/mobile/mobile-table-layout.css";
+@import "./nodes/mobile/mobile-table-identity.css";
+@import "./nodes/mobile/mobile-table-actions.css";
+@import "./nodes/monitor-hero.css";
+@import "./nodes/assignment-mqtt-summary.css";

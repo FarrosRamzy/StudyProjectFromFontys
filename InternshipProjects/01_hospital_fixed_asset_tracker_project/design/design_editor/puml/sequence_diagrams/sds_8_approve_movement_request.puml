@@ -1,0 +1,24 @@
+@startuml SD-08 Approve Movement Request
+title SD-08 Approve Movement Request
+
+actor "Registration Staff" as Staff
+participant "Registration App" as App
+participant "Movement API" as API
+participant "Movement Decision Service" as Service
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Monitor App" as MonitorApp
+
+Staff -> App: Approve movement request
+App -> API: POST /assets/movement/approve
+API -> Service: approve_asset_movement_request()
+Service -> DB: Validate request and registration node
+Service -> DB: Set request = approved
+Service -> DB: Set asset flow_status = in_transit
+DB --> Service: Commit success
+Service --> API: Approved movement
+API -> WS: Broadcast asset_movement_approved
+WS -> App: Update pending request list
+WS -> MonitorApp: Update asset movement status
+
+@enduml

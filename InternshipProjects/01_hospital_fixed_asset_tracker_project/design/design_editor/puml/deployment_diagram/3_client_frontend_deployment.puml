@@ -1,0 +1,40 @@
+@startuml
+title Hospital Client and Frontend Deployment
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam nodesep 90
+skinparam ranksep 70
+
+node "Hospital Client Device" as Client <<device>> {
+    node "Web Browser" as Browser <<execution environment>> {
+        artifact "Registration App" as RegApp
+        artifact "Monitor App" as MonitorApp
+    }
+}
+
+node "Cloud Static Hosting" as StaticHosting {
+    artifact "Registration App\nProduction Build" as RegBuild
+    artifact "Monitor App\nProduction Build" as MonitorBuild
+}
+
+node "FastAPI Backend\nWeb Service" as Backend
+
+StaticHosting --> Browser : HTTPS\nApplication files
+
+RegApp --> Backend : HTTPS / JSON
+MonitorApp --> Backend : HTTPS / JSON
+
+Backend --> RegApp : WSS\nLive updates
+Backend --> MonitorApp : WSS\nLive updates
+
+note bottom of Browser
+The applications execute in the browser
+after their production files are loaded.
+end note
+
+@enduml

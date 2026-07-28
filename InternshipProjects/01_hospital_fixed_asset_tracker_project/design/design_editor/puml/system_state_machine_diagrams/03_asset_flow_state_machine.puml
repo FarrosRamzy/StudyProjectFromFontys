@@ -1,0 +1,33 @@
+@startuml
+title Asset Flow State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "ON THE MOVE" as OnMove
+state "IN PLACE" as InPlace
+state "PENDING APPROVAL" as Pending
+state "UNAUTHORIZED" as Unauthorized
+
+[*] --> OnMove : asset registered
+OnMove --> InPlace : detected at expected room
+InPlace --> Pending : movement requested
+Pending --> InPlace : request rejected or cancelled
+Pending --> OnMove : request approved
+InPlace --> Unauthorized : detected at unexpected room
+OnMove --> Unauthorized : detected at wrong destination
+Unauthorized --> InPlace : returned to assigned room
+
+note bottom of Pending
+Movement-request status is modeled
+separately from asset flow status.
+end note
+@enduml

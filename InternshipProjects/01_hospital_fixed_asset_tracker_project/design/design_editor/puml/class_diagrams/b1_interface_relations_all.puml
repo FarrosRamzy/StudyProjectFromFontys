@@ -1,0 +1,42 @@
+@startuml Interface_Relations_All
+title Interface Relation Overview
+skinparam classAttributeIconSize 0
+hide circle
+interface IMyNodeWiFi
+interface IMyNodeNetworkConfig
+interface IMyNodeMQTTPublisher
+interface IMyNodeMQTTSubscriber
+interface IMyNodeMQTTConnector
+interface IMyNodeRFID
+interface INodeStatusLED
+interface INodeClock
+interface INodeBoardControl
+
+class MyNodeWiFi
+class MyNodeNetworkConfig
+class MyNodeMQTT
+class MyNodeRFID
+class NodeStatusLED
+class NodeClock
+class NodeBoardControl
+class NodeManager
+
+IMyNodeMQTTConnector --|> IMyNodeMQTTSubscriber
+IMyNodeMQTTConnector --|> IMyNodeMQTTPublisher
+
+MyNodeWiFi ..|> IMyNodeWiFi
+MyNodeNetworkConfig ..|> IMyNodeNetworkConfig
+MyNodeMQTT ..|> IMyNodeMQTTConnector
+MyNodeRFID ..|> IMyNodeRFID
+NodeStatusLED ..|> INodeStatusLED
+NodeClock ..|> INodeClock
+NodeBoardControl ..|> INodeBoardControl
+
+NodeManager o-- IMyNodeWiFi
+NodeManager o-- IMyNodeNetworkConfig
+NodeManager o-- IMyNodeMQTTConnector
+NodeManager o-- IMyNodeRFID
+NodeManager o-- INodeStatusLED
+NodeManager o-- INodeClock
+NodeManager o-- INodeBoardControl
+@enduml

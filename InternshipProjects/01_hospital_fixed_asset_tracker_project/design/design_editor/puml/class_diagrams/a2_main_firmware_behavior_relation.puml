@@ -1,0 +1,63 @@
+@startuml Main_Firmware_Behavior_Relation
+title Main Firmware Behavior Relation
+skinparam classAttributeIconSize 0
+hide circle
+class NodeManager {
++beginNodeSystem() : void
++runNodeSystem() : void
+-handleRFID() : void
+-publishCheckpoint(const char*) : void
+-publishRegistration(const char*) : void
+-handleHeartbeat() : void
+-handleMqttMessage(char*, uint8_t*, unsigned int) : void
+}
+class MyNodeNetworkConfig {
++beginMyNetConfig() : void
++loopMyNetConfig() : void
++getBootstrapConfig() : myNodeBootstrapConfig
++getRemoteConfig() : myNodeRemoteConfig
+}
+class MyNodeWiFi {
++setCredentials(const char*, const char*) : void
++startWiFi() : void
++loopNetWiFi() : void
++amIConnected() : bool
+}
+class MyNodeMQTT {
++startMyMQTT() : void
++myNodeMQTTLoop() : void
++publishDetection(...) : bool
++publishRegistration(...) : bool
++publishHeartbeat(...) : bool
++subscribeToMyNodeNetMQTT(const char*) : bool
+}
+class MyNodeRFID {
++beginMyNodeRFID(uint32_t) : void
++readDetectedTag(char*, size_t) : bool
++runRFIDConfiguration() : void
+}
+class NodeStatusLED {
++setGreenConnected(bool) : void
++setRedDetecting(bool) : void
++startIdentifyBlink(uint8_t, uint32_t) : void
++updateMyLEDstate() : void
+}
+class NodeClock {
++millisNow() const : uint32_t
+}
+class NodeBoardControl {
++readDigital(uint8_t) : int
+}
+
+NodeManager --> MyNodeNetworkConfig : loads bootstrap/remote config
+NodeManager --> MyNodeWiFi : starts and monitors WiFi
+NodeManager --> MyNodeMQTT : MQTT loop, publish, subscribe, callback
+NodeManager --> MyNodeRFID : reads UHF EPC tag IDs
+NodeManager --> NodeStatusLED : connection/detection/identify status
+NodeManager --> NodeClock : non-blocking timers
+NodeManager --> NodeBoardControl : reset button and board restart
+
+MyNodeRFID --> NodeManager : tag EPC result
+NodeManager --> MyNodeMQTT : registration/checkpoint/heartbeat payloads
+MyNodeMQTT --> NodeManager : MQTT command callback
+@enduml

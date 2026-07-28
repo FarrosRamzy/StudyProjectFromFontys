@@ -1,0 +1,115 @@
+/**
+ * @file part-02.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-stat-card.danger {
+    border-top: 4px solid #ef4444;
+}
+
+.monitor-stat-card.info {
+    border-top: 4px solid #0ea5e9;
+}
+
+.monitor-stat-card p {
+    overflow-wrap: anywhere;
+}
+
+.summary-list {
+    display: grid;
+    gap: 10px;
+}
+
+.summary-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #f8fafc;
+    padding: 14px;
+}
+
+.summary-card.warning {
+    border-color: #fde68a;
+    background: #fffbeb;
+}
+
+.summary-card.danger {
+    border-color: #fecaca;
+    background: #fef2f2;
+}
+
+.summary-card strong {
+    color: var(--text);
+}
+
+.summary-card span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.summary-card small {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-weight: 800;
+}
+
+.summary-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.empty-state {
+    display: grid;
+    place-items: center;
+    gap: 10px;
+    padding: 42px 20px;
+    text-align: center;
+    color: var(--muted);
+}
+
+.empty-state-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+    background: #f1f5f9;
+    color: var(--muted);
+    font-weight: 1000;
+}
+
+.empty-state strong {
+    color: var(--text);
+    font-size: 16px;
+}
+
+.empty-state p {
+    margin: 0;
+    max-width: 420px;
+}
+
+.message-banner {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 14px;
+    margin: 14px 0;
+    padding: 14px 16px;
+    border-radius: 16px;
+    font-weight: 800;
+}
+
+.message-banner p {
+    margin: 4px 0 0;
+    font-weight: 700;
+}

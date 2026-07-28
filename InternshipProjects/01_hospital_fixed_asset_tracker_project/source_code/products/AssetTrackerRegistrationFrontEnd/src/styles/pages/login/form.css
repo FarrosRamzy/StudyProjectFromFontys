@@ -1,0 +1,63 @@
+/**
+ * @file form.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Login headings, form labels, inputs, and validation message.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.eyebrow {
+    margin: 0 0 6px;
+    color: #059669;
+    font-weight: 900;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.login-card h2 {
+    margin: 0;
+    font-size: 34px;
+    letter-spacing: -0.03em;
+}
+
+.login-subtitle {
+    margin: 8px 0 0;
+    color: #64748b;
+}
+
+.login-error {
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #991b1b;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.login-card label {
+    display: grid;
+    gap: 8px;
+    font-weight: 800;
+    color: #334155;
+}
+
+.login-card input {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 16px;
+    padding: 14px 16px;
+    font-size: 16px;
+    outline: none;
+    background: #ffffff;
+    color: #0f172a;
+}
+
+.login-card input:focus {
+    border-color: #059669;
+    box-shadow: 0 0 0 4px rgba(5, 150, 105, 0.14);
+}

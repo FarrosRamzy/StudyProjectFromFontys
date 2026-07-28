@@ -1,0 +1,114 @@
+/**
+ * @file part-02.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-search:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    border-color: var(--primary);
+}
+
+.toolbar-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.toolbar-controls select {
+    width: auto;
+    min-width: 180px;
+}
+
+.checkpoint-search {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.checkpoint-search input {
+    flex: 1;
+}
+
+.password-input-row {
+    width: 100%;
+}
+
+.password-input-with-icon {
+    position: relative;
+}
+
+.password-input-with-icon input {
+    width: 100%;
+    padding-right: 48px;
+}
+
+.password-icon-button {
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    transform: translateY(-50%);
+    display: inline-grid;
+    place-items: center;
+    border: none;
+    border-radius: 999px;
+    padding: 0;
+    background: transparent;
+    cursor: pointer;
+    transition:
+        background 0.16s ease,
+        opacity 0.16s ease;
+}
+
+.password-icon-button:hover {
+    background: rgba(15, 23, 42, 0.06);
+}
+
+.password-icon-button:focus-visible {
+    outline: 3px solid rgba(4, 120, 87, 0.18);
+    outline-offset: 2px;
+}
+
+.password-icon-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+.password-icon-button img {
+    width: 18px;
+    height: 18px;
+    object-fit: contain;
+    opacity: 0.72;
+    pointer-events: none;
+}
+
+.password-icon-button:hover img {
+    opacity: 1;
+}
+
+@media (max-width: 640px) {
+
+    .monitor-search,
+    .toolbar-controls,
+    .toolbar-controls select {
+        width: 100%;
+    }
+
+    .toolbar-controls {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .checkpoint-search {
+        align-items: stretch;
+        flex-direction: column;
+    }
+}

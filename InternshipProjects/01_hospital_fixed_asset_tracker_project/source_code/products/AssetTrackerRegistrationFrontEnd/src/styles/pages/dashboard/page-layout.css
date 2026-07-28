@@ -1,0 +1,39 @@
+/**
+ * @file page-layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Registration dashboard page and panel layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.registration-dashboard-page.app-shell {
+    width: min(1500px, calc(100% - 88px));
+    margin: 0 auto;
+    padding: 32px 0 56px;
+}
+
+.registration-dashboard-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+.registration-dashboard-page .sticky-page-header,
+.registration-dashboard-page .app-topbar,
+.registration-dashboard-page .module-nav,
+.registration-dashboard-page .page-hero,
+.registration-dashboard-page .panel {
+    max-width: 100%;
+}
+
+.dashboard-overview-panel,
+.dashboard-actions-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 0.95rem;
+}

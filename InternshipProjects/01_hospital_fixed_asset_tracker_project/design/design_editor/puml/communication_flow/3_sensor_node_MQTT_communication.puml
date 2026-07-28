@@ -1,0 +1,46 @@
+@startuml
+title Sensor Node and MQTT Communication
+
+left to right direction
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam roundcorner 14
+
+rectangle "RFID-Tagged\nHospital Asset" as Asset
+
+package "Sensor Node Layer" {
+    component "Registration Desk Node\nESP32 + RFID Reader" as RegNode
+    component "Checkpoint Node\nESP32 + RFID Reader" as CheckNode
+}
+
+cloud "Hospital Wi-Fi" as WiFi
+cloud "MQTT Broker" as MQTT
+component "Backend MQTT Service" as MQTTService
+
+Asset --> RegNode : UHF RFID scan
+Asset --> CheckNode : UHF RFID detection
+
+RegNode --> WiFi : Wi-Fi connection
+CheckNode --> WiFi : Wi-Fi connection
+
+WiFi --> MQTT : Network transport
+
+RegNode --> MQTT : Registration scan\nHeartbeat\nAcknowledgement
+CheckNode --> MQTT : RFID detection\nHeartbeat\nAcknowledgement
+
+MQTT --> MQTTService : Deliver node events
+
+MQTTService --> MQTT : Publish blink or\nsupported command
+MQTT --> RegNode : Deliver command
+MQTT --> CheckNode : Deliver command
+
+note bottom of MQTTService
+The backend validates the MQTT topic,
+node identity, event type, and payload
+before updating system data.
+end note
+
+@enduml

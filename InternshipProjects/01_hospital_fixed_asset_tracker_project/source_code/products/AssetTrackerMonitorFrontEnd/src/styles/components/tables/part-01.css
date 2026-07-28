@@ -1,0 +1,118 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 18px 0;
+}
+
+.table-panel {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.monitor-table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: separate;
+    border-spacing: 0;
+}
+
+.monitor-table th,
+.monitor-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.monitor-table th {
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 1000;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    background: #f8fafc;
+}
+
+.monitor-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.monitor-table tr:hover td {
+    background: #f8fafc;
+}
+
+.monitor-row-danger td {
+    background: #fef2f2;
+}
+
+.monitor-row-danger:hover td {
+    background: #fee2e2;
+}
+
+.monitor-row-warning td {
+    background: #fffbeb;
+}
+
+.monitor-row-warning:hover td {
+    background: #fef3c7;
+}
+
+.monitor-row-muted td {
+    background: #f8fafc;
+    color: var(--muted);
+}
+
+.monitor-muted {
+    color: var(--muted);
+}
+
+.monitor-mono {
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 12px;
+    word-break: break-all;
+}
+
+.monitor-note {
+    max-width: 320px;
+    color: var(--muted);
+    font-weight: 700;
+    line-height: 1.45;
+}
+
+.sort-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    padding: 0;
+    font: inherit;
+    font-weight: 1000;
+    text-transform: inherit;
+    letter-spacing: inherit;
+    cursor: pointer;
+}
+
+.sort-button:hover {
+    color: var(--primary);
+}

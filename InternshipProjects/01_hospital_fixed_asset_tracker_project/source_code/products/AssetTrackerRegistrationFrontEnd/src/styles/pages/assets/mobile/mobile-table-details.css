@@ -1,0 +1,67 @@
+/**
+ * @file mobile-table-details.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile asset identity, status, and location cells.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .asset-registration-page .asset-table.asset-registration-table .asset-name-cell {
+        order: -2;
+        display: block;
+        text-align: left;
+        padding-bottom: 2px;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1.25;
+        color: var(--text);
+        overflow-wrap: anywhere;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .asset-name-cell::before {
+        display: none;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .tag-cell {
+        order: -1;
+        justify-content: flex-start;
+        gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+        color: #64748b;
+        font-size: 0.76rem;
+        font-weight: 800;
+        line-height: 1.3;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+        text-align: left;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .tag-cell::before {
+        display: none;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .status-col {
+        align-items: flex-start;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .asset-status-stack {
+        align-items: flex-end;
+        text-align: right;
+        max-width: 58%;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .asset-flow-note {
+        text-align: right;
+        overflow-wrap: anywhere;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .last-location-col,
+    .asset-registration-page .asset-table.asset-registration-table .last-seen-col {
+        overflow-wrap: anywhere;
+    }
+}

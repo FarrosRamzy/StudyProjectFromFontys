@@ -1,0 +1,52 @@
+/**
+ * @file part-02.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.auth-loading-panel .auth-loading-spinner {
+    margin-top: 2px;
+    border-color: rgba(4, 120, 87, 0.22);
+    border-top-color: #047857;
+}
+
+.auth-loading-panel strong {
+    display: block;
+    color: #064e3b;
+    font-size: 0.9rem;
+    line-height: 1.25;
+}
+
+.auth-loading-panel p {
+    margin: 4px 0 0;
+    color: #047857;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+@keyframes auth-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (max-width: 540px) {
+    .auth-loading-panel {
+        padding: 12px;
+        border-radius: 16px;
+    }
+
+    .auth-loading-panel strong {
+        font-size: 0.86rem;
+    }
+
+    .auth-loading-panel p {
+        font-size: 0.76rem;
+    }
+}

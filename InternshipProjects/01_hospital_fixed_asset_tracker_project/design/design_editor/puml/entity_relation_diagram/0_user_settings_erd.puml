@@ -1,0 +1,37 @@
+@startuml
+title User and System Settings Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "USER" as USER {
+    * user_id : UUID <<PK>>
+    --
+    name : varchar
+    email : varchar
+    password_hash : varchar
+    role : varchar
+    is_active : boolean
+}
+
+entity "SYSTEM_SETTING" as SETTING {
+    * setting_id : UUID <<PK>>
+    --
+    setting_key : varchar
+    setting_value : text
+    updated_by_user_id : UUID <<FK>>
+    updated_at : datetime
+}
+
+USER "1..0" -- "0..*" SETTING : updates
+
+note bottom of SETTING
+Sensitive deployment secrets should not
+be exposed as ordinary UI-editable settings.
+end note
+
+@enduml

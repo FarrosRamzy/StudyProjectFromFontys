@@ -1,0 +1,40 @@
+/**
+ * @file layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Account security panel and form layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.account-page .account-panel {
+    max-width: 820px;
+    margin: 28px auto 0;
+    border-radius: 28px;
+    border: 1px solid var(--line);
+    box-shadow: 0 24px 70px rgba(15, 23, 42, 0.10);
+}
+
+.account-page .section-header {
+    margin-bottom: 22px;
+}
+
+.account-page .account-form {
+    grid-template-columns: 1fr;
+}
+
+.password-update-form {
+    display: grid;
+    gap: 20px;
+}
+
+.password-section {
+    display: grid;
+    gap: 14px;
+    padding: 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 22px;
+    background: #f8fafc;
+}

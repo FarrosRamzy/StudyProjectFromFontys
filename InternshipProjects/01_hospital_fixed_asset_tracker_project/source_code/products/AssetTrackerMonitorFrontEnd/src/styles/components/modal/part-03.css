@@ -1,0 +1,126 @@
+/**
+ * @file part-03.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 640px) {
+    .modal-backdrop {
+        z-index: 200;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 12px;
+        background: rgba(15, 23, 42, 0.62);
+    }
+
+    .modal-card {
+        width: min(100%, 430px);
+        max-height: calc(100dvh - 24px);
+        padding: 16px;
+        padding-bottom: 78px;
+        border-radius: 24px;
+        overflow-y: auto;
+    }
+
+    .modal-card {
+        scrollbar-width: none;
+    }
+
+    .modal-card::-webkit-scrollbar {
+        display: none;
+    }
+
+    .modal-header {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 10px;
+        align-items: start;
+        margin-bottom: 12px;
+    }
+
+    .modal-header h2 {
+        margin: 0;
+        font-size: 1.25rem;
+        line-height: 1.08;
+        letter-spacing: -0.04em;
+    }
+
+    .modal-header p {
+        margin-top: 5px;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .modal-header .ghost-button.small {
+        min-height: 30px;
+        padding: 0 10px;
+        border-radius: 999px;
+        font-size: 0.72rem;
+    }
+
+    .asset-request-summary {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-bottom: 14px;
+        padding: 10px;
+        border: 1px solid rgba(148, 163, 184, 0.24);
+        border-radius: 18px;
+        background: #f8fafc;
+    }
+
+    .asset-request-summary>div {
+        display: grid;
+        grid-template-columns: 94px minmax(0, 1fr);
+        gap: 10px;
+        align-items: center;
+        min-width: 0;
+        padding: 8px 10px;
+        border: 1px solid rgba(148, 163, 184, 0.22);
+        border-radius: 14px;
+        background: white;
+    }
+
+    .asset-request-summary span {
+        display: block;
+        margin: 0;
+        color: #64748b;
+        font-size: 0.62rem;
+        font-weight: 1000;
+        letter-spacing: 0.07em;
+        line-height: 1.15;
+        text-transform: uppercase;
+    }
+
+    .asset-request-summary strong,
+    .asset-request-summary .monitor-mono {
+        display: block;
+        margin: 0;
+        min-width: 0;
+        color: #0f172a;
+        font-size: 0.82rem;
+        font-weight: 900;
+        line-height: 1.25;
+        text-align: right;
+        overflow-wrap: anywhere;
+        word-break: break-word;
+    }
+
+    .asset-request-summary .status-badge,
+    .asset-request-summary .flow-badge {
+        justify-self: end;
+        width: fit-content;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    .form-stack {
+        gap: 12px;
+    }
+}

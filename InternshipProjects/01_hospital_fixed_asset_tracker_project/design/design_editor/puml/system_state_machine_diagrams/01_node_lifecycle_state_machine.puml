@@ -1,0 +1,42 @@
+@startuml
+title Node Lifecycle State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "DISCOVERED" as Discovered
+state "ASSIGNED" as Assigned
+state "ONLINE" as Online
+state "OFFLINE" as Offline
+state "DISABLED" as Disabled
+state "DELETED" as Deleted
+
+[*] --> Discovered : discovery received
+Discovered --> Assigned : assign role and location
+Assigned --> Online : heartbeat received
+Online --> Offline : heartbeat timeout
+Offline --> Online : heartbeat resumes
+Assigned --> Disabled : disable
+Online --> Disabled : disable
+Offline --> Disabled : disable
+Disabled --> Assigned : enable
+Assigned --> Discovered : unassign
+Online --> Discovered : unassign
+Offline --> Discovered : unassign
+Discovered --> Deleted : delete eligible record
+Disabled --> Deleted : delete eligible record
+Deleted --> [*]
+
+note bottom of Discovered
+UNKNOWN is a display fallback,
+not a stored lifecycle state.
+end note
+@enduml

@@ -1,0 +1,34 @@
+@startuml
+title Movement Request State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "PENDING" as Pending
+state "APPROVED" as Approved
+state "REJECTED" as Rejected
+state "CANCELLED" as Cancelled
+state "COMPLETED" as Completed
+
+[*] --> Pending : request created
+Pending --> Approved : approve
+Pending --> Rejected : reject
+Pending --> Cancelled : cancel
+Approved --> Completed : asset detected at approved destination
+Rejected --> [*]
+Cancelled --> [*]
+Completed --> [*]
+
+note bottom of Approved
+Approval does not complete the move.
+A destination detection is required.
+end note
+@enduml

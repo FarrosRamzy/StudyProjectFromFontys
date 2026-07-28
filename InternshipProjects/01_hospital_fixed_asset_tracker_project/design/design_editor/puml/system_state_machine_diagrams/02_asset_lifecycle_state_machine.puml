@@ -1,0 +1,28 @@
+@startuml
+title Asset Lifecycle State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "UNREGISTERED" as Unregistered
+state "ACTIVE" as Active
+state "DEREGISTERED" as Deregistered
+
+[*] --> Unregistered
+Unregistered --> Active : register asset and RFID tag
+Active --> Deregistered : deregister asset
+Deregistered --> Active : register again
+
+note bottom of Deregistered
+Historical detections and movement
+records remain available.
+end note
+@enduml

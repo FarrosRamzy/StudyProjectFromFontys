@@ -1,0 +1,33 @@
+@startuml SD-09 RFID Detection Updates Asset Location
+title SD-09 RFID Detection Updates Asset Location
+
+participant "Checkpoint Node" as Node
+participant "MQTT Broker" as MQTT
+participant "MQTT Detection Handler" as Handler
+participant "Asset Location Service" as Service
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+participant "Monitor App" as MonApp
+
+Node -> MQTT: Publish RFID detection\n(tag_id, device_id)
+MQTT -> Handler: Deliver detection message
+Handler -> Service: update_asset_location()
+Service -> DB: Load node and asset
+DB --> Service: Node and asset data
+
+alt Valid active asset
+    Service -> DB: Update last room, node, timestamp
+    Service -> DB: Resolve flow status
+    DB --> Service: Commit success
+    Service --> Handler: Updated asset
+    Handler -> WS: Broadcast asset_updated
+    WS -> RegApp: Update displayed asset data
+    WS -> MonApp: Update displayed asset data
+else Unknown tag
+    Service --> Handler: Unknown tag
+    Handler -> WS: Broadcast unknown_tag
+    WS -> MonApp: Show alert
+end
+
+@enduml

@@ -1,0 +1,52 @@
+@startuml
+title Activity Event Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "USER" as USER {
+    * user_id : UUID <<PK>>
+    --
+    name : varchar
+    role : varchar
+}
+
+entity "ASSET" as ASSET {
+    * asset_id : UUID <<PK>>
+    --
+    name : varchar
+    tag_id : varchar
+}
+
+entity "NODE" as NODE {
+    * node_id : varchar <<PK>>
+    --
+    alias : varchar
+}
+
+entity "ACTIVITY_EVENT" as ACTIVITY {
+    * activity_event_id : UUID <<PK>>
+    --
+    user_id : UUID <<FK>>
+    asset_id : UUID <<FK>>
+    node_id : varchar <<FK>>
+    event_type : varchar
+    message : text
+    created_at : datetime
+}
+
+USER "1..0" -- "0..*" ACTIVITY : performed by
+ASSET "1..0" -- "0..*" ACTIVITY : related asset
+NODE "1..0" -- "0..*" ACTIVITY : related node
+
+note bottom of ACTIVITY
+user_id may be empty for automatic
+events produced by the backend,
+firmware, or status-monitoring process.
+end note
+
+@enduml

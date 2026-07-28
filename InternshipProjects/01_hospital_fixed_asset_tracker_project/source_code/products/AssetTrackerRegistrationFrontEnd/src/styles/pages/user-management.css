@@ -1,0 +1,19 @@
+/**
+  * @file user-management.css
+  * @author Farros Ramzy (you@domain.com)
+  * @description User-management stylesheets entry point.
+  * @version 1.0.0
+  * @date 2026-06-04
+
+  * @Copyright (c) 2026
+  */
+
+
+@import "./users/page.css";
+@import "./users/form.css";
+@import "./users/table.css";
+@import "./users/table-badges.css";
+@import "./users/password-reset.css";
+@import "./users/policy.css";
+@import "./users/responsive.css";
+@import "./users/mobile-cards.css";

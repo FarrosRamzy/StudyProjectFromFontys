@@ -1,0 +1,23 @@
+@startuml SD-06 Register Asset
+title SD-06 Register Asset
+
+actor "Registration Staff" as Staff
+participant "Asset Registration Page" as Page
+participant "Asset API" as API
+participant "Asset Registration Service" as Service
+database "Database" as DB
+participant "WebSocket Manager" as WS
+
+Staff -> Page: Enter asset name and assigned room
+Staff -> Page: Submit registration form
+Page -> API: POST /assets/register
+API -> Service: register_asset()
+Service -> DB: Check tag is not active
+Service -> DB: Create asset\nflow_status = pending_placement
+DB --> Service: Commit success
+Service --> API: Registered asset
+API -> WS: Broadcast asset_registered
+API --> Page: Success response
+WS -> Page: Update asset table
+
+@enduml

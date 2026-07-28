@@ -1,0 +1,126 @@
+/**
+ * @file part-13.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 640px) {
+    .sticky-page-header {
+        padding: 6px 0 8px;
+    }
+
+    .app-topbar {
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 8px;
+        margin-bottom: 8px;
+        padding: 9px 10px;
+        border-radius: 18px;
+    }
+
+    .app-brand-lockup {
+        gap: 8px;
+    }
+
+    .app-brand-mark {
+        width: 34px;
+        height: 34px;
+        border-radius: 11px;
+    }
+
+    .app-brand-lockup strong {
+        max-width: 140px;
+        font-size: 0.88rem;
+    }
+
+    .app-brand-lockup span:not(.app-brand-mark) {
+        display: none;
+    }
+
+    .topbar-actions {
+        gap: 6px;
+    }
+
+    .connection-pill {
+        width: 32px;
+        min-width: 32px;
+        max-width: 32px;
+        min-height: 32px;
+        padding: 0;
+        gap: 0;
+    }
+
+    .connection-pill::after {
+        content: none !important;
+        display: none !important;
+    }
+
+    .connection-pill strong,
+    .connection-label-full,
+    .connection-label-short,
+    .connection-pill span:not(.connection-dot) {
+        display: none !important;
+    }
+
+    .connection-dot {
+        width: 10px;
+        height: 10px;
+        flex: 0 0 auto;
+    }
+
+    .topbar-user {
+        display: none;
+    }
+
+    .topbar-actions .secondary-button,
+    .topbar-actions .ghost-button {
+        min-height: 32px;
+        padding: 0 10px;
+        font-size: 0.72rem;
+    }
+
+    .monitor-tabs {
+        border-radius: 999px;
+        gap: 7px;
+        padding: 4px;
+    }
+
+    .monitor-tab {
+        min-height: 34px;
+        padding: 7px 12px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .app-brand-lockup strong {
+        max-width: 118px;
+    }
+
+    .topbar-actions {
+        gap: 4px;
+    }
+
+    .topbar-actions .secondary-button,
+    .topbar-actions .ghost-button {
+        padding: 0 8px;
+        font-size: 0.68rem;
+    }
+
+    .connection-pill {
+        width: 30px;
+        min-width: 30px;
+        max-width: 30px;
+        min-height: 30px;
+    }
+
+    .monitor-tab {
+        padding: 7px 11px;
+        font-size: 0.76rem;
+    }
+}

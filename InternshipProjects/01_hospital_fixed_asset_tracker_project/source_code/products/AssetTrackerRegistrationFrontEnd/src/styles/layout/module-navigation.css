@@ -1,0 +1,43 @@
+/**
+ * @file module-navigation.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Primary module navigation tabs.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.module-nav {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #ffffff;
+    box-shadow: var(--shadow);
+}
+
+.module-nav a {
+    flex: 0 0 auto;
+    text-decoration: none;
+    color: var(--muted);
+    font-weight: 900;
+    padding: 10px 16px;
+    border-radius: 13px;
+}
+
+.module-nav a:hover {
+    color: var(--primary);
+    background: #ecfdf5;
+}
+
+.module-nav a.active {
+    color: #ffffff;
+    background: var(--primary);
+    box-shadow: 0 8px 20px rgba(4, 120, 87, 0.18);
+}

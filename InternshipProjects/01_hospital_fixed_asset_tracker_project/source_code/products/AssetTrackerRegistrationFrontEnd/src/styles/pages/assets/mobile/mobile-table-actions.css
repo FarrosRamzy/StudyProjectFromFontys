@@ -1,0 +1,55 @@
+/**
+ * @file mobile-table-actions.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile asset table actions and pagination.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .asset-registration-page .asset-table.asset-registration-table .action-col {
+        width: 100%;
+        min-width: 0;
+        justify-content: stretch;
+        padding-top: 8px;
+        border-top: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .action-col::before {
+        display: none;
+    }
+
+    .asset-registration-page .asset-table.asset-registration-table .small-button,
+    .asset-registration-page .asset-table.asset-registration-table .danger-small-button {
+        width: 100%;
+        min-height: 38px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+        font-weight: 900;
+    }
+
+    .asset-registration-page .simple-pagination {
+        width: 100%;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    .asset-registration-page .pagination-page-jump {
+        gap: 6px;
+    }
+
+    .asset-registration-page .pagination-page-input {
+        width: 52px;
+        min-height: 36px;
+    }
+
+    .asset-registration-page .pagination-button {
+        min-height: 36px;
+        padding: 0 12px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+    }
+}

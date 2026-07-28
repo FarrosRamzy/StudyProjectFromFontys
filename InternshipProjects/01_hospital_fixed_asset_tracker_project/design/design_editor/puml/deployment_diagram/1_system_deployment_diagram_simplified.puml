@@ -1,0 +1,52 @@
+@startuml
+title Hospital Fixed-Asset Tracking System\nDeployment Overview
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 15
+skinparam ArrowFontSize 13
+skinparam nodesep 65
+skinparam ranksep 70
+
+node "Hospital Environment" {
+
+    node "Hospital Client Device" as Client <<device>> {
+        artifact "Web Browser" as Browser
+    }
+
+    node "Registration Desk Node" as RegNode <<device>> {
+        artifact "ESP32 Firmware" as RegFirmware
+        node "UHF RFID Reader" as RegReader <<device>>
+    }
+
+    node "Checkpoint Node" as CheckNode <<device>> {
+        artifact "ESP32 Firmware" as CheckFirmware
+        node "UHF RFID Reader" as CheckReader <<device>>
+    }
+}
+
+node "Render Cloud Platform" {
+
+    node "Registration App\nStatic Site" as RegSite
+    node "Monitor App\nStatic Site" as MonitorSite
+    node "FastAPI Backend\nWeb Service" as Backend
+    database "PostgreSQL" as Database
+}
+
+cloud "External MQTT Broker" as Broker
+
+Client --> RegSite : HTTPS
+Client --> MonitorSite : HTTPS
+Client --> Backend : HTTPS / WSS
+
+RegNode --> Broker : MQTT\nScans and heartbeats
+CheckNode --> Broker : MQTT\nDetections and heartbeats
+
+Broker --> Backend : MQTT node events
+Backend --> Broker : MQTT commands
+
+Backend --> Database : PostgreSQL
+
+@enduml

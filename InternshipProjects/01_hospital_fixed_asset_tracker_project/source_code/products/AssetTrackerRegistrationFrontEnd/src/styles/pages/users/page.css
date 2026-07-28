@@ -1,0 +1,52 @@
+/**
+ * @file page.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-form-panel,
+.user-table-panel,
+.account-panel {
+    overflow: hidden;
+}
+
+.user-table-panel {
+    min-width: 0;
+}
+
+.user-table-panel .section-header {
+    align-items: center;
+}
+
+.user-muted {
+    color: var(--muted);
+    font-weight: 800;
+}
+
+.user-table-empty {
+    display: grid;
+    justify-items: center;
+    gap: 6px;
+    margin-top: 18px;
+    padding: 38px 20px;
+    border: 1px dashed rgba(148, 163, 184, 0.55);
+    border-radius: 18px;
+    background: rgba(248, 250, 252, 0.7);
+    text-align: center;
+}
+
+.user-table-empty strong {
+    color: var(--text);
+    font-size: 1rem;
+}
+
+.user-table-empty span {
+    color: var(--muted);
+    font-size: 0.88rem;
+    font-weight: 700;
+}

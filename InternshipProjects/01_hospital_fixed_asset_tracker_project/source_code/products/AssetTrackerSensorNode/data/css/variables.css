@@ -1,0 +1,26 @@
+/**
+ * @file variables.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Design tokens and reusable CSS variables.
+ * @version 1.0.0
+ * @date 2026-05-13
+
+ * @Copyright (c) 2026
+ */
+
+:root {
+    --bg: #f3f6fb;
+    --panel: #ffffff;
+    --panel-2: #f8fbff;
+    --text: #132238;
+    --muted: #62748a;
+    --line: #d8e2f0;
+    --primary: #1a6647;
+    --primary-2: #ffffff;
+    --primary-soft: #e8f0ff;
+    --success: #0f766e;
+    --shadow: 0 12px 36px rgba(18, 38, 63, .10);
+    --radius: 22px;
+    --radius-sm: 14px;
+    --max: 1080px;
+}

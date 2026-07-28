@@ -1,0 +1,24 @@
+/**
+ * @file pages.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Page-level layout styles.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./pages/login-page.css";
+@import "./pages/node-registration.css";
+@import "./pages/asset-registration.css";
+@import "./pages/user-management.css";
+@import "./pages/account-security.css";
+@import "./layout/app-shell.css";
+@import "./pages/dashboard/page-layout.css";
+@import "./pages/dashboard/overview-cards.css";
+@import "./pages/dashboard/action-cards.css";
+@import "./pages/dashboard/summary.css";
+@import "./pages/dashboard/responsive.css";
+@import "./pages/dashboard/access-cards.css";
+@import "./pages/system-settings.css";

@@ -1,0 +1,45 @@
+/**
+ * @file helper-actions.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Password guidance card and form actions.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.password-helper-card {
+    display: grid;
+    gap: 4px;
+    padding: 14px 16px;
+    border-radius: 18px;
+    background: #ffffff;
+    border: 1px dashed rgba(4, 120, 87, 0.28);
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.45;
+}
+
+.password-helper-card strong {
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 950;
+}
+
+.account-form-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 12px;
+    padding-top: 4px;
+}
+
+.account-form-actions .primary-button {
+    width: fit-content;
+    min-width: 190px;
+    min-height: 48px;
+    padding-left: 22px;
+    padding-right: 22px;
+    border-radius: 16px;
+}

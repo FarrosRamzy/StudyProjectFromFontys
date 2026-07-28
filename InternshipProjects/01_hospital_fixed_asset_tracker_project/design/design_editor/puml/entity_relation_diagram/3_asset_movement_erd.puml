@@ -1,0 +1,62 @@
+@startuml
+title Asset Movement Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "USER" as USER {
+    * user_id : UUID <<PK>>
+    --
+    name : varchar
+    role : varchar
+}
+
+entity "ASSET" as ASSET {
+    * asset_id : UUID <<PK>>
+    --
+    tag_id : varchar
+    name : varchar
+    flow_status : varchar
+}
+
+entity "ROOM" as ROOM {
+    * room_id : UUID <<PK>>
+    --
+    name : varchar
+}
+
+entity "MOVEMENT_REQUEST" as MOVEMENT {
+    * movement_request_id : UUID <<PK>>
+    --
+    asset_id : UUID <<FK>>
+    requested_by_user_id : UUID <<FK>>
+    decided_by_user_id : UUID <<FK>>
+    source_room_id : UUID <<FK>>
+    destination_room_id : UUID <<FK>>
+    status : varchar
+    requested_at : datetime
+    decided_at : datetime
+    completed_at : datetime
+}
+
+ASSET "1..1" -- "0..*" MOVEMENT : has
+USER "1..1" -- "0..*" MOVEMENT : requests
+USER "1..0" -- "0..*" MOVEMENT : decides
+
+ROOM "1..0" -- "0..*" MOVEMENT : source room
+ROOM "1..1" -- "0..*" MOVEMENT : destination room
+
+note bottom of MOVEMENT
+Only one pending movement request should
+exist for the same asset at one time.
+
+Typical statuses:
+PENDING, APPROVED, REJECTED,
+CANCELLED, COMPLETED
+end note
+
+@enduml

@@ -1,0 +1,24 @@
+/**
+ * @file panels.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-07
+
+ * @Copyright (c) 2026
+ */
+
+/* Panels */
+
+.panel {
+  margin-top: 20px;
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  padding: 24px;
+}
+
+.table-panel {
+  overflow-x: auto;
+}

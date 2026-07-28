@@ -1,0 +1,90 @@
+/**
+ * @file mobile-hero.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Compact mobile registration page hero.
+                Fixes oversized Node Registration hero on phones.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .page-hero {
+        display: grid;
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 14px;
+        padding: 1.35rem;
+        border-radius: 1.5rem;
+        min-height: auto;
+    }
+
+    .hero-main {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .hero-main .eyebrow {
+        margin-bottom: 0.45rem;
+        font-size: 0.68rem;
+        letter-spacing: 0.08em;
+    }
+
+    .hero-main h1 {
+        font-size: clamp(2rem, 11vw, 2.65rem);
+        line-height: 0.98;
+        letter-spacing: -0.045em;
+    }
+
+    .hero-copy {
+        display: none;
+    }
+
+    .hero-status-card {
+        width: 100%;
+        min-width: 0;
+        display: block;
+    }
+
+    .hero-live-status {
+        width: 100%;
+        min-height: 42px;
+        padding: 0.72rem 0.85rem;
+        border-radius: 1rem;
+    }
+
+    .hero-live-status span:not(.status-dot) {
+        font-size: 0.66rem;
+    }
+
+    .hero-live-status strong {
+        font-size: 0.86rem;
+    }
+
+    .status-dot {
+        width: 0.62rem;
+        height: 0.62rem;
+        box-shadow: 0 0 0 4px rgba(249, 115, 22, 0.16);
+    }
+
+    .status-dot.online {
+        box-shadow: 0 0 0 4px rgba(134, 239, 172, 0.18);
+    }
+}
+
+@media (max-width: 420px) {
+    .page-hero {
+        padding: 1.15rem;
+        border-radius: 1.35rem;
+    }
+
+    .hero-main h1 {
+        font-size: clamp(1.85rem, 10vw, 2.35rem);
+    }
+
+    .hero-live-status {
+        min-height: 40px;
+    }
+}

@@ -1,0 +1,24 @@
+/**
+ * @file empty-state.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Empty state styles.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+
+.empty-state h2 {
+  margin: 0;
+}
+
+.empty-state p {
+  color: var(--muted);
+  margin-bottom: 0;
+}
+
+.table-empty-search {
+  box-shadow: none;
+  margin-top: 16px;
+}

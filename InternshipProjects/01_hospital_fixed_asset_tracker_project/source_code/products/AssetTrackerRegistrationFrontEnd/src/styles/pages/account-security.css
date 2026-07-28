@@ -1,0 +1,16 @@
+/**
+ * @file account-security.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Account security stylesheets entry point.
+ * @version 1.5.0
+ * @date 2026-06-04
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./account-security/layout.css";
+@import "./account-security/password-field.css";
+@import "./account-security/password-section.css";
+@import "./account-security/helper-actions.css";
+@import "./account-security/responsive.css";

@@ -1,0 +1,118 @@
+/**
+ * @file part-04.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-stat-card.danger {
+    border-top: 4px solid #ef4444;
+}
+
+.monitor-stat-card.info {
+    border-top: 4px solid #0ea5e9;
+}
+
+.summary-list {
+    display: grid;
+    gap: 10px;
+}
+
+.summary-card {
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    background: #f8fafc;
+    padding: 14px;
+}
+
+.summary-card.warning {
+    border-color: #fde68a;
+    background: #fffbeb;
+}
+
+.summary-card.danger {
+    border-color: #fecaca;
+    background: #fef2f2;
+}
+
+.summary-card strong {
+    color: var(--text);
+}
+
+.summary-card span {
+    display: block;
+    margin-top: 6px;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.summary-card small {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-weight: 800;
+}
+
+.summary-card-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+}
+
+.monitor-toolbar {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 18px 0;
+}
+
+.toolbar-controls {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.toolbar-controls select,
+.monitor-search {
+    min-height: 46px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 12px 14px;
+    background: white;
+    color: var(--text);
+    font-weight: 800;
+}
+
+.monitor-search {
+    width: min(420px, 100%);
+}
+
+.toolbar-controls select:focus,
+.monitor-search:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    border-color: var(--primary);
+}
+
+.table-panel {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid var(--line);
+    border-radius: 22px;
+    background: white;
+    box-shadow: var(--shadow);
+}
+
+.monitor-table {
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: separate;
+    border-spacing: 0;
+}

@@ -1,0 +1,92 @@
+/**
+ * @file layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Login page split layout, brand panel, and card container.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.login-page {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    background:
+        radial-gradient(circle at top left, rgba(16, 185, 129, 0.18), transparent 32%),
+        linear-gradient(135deg, #f8fafc 0%, #ecfdf5 100%);
+    color: #0f172a;
+}
+
+.login-hero {
+    display: flex;
+    align-items: center;
+    padding: 64px;
+}
+
+.login-brand {
+    max-width: 660px;
+}
+
+.brand-badge {
+    display: inline-flex;
+    padding: 10px 14px;
+    border-radius: 999px;
+    background: #d1fae5;
+    color: #047857;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.login-brand h1 {
+    margin: 24px 0 16px;
+    font-size: clamp(42px, 6vw, 76px);
+    line-height: 0.95;
+    letter-spacing: -0.06em;
+}
+
+.login-brand p {
+    max-width: 540px;
+    font-size: 18px;
+    line-height: 1.65;
+    color: #475569;
+}
+
+.login-trust-list {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-top: 28px;
+}
+
+.login-trust-list span {
+    padding: 10px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.75);
+    border: 1px solid rgba(148, 163, 184, 0.28);
+    color: #334155;
+    font-weight: 800;
+    font-size: 13px;
+}
+
+.login-card-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px;
+}
+
+.login-card {
+    width: min(100%, 430px);
+    display: grid;
+    gap: 18px;
+    padding: 34px;
+    border-radius: 28px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 24px 80px rgba(15, 23, 42, 0.14);
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    backdrop-filter: blur(18px);
+}

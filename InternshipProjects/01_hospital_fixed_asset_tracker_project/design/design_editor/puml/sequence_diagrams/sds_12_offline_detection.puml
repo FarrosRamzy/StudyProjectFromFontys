@@ -1,0 +1,18 @@
+@startuml SD-12 Offline Node Detection
+title SD-12 Offline Node Detection
+
+participant "Offline Monitor Task" as Task
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+participant "Monitor App" as MonApp
+
+Task -> DB: Find nodes with expired heartbeat
+DB --> Task: Offline candidates
+Task -> DB: Set node status = OFFLINE
+DB --> Task: Commit success
+Task -> WS: Broadcast node_offline
+WS -> RegApp: Show node offline
+WS -> MonApp: Show node offline alert
+
+@enduml

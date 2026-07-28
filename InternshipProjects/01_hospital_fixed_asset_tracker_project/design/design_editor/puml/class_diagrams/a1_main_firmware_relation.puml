@@ -1,0 +1,41 @@
+@startuml Main_Firmware_Relation
+title Main Firmware Object Relation / Dependency Injection View
+skinparam classAttributeIconSize 0
+hide circle
+class MainFirmware <<main.cpp / .ino>> {
++setup() : void
++loop() : void
+}
+class NodeManager
+class MyNodeWiFi
+class MyNodeNetworkConfig
+class MyNodeMQTT
+class MyNodeRFID
+class NodeStatusLED
+class NodeClock
+class NodeBoardControl
+class WiFiClient
+class HardwareSerial
+
+MainFirmware *-- MyNodeWiFi : creates
+MainFirmware *-- MyNodeNetworkConfig : creates
+MainFirmware *-- WiFiClient : creates/owns
+MainFirmware *-- MyNodeMQTT : creates
+MainFirmware *-- HardwareSerial : uses Serial port
+MainFirmware *-- MyNodeRFID : creates
+MainFirmware *-- NodeStatusLED : creates
+MainFirmware *-- NodeClock : creates
+MainFirmware *-- NodeBoardControl : creates
+MainFirmware *-- NodeManager : creates
+
+NodeManager o-- MyNodeWiFi : uses via IMyNodeWiFi&
+NodeManager o-- MyNodeNetworkConfig : uses via IMyNodeNetworkConfig&
+NodeManager o-- MyNodeMQTT : uses via IMyNodeMQTTConnector&
+NodeManager o-- MyNodeRFID : uses via IMyNodeRFID&
+NodeManager o-- NodeStatusLED : uses via INodeStatusLED&
+NodeManager o-- NodeClock : uses via INodeClock&
+NodeManager o-- NodeBoardControl : uses via INodeBoardControl&
+
+MyNodeMQTT o-- WiFiClient : network transport
+MyNodeRFID o-- HardwareSerial : RFID UART transport
+@enduml

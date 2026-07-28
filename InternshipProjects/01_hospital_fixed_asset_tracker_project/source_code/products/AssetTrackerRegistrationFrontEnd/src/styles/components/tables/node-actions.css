@@ -1,0 +1,109 @@
+/**
+ * @file node-actions.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Node table identity and action controls.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.table-sort-button:hover {
+    color: var(--primary);
+}
+
+.table-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.action-col {
+    min-width: 180px;
+}
+
+.tag-cell {
+    word-break: break-all;
+    font-weight: 800;
+}
+
+.device-cell {
+    display: grid;
+    gap: 6px;
+    white-space: normal;
+}
+
+.device-cell .device-alias {
+    display: block;
+    font-weight: 900;
+    color: var(--text);
+    line-height: 1.2;
+    font-size: 16px;
+}
+
+.device-cell .device-id-small {
+    display: block;
+    font-size: 13px;
+    color: var(--muted);
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+}
+
+.action-col {
+    width: 150px;
+    min-width: 150px;
+}
+
+.node-action-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.65rem;
+    flex-wrap: nowrap;
+}
+
+.node-action-button {
+    min-width: 64px;
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 14px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.9rem;
+    font-weight: 900;
+    line-height: 1;
+    cursor: pointer;
+    white-space: nowrap;
+    transition:
+        transform 120ms ease,
+        background 120ms ease,
+        opacity 120ms ease;
+}
+
+.node-action-button:hover:not(:disabled) {
+    transform: translateY(-1px);
+}
+
+.node-action-button-primary {
+    background: #e6f7ef;
+    color: #006b4f;
+}
+
+.node-action-button-secondary {
+    background: #f1f5f9;
+    color: #075985;
+}
+
+.node-action-button-selected {
+    background: #064e3b;
+    color: #ffffff;
+}
+
+.node-action-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.45;
+    transform: none;
+}

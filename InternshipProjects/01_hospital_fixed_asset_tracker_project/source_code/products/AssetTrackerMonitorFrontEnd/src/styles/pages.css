@@ -1,0 +1,13 @@
+/**
+ * @file pages.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Page-level CSS imports.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./pages/auth.css";
+@import "./pages/monitor.css";

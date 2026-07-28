@@ -1,0 +1,115 @@
+/**
+ * @file part-01.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.modal-backdrop,
+.drawer-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background: rgba(15, 23, 42, 0.56);
+    backdrop-filter: blur(8px);
+}
+
+.modal-card {
+    width: min(860px, calc(100vw - 48px));
+    max-height: min(86dvh, 820px);
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-gutter: stable;
+    border-radius: 26px;
+    background: white;
+    box-shadow: 0 28px 80px rgba(15, 23, 42, 0.28);
+    border: 1px solid var(--line);
+    padding: 24px;
+}
+
+.modal-card {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(100, 116, 139, 0.45) transparent;
+}
+
+.modal-card::-webkit-scrollbar {
+    width: 10px;
+}
+
+.modal-card::-webkit-scrollbar-track {
+    background: transparent;
+    margin: 18px 0;
+}
+
+.modal-card::-webkit-scrollbar-thumb {
+    min-height: 48px;
+    border: 3px solid #ffffff;
+    border-radius: 999px;
+    background: rgba(100, 116, 139, 0.42);
+}
+
+.modal-card::-webkit-scrollbar-thumb:hover {
+    background: rgba(71, 85, 105, 0.62);
+}
+
+.modal-header,
+.drawer-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.modal-header h2,
+.drawer-header h2 {
+    margin: 0;
+    color: var(--text);
+}
+
+.modal-header p,
+.drawer-header p {
+    margin: 6px 0 0;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.modal-actions,
+.drawer-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.asset-request-summary {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.asset-request-summary>div,
+.detail-item {
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 14px;
+    background: #f8fafc;
+}
+
+.asset-request-summary span,
+.detail-item span {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}

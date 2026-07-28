@@ -1,0 +1,67 @@
+/**
+ * @file part-04.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 640px) {
+.field>span {
+        font-size: 0.78rem;
+        line-height: 1.2;
+    }
+
+.checkpoint-search {
+        display: block;
+    }
+
+.checkpoint-search input,
+    .field textarea {
+        width: 100%;
+        min-width: 0;
+        border-radius: 16px;
+        font-size: 0.9rem;
+    }
+
+.checkpoint-search input {
+        min-height: 44px;
+        padding: 0 14px;
+    }
+
+.field textarea {
+        min-height: 92px;
+        padding: 14px;
+        line-height: 1.35;
+    }
+
+.field-help {
+        font-size: 0.74rem;
+        line-height: 1.35;
+    }
+
+.modal-actions {
+        position: sticky;
+        bottom: -16px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 10px;
+        margin: 14px -16px -78px;
+        padding: 12px 16px 14px;
+        background: rgba(255, 255, 255, 0.96);
+        border-top: 1px solid rgba(148, 163, 184, 0.22);
+        backdrop-filter: blur(12px);
+    }
+
+.modal-actions .secondary-button,
+    .modal-actions .primary-button {
+        width: 100%;
+        min-height: 44px;
+        border-radius: 16px;
+        font-size: 0.86rem;
+        font-weight: 900;
+    }
+}

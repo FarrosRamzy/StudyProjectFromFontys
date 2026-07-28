@@ -1,0 +1,68 @@
+/**
+ * @file topbar-user.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Signed-in user identity and role display.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.topbar-user {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    max-width: min(720px, 100%);
+    padding: 0.5rem;
+    border: 1px solid #dbe4ef;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 12px 36px rgba(15, 23, 42, 0.08);
+}
+
+.topbar-user-text {
+    display: grid;
+    gap: 0.1rem;
+    min-width: 0;
+    padding-left: 0.35rem;
+}
+
+.topbar-user-text span {
+    color: #64748b;
+    font-size: 0.7rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.topbar-user-text strong {
+    max-width: 220px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #0f172a;
+    font-size: 0.9rem;
+    font-weight: 900;
+}
+
+.topbar-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    flex: 0 0 auto;
+}
+
+.topbar-role-badge {
+    min-height: 38px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.75rem;
+    border-radius: 999px;
+    background: #ecfdf5;
+    color: #047857;
+    font-size: 0.75rem;
+    font-weight: 900;
+    white-space: nowrap;
+}

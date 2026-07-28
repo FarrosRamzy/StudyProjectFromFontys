@@ -1,0 +1,38 @@
+@startuml Asset Registration Sequence
+title Asset Registration Sequence
+
+actor "Registration Staff" as Staff
+participant "Registration App" as App
+participant "Registration Desk Node\n(ESP32 Firmware)" as RegNode
+participant "MQTT Broker" as MQTT
+participant "Backend" as Backend
+database "PostgreSQL Database" as DB
+participant "WebSocket Manager" as WS
+
+Staff -> App: Open Asset Registration page
+App -> Backend: GET /assets
+Backend -> DB: Load registered assets
+DB --> Backend: Asset list
+Backend --> App: Return asset list
+
+Staff -> RegNode: Scan RFID tag
+RegNode -> MQTT: Publish registration scan\n(tag_id, device_id)
+MQTT -> Backend: Deliver scan message
+Backend -> DB: Validate registration node
+DB --> Backend: Node is valid
+Backend -> WS: Broadcast latest_scan
+WS -> App: Send scanned tag ID
+App -> App: Fill tag ID field
+
+Staff -> App: Enter asset name and assigned room
+Staff -> App: Submit registration form
+App -> Backend: POST /assets/register
+Backend -> DB: Check tag is not active
+DB --> Backend: Tag available
+Backend -> DB: Create asset record\nflow_status = pending_placement
+DB --> Backend: Commit success
+Backend -> WS: Broadcast asset_registered
+WS -> App: Send asset_registered
+App -> App: Update asset table
+
+@enduml

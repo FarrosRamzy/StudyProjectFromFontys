@@ -1,0 +1,94 @@
+/**
+ * @file forms.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Asset registration section headings, fields, and submit actions.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.asset-registration-page .section-header {
+    display: grid;
+    grid-template-columns: minmax(220px, 320px) 1fr;
+    gap: 32px;
+    align-items: start;
+}
+
+.asset-registration-page .section-header h2 {
+    margin: 0;
+    font-size: 34px;
+    line-height: 1.08;
+    letter-spacing: -0.035em;
+}
+
+.asset-registration-page .section-header p {
+    margin: 4px 0 0;
+    color: var(--muted);
+    font-size: 17px;
+    line-height: 1.45;
+}
+
+.asset-registration-page .asset-form {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.asset-registration-page .form-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 22px;
+}
+
+.asset-registration-page .form-field {
+    display: grid;
+    gap: 10px;
+}
+
+.asset-registration-page .form-field span {
+    color: var(--muted);
+    font-size: 13px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.asset-registration-page .form-field input,
+.asset-registration-page .form-field select {
+    min-height: 64px;
+    width: 100%;
+    border: 1px solid var(--line);
+    border-radius: 20px;
+    padding: 14px 16px;
+    background: white;
+    color: var(--text);
+    font-weight: 800;
+    box-sizing: border-box;
+}
+
+.asset-registration-page .form-field input:focus,
+.asset-registration-page .form-field select:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    border-color: var(--primary);
+}
+
+.asset-registration-page .form-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-start;
+}
+
+.asset-registration-page .primary-button {
+    border: none;
+    border-radius: 14px;
+    padding: 12px 18px;
+    font-weight: 900;
+    cursor: pointer;
+    background: var(--primary);
+    color: white;
+}
+
+.asset-registration-page .primary-button:hover:not(:disabled) {
+    filter: brightness(0.96);
+}

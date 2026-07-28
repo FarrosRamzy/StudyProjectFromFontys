@@ -1,0 +1,39 @@
+@startuml
+title Web Application and API Communication
+
+left to right direction
+
+skinparam shadowing false
+skinparam componentStyle rectangle
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam roundcorner 14
+
+actor "Authorized User" as User
+
+package "Browser Applications" {
+    component "Registration App" as RegApp
+    component "Monitor App" as MonApp
+}
+
+component "FastAPI Backend" as Backend
+
+User --> RegApp : Login, node, asset,\nuser and settings actions
+RegApp --> User : Forms, results,\nstatus and warnings
+
+User --> MonApp : Monitoring queries and\nmovement requests
+MonApp --> User : Locations, alerts,\nactivity and node status
+
+RegApp --> Backend : HTTPS / JSON\nBearer token
+Backend --> RegApp : API response\nor error details
+
+MonApp --> Backend : HTTPS / JSON\nBearer token
+Backend --> MonApp : API response\nor error details
+
+note bottom of Backend
+The backend validates authentication,
+role permission, submitted data,
+and business rules.
+end note
+
+@enduml

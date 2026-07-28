@@ -1,0 +1,22 @@
+/**
+ * @file sticky-header.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Sticky page header shell.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.sticky-page-header {
+    position: sticky;
+    top: 0;
+    z-index: 80;
+    padding: 10px 0 12px;
+    margin-bottom: 18px;
+    background: linear-gradient(180deg,
+            rgba(244, 247, 251, 0.98),
+            rgba(244, 247, 251, 0.88));
+    backdrop-filter: blur(16px);
+}

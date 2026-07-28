@@ -1,0 +1,106 @@
+/**
+ * @file movement-panel.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Movement request panel and card foundations.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.movement-requests-panel {
+    padding: 24px;
+    border: 1px solid #dbe4f0;
+    border-radius: 24px;
+    background: #ffffff;
+}
+
+.movement-requests-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+
+.movement-requests-header h2 {
+    margin: 0;
+    color: #0f172a;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: -0.04em;
+}
+
+.movement-requests-header p {
+    margin: 4px 0 0;
+    color: #64748b;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.compact-secondary-button {
+    min-width: 92px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 14px;
+    background: #f1f5f9;
+    color: #0f172a;
+    font-size: 14px;
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.compact-secondary-button:hover:not(:disabled) {
+    background: #e2e8f0;
+}
+
+.compact-secondary-button:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.compact-warning {
+    margin-bottom: 14px;
+    padding: 10px 12px;
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    background: #fffbeb;
+    color: #92400e;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1.35;
+}
+
+.compact-empty-state {
+    padding: 18px 20px;
+    border: 1px dashed #cbd5e1;
+    border-radius: 18px;
+    background: #f8fafc;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.movement-request-list {
+    display: grid;
+    gap: 12px;
+}
+
+.movement-request-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 16px;
+    align-items: center;
+    padding: 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    background: #ffffff;
+}
+
+.movement-request-main {
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) minmax(160px, 1fr) auto;
+    gap: 16px;
+    align-items: center;
+}

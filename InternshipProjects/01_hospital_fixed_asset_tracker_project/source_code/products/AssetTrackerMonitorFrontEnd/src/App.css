@@ -1,0 +1,15 @@
+/**
+ * @file App.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./index.css";
+@import "./styles/base.css";
+@import "./styles/components.css";
+@import "./styles/pages.css";

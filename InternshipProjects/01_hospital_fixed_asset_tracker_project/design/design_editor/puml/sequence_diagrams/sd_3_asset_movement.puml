@@ -1,0 +1,53 @@
+@startuml Asset Movement Request, Approval, and Completion
+title Asset Movement Request, Approval, and Completion
+
+actor "Monitor Staff" as MonitorStaff
+participant "Monitor App" as MonitorApp
+participant "Backend" as Backend
+database "PostgreSQL Database" as DB
+participant "WebSocket Manager" as WS
+actor "Registration Staff" as RegStaff
+participant "Registration App" as RegApp
+participant "Checkpoint Node\n(ESP32 Firmware)" as Node
+participant "MQTT Broker" as MQTT
+
+MonitorStaff -> MonitorApp: Select asset and request movement
+MonitorApp -> Backend: POST /assets/movement/request
+Backend -> DB: Create movement request\nstatus = pending
+Backend -> DB: Update asset flow_status\nmovement_requested
+DB --> Backend: Commit success
+Backend -> WS: Broadcast asset_movement_requested
+WS -> MonitorApp: Update asset status
+WS -> RegApp: Show pending movement request
+
+RegStaff -> RegApp: Approve movement request
+RegApp -> Backend: POST /assets/movement/approve
+Backend -> DB: Validate registration node
+Backend -> DB: Update movement request\nstatus = approved
+Backend -> DB: Update asset flow_status\nin_transit
+DB --> Backend: Commit success
+Backend -> WS: Broadcast asset_movement_approved
+WS -> MonitorApp: Show approved / in transit
+WS -> RegApp: Remove or update pending request
+
+Node -> MQTT: Publish RFID detection at destination
+MQTT -> Backend: Deliver detection message
+Backend -> DB: Load asset and active movement request
+
+alt Asset detected at approved destination
+    Backend -> DB: Complete movement request
+    Backend -> DB: Update assigned room and current room
+    Backend -> DB: Set asset flow_status = available
+    DB --> Backend: Commit success
+    Backend -> WS: Broadcast asset_updated
+    Backend -> WS: Broadcast asset_movement_completed
+    WS -> MonitorApp: Update asset row and movement status
+    WS -> RegApp: Update asset table
+else Asset detected at wrong destination
+    Backend -> DB: Keep asset in transit or mark wrong_location
+    Backend -> WS: Broadcast asset_updated
+    WS -> MonitorApp: Show warning
+    WS -> RegApp: Show warning
+end
+
+@enduml

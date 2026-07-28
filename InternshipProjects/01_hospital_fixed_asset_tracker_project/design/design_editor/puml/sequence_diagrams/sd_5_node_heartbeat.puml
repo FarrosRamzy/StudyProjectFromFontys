@@ -1,0 +1,30 @@
+@startuml Node Heartbeat and Offline Status Sequence
+title Node Heartbeat and Offline Status Sequence
+
+participant "Checkpoint Node\n(ESP32 Firmware)" as Node
+participant "MQTT Broker" as MQTT
+participant "Backend MQTT Handler" as Backend
+database "PostgreSQL Database" as DB
+participant "WebSocket Manager" as WS
+participant "Registration App" as RegApp
+participant "Monitor App" as MonApp
+participant "Offline Monitor Task" as OfflineTask
+
+loop Every heartbeat interval
+    Node -> MQTT: Publish heartbeat\n(device_id, status, timestamp)
+    MQTT -> Backend: Deliver heartbeat
+    Backend -> DB: Update node last_ping_at\nstatus = ONLINE
+    DB --> Backend: Commit success
+    Backend -> WS: Broadcast node_heartbeat
+    WS -> RegApp: Update node status
+    WS -> MonApp: Update node status
+end
+
+OfflineTask -> DB: Find nodes with old last_ping_at
+DB --> OfflineTask: Offline candidates
+OfflineTask -> DB: Set status = OFFLINE
+OfflineTask -> WS: Broadcast node_offline
+WS -> RegApp: Show node offline
+WS -> MonApp: Show node offline alert
+
+@enduml

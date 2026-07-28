@@ -1,0 +1,192 @@
+@startuml
+title ESP32 Sensor Node Firmware\nCombined Class Relations - Compact View
+left to right direction
+skinparam shadowing false
+skinparam classAttributeIconSize 0
+skinparam packageStyle rectangle
+skinparam linetype ortho
+hide circle
+
+package "Main / Orchestration" {
+  class MainFirmware <<main.cpp>> {
+    +setup() : void
+    +loop() : void
+  }
+
+  class NodeManager {
+    -my_node_wi_fi : IMyNodeWiFi&
+    -my_node_net_config : IMyNodeNetworkConfig&
+    -my_node_mqtt : IMyNodeMQTTConnector&
+    -my_node_rfid : IMyNodeRFID&
+    -my_node_status_led : INodeStatusLED&
+    -my_clock : INodeClock&
+    -my_board : INodeBoardControl&
+    --
+    -my_node_id : String
+    -my_node_role : String
+    -my_hospital_id : String
+    -my_node_room : String
+    -my_node_is_provisioned : bool
+    -last_mqtt_connected : bool
+    -last_heartbeat_time : uint32_t
+    -last_tag_id : char[]
+    --
+    +NodeManager(IMyNodeWiFi&, IMyNodeNetworkConfig&, IMyNodeMQTTConnector&, IMyNodeRFID&, INodeStatusLED&, INodeClock&, INodeBoardControl&)
+    +~NodeManager()
+    +beginNodeSystem() : void
+    +runNodeSystem() : void
+  }
+}
+
+package "Interfaces" {
+  interface IMyNodeWiFi
+  interface IMyNodeNetworkConfig
+  interface IMyNodeMQTTPublisher
+  interface IMyNodeMQTTSubscriber
+  interface IMyNodeMQTTConnector
+  interface IMyNodeRFID
+  interface INodeStatusLED
+  interface INodeClock
+  interface INodeBoardControl
+}
+
+package "Concrete Firmware Classes" {
+  class MyNodeWiFi {
+    -ssid : String
+    -password : String
+    -last_reconnect_attempt : uint32_t
+    -reconnect_interval : uint32_t
+    --
+    +MyNodeWiFi()
+    +~MyNodeWiFi()
+  }
+
+  class MyNodeNetworkConfig {
+    -my_preferences : Preferences
+    -my_web_server : WebServer
+    -my_bootstrap_config : myNodeBootstrapConfig
+    -my_remote_config : myNodeRemoteConfig
+    -my_setup_mode : bool
+    --
+    +MyNodeNetworkConfig()
+    +~MyNodeNetworkConfig()
+  }
+
+  class MyNodeMQTT {
+    -my_node_mqtt_client : PubSubClient
+    -node_esp_client : WiFiClient&
+    -my_node_net_server : const char*
+    -my_node_net_port : int
+    -my_node_net_id : const char*
+    -my_mqtt_callback : callback
+    --
+    +MyNodeMQTT(WiFiClient&, const char*, int, const char*, callback)
+    +~MyNodeMQTT()
+  }
+
+  class MyNodeRFID {
+    -my_rfid_serial : HardwareSerial&
+    -my_rx_pin : int
+    -my_tx_pin : int
+    -my_en_pin : int
+    -frame_buffer : uint8_t[]
+    -rfid_config_state : RFIDConfigState
+    --
+    +MyNodeRFID(HardwareSerial&, int, int, int)
+    +~MyNodeRFID()
+  }
+
+  class NodeStatusLED {
+    -green_pin : uint8_t
+    -red_pin : uint8_t
+    -green_active : bool
+    -red_active : bool
+    -identify_active : bool
+    --
+    +NodeStatusLED(uint8_t, uint8_t)
+    +~NodeStatusLED()
+  }
+
+  class NodeClock {
+    +NodeClock()
+    +~NodeClock()
+  }
+
+  class NodeBoardControl {
+    +NodeBoardControl()
+    +~NodeBoardControl()
+  }
+}
+
+package "Structs and Enum" {
+  class myNodeBootstrapConfig <<struct>> {
+    +device_id : String
+    +wifi_ssid : String
+    +wifi_password : String
+    +is_configured : bool
+  }
+
+  class myNodeRemoteConfig <<struct>> {
+    +role : String
+    +hospital_name : String
+    +room_name : String
+    +mqtt_host : String
+    +mqtt_port : uint16_t
+    +is_provisioned : bool
+  }
+
+  enum RFIDConfigState {
+    RFID_CONFIG_IDLE
+    RFID_CONFIG_WAIT_READER_READY
+    RFID_CONFIG_SEND_SET_POWER
+    RFID_CONFIG_DONE
+    RFID_CONFIG_FAILED
+  }
+}
+
+package "External Libraries" {
+  class WiFiClient <<external>>
+  class PubSubClient <<external>>
+  class HardwareSerial <<external>>
+  class Preferences <<external>>
+  class WebServer <<external>>
+}
+
+MainFirmware *-- MyNodeWiFi : creates
+MainFirmware *-- MyNodeNetworkConfig : creates
+MainFirmware *-- WiFiClient : creates
+MainFirmware *-- MyNodeMQTT : creates
+MainFirmware *-- HardwareSerial : uses
+MainFirmware *-- MyNodeRFID : creates
+MainFirmware *-- NodeStatusLED : creates
+MainFirmware *-- NodeClock : creates
+MainFirmware *-- NodeBoardControl : creates
+MainFirmware *-- NodeManager : creates
+
+IMyNodeMQTTConnector --|> IMyNodeMQTTSubscriber
+IMyNodeMQTTConnector --|> IMyNodeMQTTPublisher
+MyNodeWiFi ..|> IMyNodeWiFi
+MyNodeNetworkConfig ..|> IMyNodeNetworkConfig
+MyNodeMQTT ..|> IMyNodeMQTTConnector
+MyNodeRFID ..|> IMyNodeRFID
+NodeStatusLED ..|> INodeStatusLED
+NodeClock ..|> INodeClock
+NodeBoardControl ..|> INodeBoardControl
+
+NodeManager o-- IMyNodeWiFi : Wi-Fi
+NodeManager o-- IMyNodeNetworkConfig : config
+NodeManager o-- IMyNodeMQTTConnector : MQTT
+NodeManager o-- IMyNodeRFID : RFID
+NodeManager o-- INodeStatusLED : LED
+NodeManager o-- INodeClock : time
+NodeManager o-- INodeBoardControl : board
+
+MyNodeMQTT *-- PubSubClient : owns
+MyNodeMQTT o-- WiFiClient : transport
+MyNodeRFID o-- HardwareSerial : UART
+MyNodeRFID --> RFIDConfigState : uses
+MyNodeNetworkConfig *-- Preferences : storage
+MyNodeNetworkConfig *-- WebServer : setup portal
+MyNodeNetworkConfig *-- myNodeBootstrapConfig : stores
+MyNodeNetworkConfig *-- myNodeRemoteConfig : stores
+@enduml

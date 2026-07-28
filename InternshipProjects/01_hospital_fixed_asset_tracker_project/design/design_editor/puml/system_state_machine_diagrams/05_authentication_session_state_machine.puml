@@ -1,0 +1,35 @@
+@startuml
+title Authentication and Session State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "SIGNED OUT" as SignedOut
+state "AUTHENTICATING" as Authenticating
+state "AUTHENTICATED" as Authenticated
+state "TOKEN EXPIRED" as Expired
+state "ACCESS DENIED" as Denied
+
+[*] --> SignedOut
+SignedOut --> Authenticating : submit credentials
+Authenticating --> Authenticated : credentials accepted
+Authenticating --> SignedOut : credentials rejected
+Authenticated --> SignedOut : logout
+Authenticated --> Expired : token expires
+Authenticated --> Denied : role or access rejected
+Expired --> SignedOut : clear session
+Denied --> SignedOut : clear session
+
+note bottom of SignedOut
+First-admin setup is available only
+when no administrator exists.
+end note
+@enduml

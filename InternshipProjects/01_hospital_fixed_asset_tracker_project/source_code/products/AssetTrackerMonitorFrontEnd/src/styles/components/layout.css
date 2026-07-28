@@ -1,0 +1,15 @@
+/**
+ * @file layout.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Shared layout, topbar, navigation, hero, and shell styles.
+ * @version 1.0.0
+ * @date 2026-05-22
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./layout/part-01.css";
+@import "./layout/part-02.css";
+@import "./layout/part-03.css";
+@import "./layout/part-04.css";

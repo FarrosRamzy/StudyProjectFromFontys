@@ -1,0 +1,62 @@
+/**
+ * @file table-badges.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-role-badge,
+.user-status-badge {
+    display: inline-flex;
+    align-items: center;
+    width: fit-content;
+    max-width: 100%;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 900;
+    line-height: 1.2;
+}
+
+.user-role-badge {
+    padding: 6px 10px;
+    background: rgba(59, 130, 246, 0.1);
+    color: #1d4ed8;
+    white-space: normal;
+}
+
+.user-status-badge {
+    gap: 7px;
+    padding: 6px 10px;
+    white-space: nowrap;
+}
+
+.user-status-badge.is-active {
+    background: rgba(16, 185, 129, 0.12);
+    color: #047857;
+}
+
+.user-status-badge.is-inactive {
+    background: rgba(100, 116, 139, 0.12);
+    color: #475569;
+}
+
+.user-status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 999px;
+    background: currentColor;
+}
+
+.user-row-inactive .user-avatar {
+    background: rgba(100, 116, 139, 0.12);
+    color: #64748b;
+}
+
+.user-row-inactive .user-identity-copy strong,
+.user-row-inactive .user-email-cell {
+    color: #64748b;
+}

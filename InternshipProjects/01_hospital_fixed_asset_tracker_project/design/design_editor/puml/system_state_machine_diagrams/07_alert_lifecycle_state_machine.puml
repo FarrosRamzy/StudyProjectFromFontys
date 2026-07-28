@@ -1,0 +1,31 @@
+@startuml
+title Alert Lifecycle State Machine
+left to right direction
+hide empty description
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 14
+skinparam ArrowFontSize 12
+skinparam state {
+  BackgroundColor White
+  BorderColor Black
+  FontColor Black
+}
+
+state "OPEN" as Open
+state "RESOLVED" as Resolved
+
+[*] --> Open : alert condition detected
+Open --> Resolved : condition cleared or resolved
+Resolved --> [*]
+
+note bottom of Open
+Examples: unknown tag, offline node,
+and unauthorized movement.
+end note
+
+note bottom of Resolved
+ACKNOWLEDGED is omitted unless the
+backend implements that status.
+end note
+@enduml

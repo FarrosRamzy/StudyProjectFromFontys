@@ -1,0 +1,58 @@
+# =========================
+# Python
+# =========================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+
+# =========================
+# Node / React
+# =========================
+node_modules/
+dist/
+build/
+.vite/
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# React env files
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# =========================
+# General
+# =========================
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Env / secrets
+.env
+.env.development
+
+# Python test/cache files
+.pytest_cache/
+__pycache__/
+*.pyc
+
+# Local test database
+test_asset_tracker.db
+
+# Coverage output, if used later
+.coverage
+htmlcov/

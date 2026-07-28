@@ -1,0 +1,267 @@
+@startuml NodeManager_Class
+ title NodeManager Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class NodeManager {
+   -my_node_wi_fi : IMyNodeWiFi&
+   -my_node_net_config : IMyNodeNetworkConfig&
+   -my_node_mqtt : IMyNodeMQTTConnector&
+   -my_node_rfid : IMyNodeRFID&
+   -my_node_status_led : INodeStatusLED&
+   -my_clock : INodeClock&
+   -my_board : INodeBoardControl&
+   -my_node_id : String
+   -my_node_role : String
+   -my_node_hospital : String
+   -my_hospital_id : String
+   -my_node_room : String
+   -my_node_client_id : String
+   -my_node_msg : String
+   -my_node_stat : String
+   -last_heartbeat_time : uint32_t
+   -heartbeat_interval : uint32_t
+   -last_tag_id[RFID_BUFFER_SIZE] : char
+   -last_tag_time : uint32_t
+   -duplicate_suppress_ms : uint32_t
+   -reset_button_press_start : uint32_t
+   -reset_button_was_pressed : bool
+   -reset_button_triggered : bool
+   -last_mqtt_connected : bool
+   -my_node_is_provisioned : bool
+   -my_commands_subscribed : bool
+   -last_command_subs_attempt : uint32_t
+   -my_time_synced : bool
+   -my_time_sync_started : bool
+   -my_time_sync_start_ms : uint32_t
+   -my_last_time_sync_check_ms : uint32_t
+   -my_last_remote_check_ms : uint32_t
+   -{static} active_instance : NodeManager*
+   +NodeManager(IMyNodeWiFi&, IMyNodeNetworkConfig&, IMyNodeMQTTConnector&, IMyNodeRFID&, INodeStatusLED&, INodeClock&, INodeBoardControl&)
+   +~NodeManager()
+   +beginNodeSystem() : void
+   +runNodeSystem() : void
+   -{static} myNodeMQTTCallback(char*, uint8_t*, unsigned int) : void
+   -handleMqttMessage(char*, uint8_t*, unsigned int) : void
+   -subscribeToCommandTopics() : void
+   -handleBlinkCommand(const char*, const char*, unsigned int) : void
+   -publishCommandAck(const char*, const char*, const char*) : void
+   -handleRFID() : void
+   -publishCheckpoint(const char*) : void
+   -publishRegistration(const char*) : void
+   -handleHeartbeat() : void
+   -isDuplicateTag(const char*) : bool
+   -applyRemoteConfig() : void
+   -fetchRemoteConfig() : bool
+   -beginTimeSync() : void
+   -getCurrentTimestampWIB(char*, size_t) : bool
+   -updateTimeSync() : void
+   -setupNetConfigResetButton() : void
+   -handleConfigResetButton() : void
+   -sayHello() : void
+   -sayGoodbye() : void
+   -handleGreetings(const char*, const char*) : void
+   -checkRemoteConfigPeriodically() : void
+   -prepareMQTTTimestamp(char*, size_t) : bool
+   -checkRole(String) : String
+   -hospitalNameToID(String) : String
+ }
+@enduml
+
+@startuml NodeManager_Public_API_View
+    title NodeManager - Public API View
+    skinparam classAttributeIconSize 0
+    hide circle
+
+    class NodeManager {
+    +NodeManager(
+        IMyNodeWiFi&,
+        IMyNodeNetworkConfig&,
+        IMyNodeMQTTConnector&,
+        IMyNodeRFID&,
+        INodeStatusLED&,
+        INodeClock&,
+        INodeBoardControl&
+    )
+    +~NodeManager()
+    +beginNodeSystem() : void
+    +runNodeSystem() : void
+    }
+@enduml
+
+@startuml NodeManager_Dependency_View
+    title NodeManager - Dependency View
+    skinparam classAttributeIconSize 0
+    hide circle
+
+    class NodeManager {
+    +beginNodeSystem() : void
+    +runNodeSystem() : void
+    }
+
+    interface IMyNodeWiFi
+    interface IMyNodeNetworkConfig
+    interface IMyNodeMQTTConnector
+    interface IMyNodeRFID
+    interface INodeStatusLED
+    interface INodeClock
+    interface INodeBoardControl
+
+    NodeManager o-- IMyNodeWiFi : WiFi control
+    NodeManager o-- IMyNodeNetworkConfig : local/remote config
+    NodeManager o-- IMyNodeMQTTConnector : MQTT communication
+    NodeManager o-- IMyNodeRFID : RFID tag reading
+    NodeManager o-- INodeStatusLED : node status indication
+    NodeManager o-- INodeClock : timing source
+    NodeManager o-- INodeBoardControl : board/reset control
+@enduml
+
+@startuml NodeManager_Behavior_Group_View
+    title NodeManager - Behavior Group View
+    skinparam classAttributeIconSize 0
+    hide circle
+
+    class NodeManager {
+    +beginNodeSystem() : void
+    +runNodeSystem() : void
+
+    .. MQTT handling ..
+    -myNodeMQTTCallback(char*, uint8_t*, unsigned int) : void
+    -handleMqttMessage(char*, uint8_t*, unsigned int) : void
+    -subscribeToCommandTopics() : void
+    -handleBlinkCommand(const char*, const char*, unsigned int) : void
+    -publishCommandAck(const char*, const char*, const char*) : void
+
+    .. RFID handling ..
+    -handleRFID() : void
+    -publishCheckpoint(const char*) : void
+    -publishRegistration(const char*) : void
+    -isDuplicateTag(const char*) : bool
+
+    .. heartbeat and status ..
+    -handleHeartbeat() : void
+    -sayHello() : void
+    -sayGoodbye() : void
+    -handleGreetings(const char*, const char*) : void
+
+    .. configuration ..
+    -applyRemoteConfig() : void
+    -fetchRemoteConfig() : bool
+    -checkRemoteConfigPeriodically() : void
+    -checkRole(String) : String
+    -hospitalNameToID(String) : String
+
+    .. time sync ..
+    -beginTimeSync() : void
+    -updateTimeSync() : void
+    -getCurrentTimestampWIB(char*, size_t) : bool
+    -prepareMQTTTimestamp(char*, size_t) : bool
+
+    .. reset button ..
+    -setupNetConfigResetButton() : void
+    -handleConfigResetButton() : void
+    }
+@enduml
+
+@startuml NodeManager_State_Group_View
+    title NodeManager - State Group View
+    skinparam classAttributeIconSize 0
+    hide circle
+
+    class NodeManager {
+    .. injected dependencies ..
+    -my_node_wi_fi : IMyNodeWiFi&
+    -my_node_net_config : IMyNodeNetworkConfig&
+    -my_node_mqtt : IMyNodeMQTTConnector&
+    -my_node_rfid : IMyNodeRFID&
+    -my_node_status_led : INodeStatusLED&
+    -my_clock : INodeClock&
+    -my_board : INodeBoardControl&
+
+    .. node identity ..
+    -my_node_id : String
+    -my_node_role : String
+    -my_node_hospital : String
+    -my_hospital_id : String
+    -my_node_room : String
+    -my_node_client_id : String
+
+    .. message/status ..
+    -my_node_msg : String
+    -my_node_stat : String
+    -last_mqtt_connected : bool
+    -my_node_is_provisioned : bool
+    -my_commands_subscribed : bool
+
+    .. RFID duplicate filtering ..
+    -last_tag_id[RFID_BUFFER_SIZE] : char
+    -last_tag_time : uint32_t
+    -duplicate_suppress_ms : uint32_t
+
+    .. heartbeat timing ..
+    -last_heartbeat_time : uint32_t
+    -heartbeat_interval : uint32_t
+
+    .. reset button state ..
+    -reset_button_press_start : uint32_t
+    -reset_button_was_pressed : bool
+    -reset_button_triggered : bool
+
+    .. time sync state ..
+    -my_time_synced : bool
+    -my_time_sync_started : bool
+    -my_time_sync_start_ms : uint32_t
+    -my_last_time_sync_check_ms : uint32_t
+
+    .. remote config refresh ..
+    -last_command_subs_attempt : uint32_t
+    -my_last_remote_check_ms : uint32_t
+
+    .. singleton callback routing ..
+    -{static} active_instance : NodeManager*
+    }
+@enduml
+
+@startuml NodeManager_Report_View
+    title NodeManager - Report View
+    skinparam classAttributeIconSize 0
+    hide circle
+
+    class NodeManager {
+    +beginNodeSystem() : void
+    +runNodeSystem() : void
+
+    .. RFID processing ..
+    -handleRFID() : void
+    -publishCheckpoint(const char*) : void
+    -publishRegistration(const char*) : void
+
+    .. MQTT communication ..
+    -handleMqttMessage(char*, uint8_t*, unsigned int) : void
+    -subscribeToCommandTopics() : void
+    -handleHeartbeat() : void
+
+    .. configuration ..
+    -fetchRemoteConfig() : bool
+    -applyRemoteConfig() : void
+
+    .. system support ..
+    -updateTimeSync() : void
+    -handleConfigResetButton() : void
+    }
+
+    interface IMyNodeWiFi
+    interface IMyNodeNetworkConfig
+    interface IMyNodeMQTTConnector
+    interface IMyNodeRFID
+    interface INodeStatusLED
+    interface INodeClock
+    interface INodeBoardControl
+
+    NodeManager o-- IMyNodeWiFi
+    NodeManager o-- IMyNodeNetworkConfig
+    NodeManager o-- IMyNodeMQTTConnector
+    NodeManager o-- IMyNodeRFID
+    NodeManager o-- INodeStatusLED
+    NodeManager o-- INodeClock
+    NodeManager o-- INodeBoardControl
+@enduml

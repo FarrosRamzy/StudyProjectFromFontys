@@ -1,0 +1,51 @@
+@startuml
+title Alert Entities
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+skinparam linetype ortho
+
+entity "ASSET" as ASSET {
+    * asset_id : UUID <<PK>>
+    --
+    tag_id : varchar
+    name : varchar
+}
+
+entity "NODE" as NODE {
+    * node_id : varchar <<PK>>
+    --
+    alias : varchar
+    status : varchar
+}
+
+entity "ALERT" as ALERT {
+    * alert_id : UUID <<PK>>
+    --
+    asset_id : UUID <<FK>>
+    node_id : varchar <<FK>>
+    alert_type : varchar
+    severity : varchar
+    message : text
+    status : varchar
+    created_at : datetime
+    resolved_at : datetime
+}
+
+ASSET "1..0" -- "0..*" ALERT : related asset
+NODE "1..0" -- "0..*" ALERT : related node
+
+note bottom of ALERT
+An alert may relate to an asset, a node,
+or both, depending on the alert type.
+
+Examples:
+UNKNOWN_TAG
+NODE_OFFLINE
+UNAUTHORIZED_MOVEMENT
+end note
+
+@enduml

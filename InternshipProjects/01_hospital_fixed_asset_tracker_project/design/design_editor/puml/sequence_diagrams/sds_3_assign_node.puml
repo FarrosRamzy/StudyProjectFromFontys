@@ -1,0 +1,22 @@
+@startuml SD-03 Assign Node
+title SD-03 Assign Node
+
+actor Technician
+participant "Node Registration Page" as Page
+participant "Node API" as API
+participant "Node Assigner Service" as Service
+database "Database" as DB
+participant "WebSocket Manager" as WS
+
+Technician -> Page: Fill node assignment form
+Page -> API: POST /nodes/{device_id}/assign
+API -> Service: assign_node_record()
+Service -> DB: Validate and save node assignment
+DB --> Service: Saved node
+Service --> API: Node data
+API -> WS: Broadcast node_assigned
+API --> Page: Assignment success
+WS -> Page: Live node update
+Page -> Technician: Show assigned node
+
+@enduml

@@ -1,0 +1,66 @@
+/**
+ * @file mobile-table-actions.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Mobile node actions and pagination.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 680px) {
+    .asset-table.node-table .action-col {
+        width: 100%;
+        min-width: 0;
+        justify-content: stretch;
+        padding-top: 8px;
+        border-top: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .asset-table.node-table .action-col::before {
+        display: none;
+    }
+
+    .asset-table.node-table .node-action-buttons {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 8px;
+        justify-content: stretch;
+    }
+
+    .asset-table.node-table .node-action-buttons:has(button:only-child) {
+        grid-template-columns: 1fr;
+    }
+
+    .asset-table.node-table .node-action-button {
+        width: 100%;
+        min-width: 0;
+        min-height: 38px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+    }
+
+    .simple-pagination {
+        width: 100%;
+        gap: 8px;
+        justify-content: space-between;
+    }
+
+    .pagination-page-jump {
+        gap: 6px;
+    }
+
+    .pagination-page-input {
+        width: 52px;
+        min-height: 36px;
+    }
+
+    .pagination-button {
+        min-height: 36px;
+        padding: 0 12px;
+        border-radius: 999px;
+        font-size: 0.78rem;
+    }
+}

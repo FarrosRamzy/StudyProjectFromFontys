@@ -1,0 +1,33 @@
+@startuml
+title Registration Desk Node Deployment
+
+top to bottom direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam ranksep 75
+
+node "Registration Desk Node" as RegNode <<device>> {
+    node "ESP32 Runtime" as Runtime <<execution environment>> {
+        artifact "Registration Desk\nFirmware" as Firmware
+    }
+
+    node "UHF RFID Reader" as Reader <<device>>
+    node "Status LEDs" as LEDs <<device>>
+}
+
+cloud "Hospital Wi-Fi" as WiFi
+cloud "MQTT Broker" as Broker
+
+Reader --> Runtime : UART
+Runtime --> LEDs : GPIO
+
+RegNode --> WiFi : Wi-Fi
+WiFi --> Broker : Network access
+
+RegNode --> Broker : Registration scans,\nheartbeats and ACKs
+Broker --> RegNode : Blink commands
+
+@enduml

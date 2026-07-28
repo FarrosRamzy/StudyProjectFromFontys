@@ -1,0 +1,60 @@
+/**
+ * @file form.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.user-form-grid,
+.account-form {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-top: 18px;
+}
+
+.user-form-grid label,
+.account-form label {
+    display: grid;
+    gap: 8px;
+    color: var(--muted);
+    font-size: 12px;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+.user-form-grid input,
+.user-form-grid select,
+.account-form input {
+    width: 100%;
+    min-width: 0;
+    min-height: 46px;
+    box-sizing: border-box;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 10px 14px;
+    background: #ffffff;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 800;
+    letter-spacing: normal;
+    text-transform: none;
+}
+
+.user-form-grid input:focus,
+.user-form-grid select:focus,
+.account-form input:focus {
+    border-color: rgba(5, 150, 105, 0.65);
+    outline: 3px solid rgba(5, 150, 105, 0.12);
+}
+
+.user-form-grid>button,
+.account-form>button {
+    align-self: end;
+    min-height: 46px;
+}

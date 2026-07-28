@@ -1,0 +1,29 @@
+/**
+ * @file responsive.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Responsive account security form layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 760px) {
+    .account-page .account-panel {
+        margin-top: 18px;
+        border-radius: 22px;
+    }
+
+    .password-section {
+        padding: 16px;
+    }
+
+    .account-form-actions {
+        justify-content: stretch;
+    }
+
+    .account-form-actions .primary-button {
+        width: 100%;
+    }
+}

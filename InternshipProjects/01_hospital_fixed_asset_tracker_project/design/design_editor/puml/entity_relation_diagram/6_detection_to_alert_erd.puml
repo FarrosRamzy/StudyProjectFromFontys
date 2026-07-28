@@ -1,0 +1,30 @@
+@startuml
+title Detection and Alert Relationship
+
+left to right direction
+
+hide methods
+hide stereotypes
+skinparam shadowing false
+
+entity "DETECTION_EVENT" as DETECTION {
+    * detection_event_id : UUID <<PK>>
+    --
+    tag_id : varchar
+    node_id : varchar
+    detected_at : datetime
+    processing_result : varchar
+}
+
+entity "ALERT" as ALERT {
+    * alert_id : UUID <<PK>>
+    --
+    detection_event_id : UUID <<FK>>
+    alert_type : varchar
+    severity : varchar
+    message : text
+}
+
+DETECTION "1..0" -- "0..*" ALERT : may generate
+
+@enduml

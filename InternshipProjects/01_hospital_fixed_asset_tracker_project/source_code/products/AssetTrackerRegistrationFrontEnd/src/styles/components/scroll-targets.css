@@ -1,0 +1,17 @@
+/**
+ * @file scroll-targets.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Shared scroll target offsets.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.module-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 14px 0 18px;
+}

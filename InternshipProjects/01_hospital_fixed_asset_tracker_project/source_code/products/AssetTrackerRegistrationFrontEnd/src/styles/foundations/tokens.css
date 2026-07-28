@@ -1,0 +1,26 @@
+/**
+ * @file tokens.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Global design tokens.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+:root {
+    --bg: #f4f7fb;
+    --panel: #ffffff;
+    --text: #102033;
+    --muted: #667085;
+    --line: #d8e0ea;
+    --primary: #047857;
+    --primary-dark: #065f46;
+    --danger: #dc2626;
+    --success-bg: #ecfdf5;
+    --success-text: #047857;
+    --error-bg: #fef2f2;
+    --error-text: #b91c1c;
+    --shadow: 0 16px 40px rgba(16, 32, 51, 0.08);
+}

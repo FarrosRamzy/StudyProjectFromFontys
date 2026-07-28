@@ -1,0 +1,84 @@
+/**
+ * @file table-helpers.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-07
+
+ * @Copyright (c) 2026
+ */
+
+/* Monospace table cell */
+
+.tag-cell {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 13px;
+}
+
+.sticky-col {
+  position: sticky;
+  background: var(--panel);
+  z-index: 2;
+}
+
+.asset-table th.sticky-col {
+  z-index: 3;
+}
+
+.sticky-col-1 {
+  left: 0;
+  min-width: 130px;
+  max-width: 130px;
+}
+
+.sticky-col-2 {
+  left: 158px;
+  min-width: 120px;
+  max-width: 120px;
+  box-shadow: 8px 0 12px rgba(16, 32, 51, 0.06);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.status-col {
+  min-width: 110px;
+}
+
+.last-location-col {
+  min-width: 190px;
+  padding-right: 28px;
+  white-space: nowrap;
+}
+
+.last-seen-col {
+  min-width: 180px;
+  padding-left: 24px;
+  white-space: nowrap;
+}
+
+.action-col {
+  min-width: 150px;
+}
+
+.sortable-header {
+  border: none;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+}
+
+.sortable-header:hover {
+  color: var(--primary);
+}
+
+.sortable-header:focus {
+  outline: 2px solid rgba(4, 120, 87, 0.18);
+  outline-offset: 4px;
+  border-radius: 6px;
+}

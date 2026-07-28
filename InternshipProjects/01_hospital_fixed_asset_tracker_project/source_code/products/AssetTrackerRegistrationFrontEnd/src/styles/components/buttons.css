@@ -1,0 +1,124 @@
+/**
+ * @file buttons.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Button styles.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+
+.refresh-button,
+button {
+    border: none;
+    border-radius: 14px;
+    padding: 11px 16px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.refresh-button {
+    background: white;
+    color: var(--primary-dark);
+    white-space: nowrap;
+}
+
+button:disabled {
+    opacity: 0.55;
+    cursor: not-allowed;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+}
+
+.secondary-button {
+    background: #f1f5f9;
+    color: var(--text);
+}
+
+.action-button {
+    background: #e8f5ef;
+    color: var(--primary-dark);
+}
+
+.action-button-selected {
+    background: #fee2e2;
+    color: var(--danger);
+}
+
+.danger-button {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.danger-button:hover {
+    background: #fecaca;
+}
+
+.danger-small-button {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-weight: 800;
+    cursor: pointer;
+    background: var(--danger);
+    color: white;
+}
+
+.small-button {
+    border: none;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-weight: 800;
+    cursor: pointer;
+    background: #e8f5ef;
+    color: var(--primary-dark);
+}
+
+.ghost-button {
+    background: transparent;
+    color: var(--muted);
+    border: 1px solid var(--line);
+}
+
+.topbar-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.topbar-refresh-button {
+    border: 1px solid rgba(8, 128, 95, 0.22);
+    background: #ffffff;
+    color: #087f5b;
+    border-radius: 999px;
+    padding: 0.75rem 1.1rem;
+    font-weight: 800;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.topbar-refresh-button:hover {
+    background: #ecfdf5;
+    box-shadow: 0 10px 22px rgba(8, 128, 95, 0.16);
+    transform: translateY(-1px);
+}
+
+.topbar-refresh-button:active {
+    transform: translateY(0);
+}
+
+@media (max-width: 760px) {
+    .refresh-button {
+        width: 100%;
+    }
+}

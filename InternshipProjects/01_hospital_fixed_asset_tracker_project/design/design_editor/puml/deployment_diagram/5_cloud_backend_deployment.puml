@@ -1,0 +1,49 @@
+@startuml
+title Cloud Backend and Infrastructure Deployment
+
+left to right direction
+
+skinparam shadowing false
+skinparam roundcorner 14
+skinparam defaultFontSize 16
+skinparam ArrowFontSize 14
+skinparam nodesep 85
+skinparam ranksep 70
+
+node "Cloud Hosting Platform\nRender" as Render {
+
+    node "FastAPI Backend\nWeb Service" as Backend {
+        node "Python Runtime" as Python <<execution environment>> {
+            artifact "Backend Application" as App
+        }
+
+        component "REST API" as API
+        component "WebSocket Manager" as WebSocket
+        component "MQTT Client" as MQTTClient
+    }
+
+    database "PostgreSQL\nDatabase Service" as Database
+}
+
+cloud "External MQTT Broker" as Broker
+
+node "Authenticated Browser Clients" as Browsers
+node "ESP32 Sensor Nodes" as SensorNodes <<device>>
+
+Browsers --> API : HTTPS / JSON
+WebSocket --> Browsers : WSS live updates
+
+SensorNodes --> Broker : MQTT node events
+Broker --> MQTTClient : Deliver events
+
+MQTTClient --> Broker : Publish commands
+Broker --> SensorNodes : Deliver commands
+
+App --> API
+App --> WebSocket
+App --> MQTTClient
+
+Backend --> Database : SQLAlchemy /\nPostgreSQL
+Database --> Backend : Query results
+
+@enduml

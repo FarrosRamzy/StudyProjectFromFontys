@@ -1,0 +1,51 @@
+/**
+ * @file table.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Desktop asset registration table layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.asset-registration-page .table-panel {
+    margin-top: 22px;
+    overflow-x: auto;
+}
+
+.asset-registration-page .table-header-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 18px;
+    align-items: flex-start;
+}
+
+.asset-registration-page .asset-table {
+    margin-top: 20px;
+    width: 100%;
+    min-width: 1120px;
+    border-collapse: collapse;
+}
+
+.asset-registration-page .asset-table th,
+.asset-registration-page .asset-table td {
+    padding: 16px 12px;
+    border-bottom: 1px solid var(--line);
+    text-align: left;
+}
+
+.asset-registration-page .asset-table th {
+    color: var(--muted);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.asset-registration-page .asset-table td {
+    font-size: 15px;
+}
+
+.asset-registration-page .module-nav {
+    margin-bottom: 0;
+}

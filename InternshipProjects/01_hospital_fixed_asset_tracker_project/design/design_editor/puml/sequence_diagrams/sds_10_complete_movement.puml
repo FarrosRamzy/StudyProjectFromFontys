@@ -1,0 +1,35 @@
+@startuml SD-10 Complete Approved Movement
+title SD-10 Complete Approved Movement
+
+participant "Checkpoint Node" as Node
+participant "MQTT Broker" as MQTT
+participant "MQTT Detection Handler" as Handler
+participant "Asset Flow Resolver" as Resolver
+database "Database" as DB
+participant "WebSocket Manager" as WS
+participant "Monitor App" as MonitorApp
+participant "Registration App" as RegApp
+
+Node -> MQTT: Publish RFID detection at destination
+MQTT -> Handler: Deliver detection message
+Handler -> Resolver: Resolve asset flow after detection
+Resolver -> DB: Load active movement request
+
+alt Detected at approved destination
+    Resolver -> DB: Complete movement request
+    Resolver -> DB: Update assigned room
+    Resolver -> DB: Set asset available
+    DB --> Resolver: Commit success
+    Resolver --> Handler: movement_completed = true
+    Handler -> WS: Broadcast asset_updated
+    Handler -> WS: Broadcast asset_movement_completed
+    WS -> MonitorApp: Show movement completed
+    WS -> RegApp: Update asset table
+else Detected at wrong room
+    Resolver -> DB: Keep asset in transit or wrong location
+    Resolver --> Handler: movement_completed = false
+    Handler -> WS: Broadcast asset_updated
+    WS -> MonitorApp: Show warning
+end
+
+@enduml

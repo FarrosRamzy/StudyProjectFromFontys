@@ -1,0 +1,118 @@
+/**
+ * @file part-03.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 980px) {
+    .monitor-page {
+        width: min(100% - 18px, 1500px);
+        padding-top: 14px;
+    }
+
+    .sticky-page-header {
+        padding: 6px 0 8px;
+    }
+
+    .app-topbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        padding: 12px 14px;
+        border-radius: 20px;
+    }
+
+    .app-brand-lockup {
+        flex: 1 1 auto;
+        min-width: 0;
+        gap: 10px;
+    }
+
+    .app-brand-mark {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        flex: 0 0 auto;
+    }
+
+    .app-brand-lockup strong {
+        font-size: 15px;
+        white-space: nowrap;
+    }
+
+    .app-brand-lockup div span {
+        display: none;
+    }
+
+    .topbar-actions {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 7px;
+        min-width: 0;
+    }
+
+    .connection-pill,
+    .topbar-actions .secondary-button,
+    .topbar-actions .ghost-button,
+    .topbar-user {
+        min-height: 36px;
+        border-radius: 13px;
+        padding: 7px 10px;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .connection-pill {
+        gap: 7px;
+    }
+
+    .connection-dot {
+        width: 9px;
+        height: 9px;
+        flex: 0 0 auto;
+    }
+
+    .topbar-user {
+        max-width: 150px;
+        overflow: hidden;
+    }
+
+    .topbar-user-text span {
+        display: none;
+    }
+
+    .topbar-user-text strong {
+        max-width: 120px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 12px;
+        white-space: nowrap;
+    }
+
+    .sticky-tabs-shell {
+        margin-top: 8px;
+    }
+
+    .monitor-tabs {
+        width: 100%;
+        gap: 5px;
+        padding: 5px;
+        border-radius: 17px;
+    }
+
+    .monitor-tab {
+        flex: 1 1 0;
+        text-align: center;
+        padding: 9px 10px;
+        border-radius: 12px;
+        font-size: 14px;
+    }
+}

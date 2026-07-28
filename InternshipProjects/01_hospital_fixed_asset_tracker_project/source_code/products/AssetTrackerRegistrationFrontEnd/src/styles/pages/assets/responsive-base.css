@@ -1,0 +1,62 @@
+/**
+ * @file responsive-base.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Base responsive asset registration layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+@media (max-width: 760px) {
+    .movement-request-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+    }
+
+    .compact-node-picker {
+        width: 100%;
+    }
+
+    .selected-node-note {
+        width: fit-content;
+    }
+}
+
+@media (max-width: 860px) {
+    .asset-registration-page .hero {
+        flex-direction: column;
+    }
+
+    .asset-registration-page .refresh-button {
+        width: 100%;
+    }
+
+    .asset-registration-page .section-header {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+@media (max-width: 640px) {
+    .asset-registration-page {
+        width: min(100% - 20px, 1180px);
+        padding-top: 20px;
+    }
+
+    .asset-registration-page .hero {
+        padding: 24px;
+        border-radius: 22px;
+    }
+
+    .asset-registration-page .panel {
+        padding: 18px;
+    }
+
+    .asset-registration-page .form-tabs {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+}

@@ -1,0 +1,48 @@
+@startuml MyNodeNetworkConfig_Class
+ title MyNodeNetworkConfig Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class MyNodeNetworkConfig {
+   -my_preferences : Preferences
+   -my_web_server : WebServer
+   -my_bootstrap_config : myNodeBootstrapConfig
+   -my_remote_config : myNodeRemoteConfig
+   -my_restart_pending : bool
+   -my_restart_at_ms : uint32_t
+   -my_setup_mode : bool
+   +MyNodeNetworkConfig()
+   +~MyNodeNetworkConfig()
+   +beginMyNetConfig() : void
+   +loopMyNetConfig() : void
+   +isConfigured() const : bool
+   +isSetupMode() const : bool
+   +getBootstrapConfig() const : const myNodeBootstrapConfig&
+   +getRemoteConfig() const : const myNodeRemoteConfig&
+   +setRemoteConfig(const String&, const String&, const String&, const String&, uint16_t, bool) : void
+   +resetConfiguration() : void
+   -loadConfig() : void
+   -saveConfig() : void
+   -startAccessPoint() : void
+   -startWebServer() : void
+   -makeAccessPointName() const : String
+   -generateDeviceId() const : String
+   -handleRoot() : void
+   -handleSave() : void
+   -handleRefresh() : void
+   -serveFile(const char*, const char*) : void
+   -handleStyle() : void
+   -handleScript() : void
+   -clearBootstrapConfig(bool) : void
+   -clearRemoteConfig() : void
+   -handleDebugFiles() : void
+   -buildWiFiOptionsHtml() : String
+   -htmlEscape(const String&) const : String
+   -readFile(const char*) : String
+   -makeUrlSafe(const String&) const : String
+   -testWiFiConnection(const String&, const String&, bool, uint32_t, String&) : bool
+ }
+ MyNodeNetworkConfig *-- Preferences
+ MyNodeNetworkConfig *-- WebServer
+ MyNodeNetworkConfig *-- myNodeBootstrapConfig
+ MyNodeNetworkConfig *-- myNodeRemoteConfig
+@enduml

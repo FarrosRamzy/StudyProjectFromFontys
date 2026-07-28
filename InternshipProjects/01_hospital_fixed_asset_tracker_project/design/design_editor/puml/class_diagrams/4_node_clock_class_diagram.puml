@@ -1,0 +1,10 @@
+@startuml NodeClock_Class
+ title NodeClock Class
+ skinparam classAttributeIconSize 0
+ hide circle
+ class NodeClock {
+   +NodeClock()
+   +~NodeClock()
+   +millisNow() const : uint32_t
+ }
+@enduml

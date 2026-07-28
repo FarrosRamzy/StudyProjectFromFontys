@@ -1,0 +1,80 @@
+/**
+ * @file asset-states.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Asset row states, flow notes, and count badges.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.asset-table tr.asset-row-danger td {
+    background: #fef2f2;
+}
+
+.asset-table tr.asset-row-danger:hover td {
+    background: #fee2e2;
+}
+
+.asset-table tr.asset-row-warning td {
+    background: #fffbeb;
+}
+
+.asset-table tr.asset-row-warning:hover td {
+    background: #fef3c7;
+}
+
+.asset-table tr.asset-row-success td {
+    background: #ecfdf5;
+}
+
+.asset-table tr.asset-row-success:hover td {
+    background: #d1fae5;
+}
+
+.asset-status-stack {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.asset-flow-note {
+    color: #475569;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.movement-request-warning {
+    margin-bottom: 16px;
+    padding: 12px 14px;
+    border-radius: 14px;
+    background: #fffbeb;
+    color: #92400e;
+    font-weight: 800;
+    border: 1px solid #fde68a;
+}
+
+.tab-count-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 22px;
+    height: 22px;
+    margin-left: 8px;
+    padding: 0 7px;
+    border-radius: 999px;
+    background: #ef4444;
+    color: white;
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.form-help-text {
+    margin-top: 6px;
+    color: #64748b;
+    font-size: 12px;
+    font-weight: 700;
+}

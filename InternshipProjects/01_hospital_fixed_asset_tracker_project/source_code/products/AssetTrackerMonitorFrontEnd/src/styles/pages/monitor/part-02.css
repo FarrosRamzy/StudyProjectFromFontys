@@ -1,0 +1,113 @@
+/**
+ * @file part-02.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.monitor-page .hero {
+    margin-top: 18px;
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    align-items: flex-start;
+    background: linear-gradient(135deg, #064e3b, #059669);
+    color: white;
+    border-radius: 28px;
+    padding: 32px;
+    box-shadow: var(--shadow);
+}
+
+.monitor-page .hero h1 {
+    margin: 0;
+    font-size: clamp(34px, 4vw, 54px);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+}
+
+.monitor-page .hero p {
+    margin-top: 10px;
+    max-width: 780px;
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 17px;
+}
+
+.eyebrow {
+    margin: 0 0 10px;
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 12px;
+    font-weight: 1000;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.hero-status-card {
+    min-width: 240px;
+    border: 1px solid rgba(255, 255, 255, 0.24);
+    border-radius: 22px;
+    padding: 18px;
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(12px);
+}
+
+.hero-status-card span {
+    display: block;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 12px;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.hero-status-card strong {
+    display: block;
+    margin-top: 8px;
+    color: white;
+    font-size: 24px;
+}
+
+.hero-status-card p {
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, 0.84);
+    font-size: 13px;
+}
+
+.connection-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 38px;
+    padding: 8px 12px;
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    background: #f8fafc;
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 900;
+}
+
+.connection-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+}
+
+.connection-dot.online {
+    background: #10b981;
+    box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.14);
+}
+
+.connection-dot.offline {
+    background: #ef4444;
+    box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.14);
+}
+
+.connection-dot.warning {
+    background: #f59e0b;
+    box-shadow: 0 0 0 4px rgba(245, 158, 11, 0.14);
+}

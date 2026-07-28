@@ -1,0 +1,39 @@
+/**
+ * @file base.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Shared table sizing and structural layout.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.node-table,
+.asset-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    min-width: 900px;
+}
+
+.node-table {
+    table-layout: fixed;
+}
+
+.node-table thead {
+    display: table-header-group;
+}
+
+.node-table tbody {
+    display: table-row-group;
+}
+
+.node-table tr {
+    display: table-row;
+}
+
+.node-table th,
+.node-table td {
+    display: table-cell;
+}

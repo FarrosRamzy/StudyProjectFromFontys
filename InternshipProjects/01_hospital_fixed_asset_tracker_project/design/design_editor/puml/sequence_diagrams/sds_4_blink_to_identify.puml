@@ -1,0 +1,21 @@
+@startuml SD-04 Identify Node by Blink Command
+title SD-04 Identify Node by Blink Command
+
+actor Technician
+participant "Node Registration Page" as Page
+participant "Node Command API" as API
+participant "MQTT Publisher" as Publisher
+participant "MQTT Broker" as MQTT
+participant "ESP32 Node" as Node
+
+Technician -> Page: Click Identify / Blink
+Page -> API: POST /nodes/{device_id}/blink
+API -> Publisher: Publish blink command
+Publisher -> MQTT: Command message
+MQTT -> Node: Deliver command
+Node -> Node: Blink LED
+Node -> MQTT: Publish command ACK
+MQTT -> API: ACK message received
+API -> Page: Command accepted
+
+@enduml

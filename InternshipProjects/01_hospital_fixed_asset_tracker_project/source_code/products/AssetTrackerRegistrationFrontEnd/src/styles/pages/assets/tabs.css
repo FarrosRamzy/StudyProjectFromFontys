@@ -1,0 +1,46 @@
+/**
+ * @file tabs.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Asset registration action tabs and tab content.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.asset-registration-page .form-tabs {
+    display: inline-flex;
+    gap: 8px;
+    padding: 6px;
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    background: #f8fafc;
+    width: fit-content;
+}
+
+.asset-registration-page .form-tab {
+    border: none;
+    border-radius: 12px;
+    padding: 10px 16px;
+    font-weight: 900;
+    cursor: pointer;
+    background: transparent;
+    color: var(--muted);
+}
+
+.asset-registration-page .form-tab.active {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 8px 20px rgba(4, 120, 87, 0.18);
+}
+
+.asset-registration-page .form-tab-danger.active {
+    background: var(--danger);
+    color: white;
+    box-shadow: 0 8px 20px rgba(220, 38, 38, 0.18);
+}
+
+.asset-registration-page .form-tab-content {
+    min-width: 0;
+}

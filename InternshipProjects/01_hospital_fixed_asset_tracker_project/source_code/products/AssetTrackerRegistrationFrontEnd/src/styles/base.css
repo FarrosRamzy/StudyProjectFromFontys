@@ -1,0 +1,13 @@
+/**
+ * @file base.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Foundation stylesheets entry point.
+ * @version 1.0.0
+ * @date 2026-05-11
+
+ * @Copyright (c) 2026
+ */
+
+
+@import "./foundations/tokens.css";
+@import "./foundations/document.css";

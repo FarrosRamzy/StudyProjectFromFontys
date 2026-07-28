@@ -1,0 +1,44 @@
+@startuml
+left to right direction
+skinparam shadowing false
+skinparam packageStyle rectangle
+skinparam actorStyle awesome
+
+skinparam rectangle {
+  RoundCorner 18
+}
+
+actor "Initial System\nAdministrator" as InitialAdmin
+actor Admin
+actor Technician
+actor "Registration Staff" as RegistrationStaff
+actor "Monitor Staff" as MonitorStaff
+
+rectangle "RFID-Tagged\nHospital Assets" as Assets
+cloud "MQTT Broker" as MQTT
+cloud "Hospital Wi-Fi /\nNetwork" as Network
+
+rectangle "Hospital Fixed-Asset Tracking System\n--\nRegisters and monitors RFID-tagged hospital assets,\nmanages sensor nodes and movement requests,\nand provides live asset and node status updates." as System
+
+InitialAdmin --> System : First-admin setup
+System --> InitialAdmin : Setup result
+
+Admin --> System : Manage users, nodes,\nassets, movements, settings
+System --> Admin : Status, alerts,\nand operation results
+
+Technician --> System : Configure and manage nodes
+System --> Technician : Node status and\ncommand results
+
+RegistrationStaff --> System : Register assets,\nderegister assets,\napprove/reject movements
+System --> RegistrationStaff : Scanned tags,\nasset data, pending requests
+
+MonitorStaff --> System : Monitor assets and nodes,\nrequest movements
+System --> MonitorStaff : Locations, alerts,\nand activity logs
+
+Assets --> System : RFID tag signals\nand detections
+
+System <--> MQTT : Scans, detections,\nheartbeats, commands,\nacknowledgements
+
+Network <--> System : Connectivity for\napps and sensor nodes
+
+@enduml

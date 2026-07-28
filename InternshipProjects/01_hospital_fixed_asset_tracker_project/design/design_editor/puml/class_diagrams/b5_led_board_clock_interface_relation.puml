@@ -1,0 +1,26 @@
+@startuml LED_Board_Clock_Interface_Relation
+title LED, Board, and Clock Interface Relation
+skinparam classAttributeIconSize 0
+hide circle
+interface INodeStatusLED {
++beginMyLEDs() : void
++setGreenConnected(bool) : void
++setRedDetecting(bool) : void
++startIdentifyBlink(uint8_t, uint32_t) : void
++updateMyLEDstate() : void
+}
+interface INodeBoardControl {
++setPinMode(uint8_t, uint8_t) : void
++readDigital(uint8_t) : int
++restartBoard() : void
+}
+interface INodeClock {
++millisNow() const : uint32_t
+}
+class NodeStatusLED
+class NodeBoardControl
+class NodeClock
+NodeStatusLED ..|> INodeStatusLED
+NodeBoardControl ..|> INodeBoardControl
+NodeClock ..|> INodeClock
+@enduml

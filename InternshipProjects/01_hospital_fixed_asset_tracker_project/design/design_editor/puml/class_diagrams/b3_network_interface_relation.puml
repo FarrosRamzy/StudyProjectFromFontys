@@ -1,0 +1,28 @@
+@startuml Network_Interface_Relation
+title Network Interface Relation
+skinparam classAttributeIconSize 0
+hide circle
+interface IMyNodeWiFi {
++setCredentials(const char*, const char*) : void
++hasCredentials() const : bool
++startWiFi() : void
++loopNetWiFi() : void
++amIConnected() : bool
++reconnectWiFi() : void
++disconnectWiFi() : void
+}
+interface IMyNodeNetworkConfig {
++beginMyNetConfig() : void
++loopMyNetConfig() : void
++isConfigured() const : bool
++isSetupMode() const : bool
++getBootstrapConfig() const : const myNodeBootstrapConfig&
++getRemoteConfig() const : const myNodeRemoteConfig&
++setRemoteConfig(const String&, const String&, const String&, const String&, uint16_t, bool) : void
++resetConfiguration() : void
+}
+class MyNodeWiFi
+class MyNodeNetworkConfig
+MyNodeWiFi ..|> IMyNodeWiFi
+MyNodeNetworkConfig ..|> IMyNodeNetworkConfig
+@enduml

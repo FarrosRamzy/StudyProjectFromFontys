@@ -1,0 +1,37 @@
+@startuml Login and Role-Based Page Access
+title Login and Role-Based Page Access
+
+actor "User" as User
+participant "Frontend App" as Frontend
+participant "Backend Auth API" as Auth
+database "PostgreSQL Database" as DB
+
+User -> Frontend: Enter email and password
+Frontend -> Auth: POST /auth/login
+Auth -> DB: Find user by email
+DB --> Auth: User account
+Auth -> Auth: Verify password hash
+Auth -> Auth: Check user is active
+
+alt Login valid
+    Auth --> Frontend: Return JWT token and user role
+    Frontend -> Frontend: Store token and user
+    Frontend -> Frontend: Redirect based on role
+
+    alt Admin
+        Frontend -> User: Show Dashboard, Nodes, Assets, Users
+    else Test User
+        Frontend -> User: Show Dashboard, Nodes, Assets\nHide Users page
+    else Technician
+        Frontend -> User: Show Dashboard and Nodes
+    else Registration Staff
+        Frontend -> User: Show Dashboard and Assets
+    else Monitor Staff
+        Frontend -> User: Show Dashboard and Account Security
+    end
+else Invalid login
+    Auth --> Frontend: Return error
+    Frontend -> User: Show login error
+end
+
+@enduml

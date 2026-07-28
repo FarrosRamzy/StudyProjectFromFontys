@@ -1,0 +1,46 @@
+/**
+ * @file columns.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description Node table column widths.
+ * @version 1.0.0
+ * @date 2026-06-18
+
+ * @Copyright (c) 2026
+ */
+
+
+.node-table th:nth-child(1),
+.node-table td:nth-child(1) {
+    width: 300px;
+    min-width: 300px;
+}
+
+.node-table th:nth-child(2),
+.node-table td:nth-child(2) {
+    width: 140px;
+}
+
+.node-table th:nth-child(3),
+.node-table td:nth-child(3) {
+    width: 130px;
+}
+
+.node-table th:nth-child(4),
+.node-table td:nth-child(4) {
+    width: 170px;
+}
+
+.node-table th:nth-child(5),
+.node-table td:nth-child(5) {
+    width: 160px;
+}
+
+.node-table th:nth-child(6),
+.node-table td:nth-child(6) {
+    width: 130px;
+}
+
+.node-table th:nth-child(7),
+.node-table td:nth-child(7) {
+    width: 150px;
+}

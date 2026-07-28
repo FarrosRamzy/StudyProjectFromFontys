@@ -1,0 +1,24 @@
+/**
+ * @file empty-state.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-05-07
+
+ * @Copyright (c) 2026
+ */
+
+/* Empty state */
+
+.empty-state {
+  text-align: center;
+}
+
+.empty-state h2 {
+  margin: 0;
+}
+
+.empty-state p {
+  margin-top: 8px;
+  color: var(--muted);
+}

@@ -1,0 +1,66 @@
+/**
+ * @file part-02.css
+ * @author Farros Ramzy (you@domain.com)
+ * @description 
+ * @version 1.0.0
+ * @date 2026-06-23
+
+ * @Copyright (c) 2026
+ */
+
+
+.sort-button:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    outline-offset: 4px;
+    border-radius: 8px;
+}
+
+.sort-button.active {
+    color: var(--primary);
+}
+
+.pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px;
+    border-top: 1px solid var(--line);
+    background: #ffffff;
+}
+
+.pagination-page-control {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--muted);
+    font-weight: 900;
+}
+
+.pagination-page-control input {
+    width: 72px;
+    min-height: 38px;
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 8px 10px;
+    text-align: center;
+    color: var(--text);
+    font-weight: 900;
+}
+
+.pagination-page-control input:focus {
+    outline: 3px solid rgba(4, 120, 87, 0.16);
+    border-color: var(--primary);
+}
+
+@media (max-width: 560px) {
+    .pagination-bar {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 640px) {
+    .monitor-toolbar {
+        align-items: stretch;
+    }
+}
