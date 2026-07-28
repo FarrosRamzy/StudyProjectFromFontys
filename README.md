@@ -1,6 +1,4 @@
-from pathlib import Path
-
-readme = """# Study Projects from Fontys
+# Study Projects from Fontys
 
 This repository contains a selection of projects I completed during my 2 years of ICT studies at Fontys University of Applied Sciences. It includes personal assignments, team-based embedded systems projects, and my most recent full-stack internship project.
 
