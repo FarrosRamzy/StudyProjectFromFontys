@@ -1,16 +1,16 @@
-# React + Vite
+# Asset and Node Monitor — Archived Iteration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I created this React and Vite application as an earlier operational dashboard for viewing assets, nodes, alerts, activity, and basic status summaries. It helped establish the filtering, monitoring, API, and presentation logic used by the later Monitor App.
 
-Currently, two official plugins are available:
+The maintained version with authentication, movement requests, richer live updates, responsive tables, and the current component structure is here:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[`../products/AssetTrackerMonitorFrontEnd`](../products/AssetTrackerMonitorFrontEnd/)
 
-## React Compiler
+## Run this archived version
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```bash
+npm ci
+npm run dev
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This folder is preserved as development history and may not match the current backend contracts.

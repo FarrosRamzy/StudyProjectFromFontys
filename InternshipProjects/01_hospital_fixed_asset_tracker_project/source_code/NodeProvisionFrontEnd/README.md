@@ -1,18 +1,16 @@
-# React + Vite
+# Node Provision Frontend — Archived Iteration
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I created this React and Vite application during the earlier node-management stage of the project. It introduced authenticated node registration, assignment forms, search, sorting, pagination, WebSocket updates, and physical node actions such as identify, unassign, and delete.
 
-Currently, two official plugins are available:
+This folder is preserved to show the development history of the interface. The maintained version is now part of the combined Registration App:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+[`../products/AssetTrackerRegistrationFrontEnd`](../products/AssetTrackerRegistrationFrontEnd/)
 
-## React Compiler
+## Run this archived version
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+```bash
+npm ci
+npm run dev
+```
 
-Note: This will impact Vite dev & build performances.
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+This iteration should not be run together with the current product stack unless its API expectations are checked first.
