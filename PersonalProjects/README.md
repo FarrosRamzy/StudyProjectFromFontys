@@ -1,6 +1,6 @@
 # Personal Programming Projects
 
-This repository contains personal and paired assignments I completed during my ICT studies. The projects cover C, C++, C#, cybersecurity, and embedded software development with Arduino and STM32 boards.
+This repository contains personal and paired assignments I completed during my 2 years in ICT studies. The projects cover C, C++, C#, cybersecurity, and embedded software development with Arduino and STM32 boards.
 
 Each folder includes a short README that explains what I built, what I learned, and which parts I implemented. Most of the projects are educational prototypes rather than production-ready applications.
 

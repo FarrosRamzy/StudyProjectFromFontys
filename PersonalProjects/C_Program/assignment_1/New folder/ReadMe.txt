@@ -1,2 +1,0 @@
-This C Program assignment is about a practice to change numerical data using logical operators such as "&&", "||", "^", and "~"
-The assignment consists of two types of operating program. One of them is using the return operation and the other is using the pointer.
