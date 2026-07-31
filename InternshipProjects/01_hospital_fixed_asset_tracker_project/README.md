@@ -1,6 +1,6 @@
 # Hospital Fixed-Asset Tracking System
 
-This project is a non-academical embedded product research internship project that I have done with the Imperial Healthtech company in Indonesia while I was taking my gap semester from Fontys ICT.
+This project is a non-academical embedded product research internship that I have done with the Imperial Healthtech company in Indonesia while I was taking my gap semester from Fontys ICT.
 
 I built this project to track movable hospital equipment with UHF RFID tags and fixed room checkpoints. Instead of trying to calculate a continuous indoor position, the system records the most recent checkpoint that detected an asset and uses that information to show its current or last known room.
 
