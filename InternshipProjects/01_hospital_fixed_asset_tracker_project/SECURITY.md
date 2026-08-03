@@ -6,7 +6,7 @@ This repository is an internship prototype and should not be deployed in a hospi
 
 I keep database URLs, JWT secrets, MQTT credentials, and deployment-specific values outside the documentation and source-control history. Local `.env` files must remain untracked.
 
-Before making the repository public, the firmware configuration also needs review. Development setup credentials and provisioning values currently represented in the firmware source should be replaced with a secure provisioning process and rotated before deployment.
+Before making the repository public, the firmware configuration also have reviewed. Development setup credentials and provisioning values currently represented in the firmware source were replaced with a secure provisioning process and rotated before deployment.
 
 ## Production checklist
 
