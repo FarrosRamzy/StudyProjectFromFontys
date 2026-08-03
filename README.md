@@ -1,4 +1,17 @@
-# Study Projects from Fontys
+# Embedded Software and IoT Portfolio
+
+Embedded software student focused on C/C++, microcontrollers,
+communication protocols, sensor integration, and connected systems.
+
+## Featured Projects
+
+| Project | My contribution | Technologies |
+|---|---|---|
+| [Hospital Fixed-Asset Tracking System](./InternshipProjects/01_hospital_fixed_asset_tracker_project/) | Designed and implemented the end-to-end prototype | ESP32, C++, RFID, MQTT, FastAPI, PostgreSQL, React |
+| [Autonomous Platooning Robot Simulation System](./GroupProjects/02_autonomous_robot_simulation_system_project/PlatooningRobot_2024/) | Developed sensor logic, control behavior, and telemetry | STM32, ESP32, C/C++, UART, MQTT, MATLAB |
+| [Distributed Embedded Vehicle Control System](./GroupProjects/01_embedded_vehicle_control_simulation_system_project/) | Developed MQTT–CAN bridge, sensor subsystem, and integration | C++, ESP32, CAN, MQTT, BME280 |
+
+## Project Summaries
 
 This repository contains a selection of projects I completed during my 2 years of ICT studies at Fontys University of Applied Sciences. It includes personal assignments, team-based embedded systems projects, and my most recent full-stack internship project.
 
